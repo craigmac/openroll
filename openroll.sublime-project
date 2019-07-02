@@ -1,0 +1,36 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"folder_exclude_patterns": ["__pycache__"]
+		}
+	],
+	"settings":
+	{
+		"LSP":
+		{
+			"pyls":
+			{
+				"command":
+				[
+					"C:/users/cmaceachern/virtualenvs/pyside2/scripts/pyls"
+				],
+				"enabled": true,
+				"env":
+				{
+					"PATH": "C:/users/cmaceachern/virtualenvs/pyside2/Scripts"
+				},
+				"plugins": 
+				{
+					"pylint": {"enabled": false},
+					"pydocstyle": {"enabled": true},
+					"rope": {"enabled": true},
+				}
+			},
+			"only_show_lsp_completions": true,
+		},
+		"python_interpreter": "C:/users/cmaceachern/virtualenvs/pyside2/Scripts/python",
+
+	},
+}

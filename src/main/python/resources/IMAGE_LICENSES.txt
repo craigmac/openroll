@@ -1,0 +1,2 @@
+Image files in this directory provided from Google, copyright (c) 2014, Google (https://material.io/tools/icons/), used under Apache License 2.0, found at: https://www.apache.org/licenses/LICENSE-2.0.html
+

@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/images">
+        <file alias="loop.png">resources/baseline_loop_black_18dp.png</file>
+        <file alias="pause.png">resources/baseline_pause_black_18dp.png</file>
+        <file alias="play.png">resources/baseline_play_arrow_black_18dp.png</file>
+        <file alias="settings.png">resources/baseline_settings_black_18dp.png</file>
+        <file alias="stop.png">resources/baseline_stop_black_18dp.png</file>
+        <file alias="undo.png">resources/baseline_undo_black_18dp.png</file>
+        <file alias="soundoff.png">resources/baseline_volume_off_black_18dp.png</file>
+        <file alias="soundon.png">resources/baseline_volume_up_black_18dp.png</file>
+    </qresource>
+    <qresource prefix="/sounds">
+        <file alias="airhorn.wav">resources/airhorn.wav</file>
+        <file alias="basketballbuzzer.wav">resources/basketballbuzzer.wav</file>
+        <file alias="buzz.wav">resources/buzz.wav</file>
+        <file alias="doorbuzzer.wav">resources/doorbuzzer.wav</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file alias="icon.ico">resources/Icon.ico</file>
+        <file alias="openroll.png">resources/openroll.png</file>
+        <file alias="openroll-original.png">resources/openroll-bg-original.png</file>
+    </qresource>
+</RCC>
