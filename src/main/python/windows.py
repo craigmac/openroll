@@ -51,8 +51,6 @@ from ui_scoreboard import Ui_Scoreboard
 
 import functools
 
-import os
-
 
 DEBUG = True
 DEBUG_TIME = 60 * 1
@@ -205,8 +203,8 @@ class Control_Window(QMainWindow):
         newvalue = 0 if (oldvalue + amount) < 0 else oldvalue + amount
         label.setText(str(newvalue))
 
-    # Method MUST be named this way to work
     def closeEvent(self, event: QCloseEvent):
+        """Method MUST be named this way to work."""
         if DEBUG:
             qDebug("Control_Window caught close signal.")
 
@@ -521,7 +519,6 @@ class Control_Window(QMainWindow):
             qDebug("========== reset_labels() out. ==========")
 
     def load_logo_clicked(self):
-
         # returns (fileName: str, selectedFilter: str)
         fname = QFileDialog.getOpenFileName(self, "Open Image",
                                             ".",
@@ -582,7 +579,6 @@ class Scoreboard_Window(QWidget):
         self.ui = Ui_Scoreboard()
         self.ui.setupUi(self)
         # self.setWindowFlags(Qt.CustomizeWindowHint)
-
 
     def closeEvent(self, event: QCloseEvent):
         """Override of virtual Qt method. Fired when close signal
