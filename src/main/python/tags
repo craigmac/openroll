@@ -6,10 +6,12 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/1b747b38/
 AppContext	main.py	/^class AppContext(ApplicationContext):$/;"	c
+COUNTRY_FLAG	windows.py	/^COUNTRY_FLAG = {$/;"	v
 Control_Window	windows.py	/^class Control_Window(QMainWindow):$/;"	c
 DEBUG	windows.py	/^DEBUG = True$/;"	v
 DEBUG_TIME	windows.py	/^DEBUG_TIME = 60 * 1$/;"	v
 DEFAULT_DIVISION_IDX	windows.py	/^DEFAULT_DIVISION_IDX = 14  # ADULT WHITE 18-29 5:00$/;"	v
+DEFAULT_FLAG_IDX	windows.py	/^DEFAULT_FLAG_IDX = list(COUNTRY_FLAG.keys()).index('Canada')$/;"	v
 DEFAULT_TIME	windows.py	/^DEFAULT_TIME = 60 * 5  # 5 minutes -> 300 seconds$/;"	v
 Scoreboard_Window	windows.py	/^class Scoreboard_Window(QWidget):$/;"	c
 Ui_Control	ui_control.py	/^class Ui_Control(object):$/;"	c
@@ -17,16 +19,28 @@ Ui_Scoreboard	ui_scoreboard.py	/^class Ui_Scoreboard(object):$/;"	c
 __init__	windows.py	/^    def __init__(self, parent, qt_window_flags):$/;"	m	class:Scoreboard_Window
 __init__	windows.py	/^    def __init__(self, version, parent=None):$/;"	m	class:Control_Window
 app_ctx	main.py	/^    app_ctx = AppContext()$/;"	v
+build	Makefile	/^build:$/;"	t
+c1_load_flag_clicked	windows.py	/^    def c1_load_flag_clicked(self):$/;"	m	class:Control_Window
+c2_load_flag_clicked	windows.py	/^    def c2_load_flag_clicked(self):$/;"	m	class:Control_Window
+clean	Makefile	/^clean:$/;"	t
 closeEvent	windows.py	/^    def closeEvent(self, event: QCloseEvent):$/;"	m	class:Control_Window
 closeEvent	windows.py	/^    def closeEvent(self, event: QCloseEvent):$/;"	m	class:Scoreboard_Window
+comp1_flag_change	windows.py	/^    def comp1_flag_change(self, flag: str):$/;"	m	class:Control_Window
+comp2_flag_change	windows.py	/^    def comp2_flag_change(self, flag: str):$/;"	m	class:Control_Window
+compile	Makefile	/^compile:$/;"	t
+convert-rc	Makefile	/^convert-rc:$/;"	t
+convert-ui	Makefile	/^convert-ui:$/;"	t
 debug_dump	windows.py	/^    def debug_dump(self):$/;"	m	class:Control_Window
 division_changed	windows.py	/^    def division_changed(self, index: int):$/;"	m	class:Control_Window
+full	Makefile	/^full: convert-ui convert-rc$/;"	t
+load_custom_flag_emblem	windows.py	/^    def load_custom_flag_emblem(self, flag: str, player: int):$/;"	m	class:Control_Window
 load_image	windows.py	/^    def load_image(self, fname: str):$/;"	m	class:Control_Window
 load_logo_clicked	windows.py	/^    def load_logo_clicked(self):$/;"	m	class:Control_Window
 modify_points	windows.py	/^    def modify_points(self, label, amount):$/;"	m	class:Control_Window
 play_pause_button_clicked	windows.py	/^    def play_pause_button_clicked(self):$/;"	m	class:Control_Window
 play_sound	windows.py	/^    def play_sound(self):$/;"	m	class:Control_Window
 populate_default_sounds_dropdown	windows.py	/^    def populate_default_sounds_dropdown(self):$/;"	m	class:Control_Window
+populate_flag_combobox	windows.py	/^    def populate_flag_combobox(self):$/;"	m	class:Control_Window
 qCleanupResources	openroll_rc.py	/^def qCleanupResources():$/;"	f
 qInitResources	openroll_rc.py	/^def qInitResources():$/;"	f
 qt_resource_data	openroll_rc.py	/^qt_resource_data = b"\\$/;"	v

@@ -3,8 +3,8 @@
 # Form implementation generated from reading ui file 'scoreboard.ui',
 # licensing of 'scoreboard.ui' applies.
 #
-# Created: Thu Jun 27 09:26:23 2019
-#      by: pyside2-uic  running on PySide2 5.12.3
+# Created: Wed Jul 10 11:13:18 2019
+#      by: pyside2-uic  running on PySide2 5.13.0
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -13,7 +13,7 @@ from PySide2 import QtCore, QtGui, QtWidgets
 class Ui_Scoreboard(object):
     def setupUi(self, Scoreboard):
         Scoreboard.setObjectName("Scoreboard")
-        Scoreboard.resize(1600, 830)
+        Scoreboard.resize(1600, 911)
         Scoreboard.setMinimumSize(QtCore.QSize(1600, 830))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -34,6 +34,19 @@ class Ui_Scoreboard(object):
         self.comp1_name.setAlignment(QtCore.Qt.AlignCenter)
         self.comp1_name.setObjectName("comp1_name")
         self.comp1_layout.addWidget(self.comp1_name)
+        self.label = QtWidgets.QLabel(Scoreboard)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(1)
+        sizePolicy.setVerticalStretch(1)
+        sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
+        self.label.setSizePolicy(sizePolicy)
+        self.label.setMinimumSize(QtCore.QSize(128, 64))
+        self.label.setStyleSheet("image: url(:/flags/ca.png);\n"
+"background-color:rgb(0,0,200);\n"
+"padding: 2;")
+        self.label.setText("")
+        self.label.setObjectName("label")
+        self.comp1_layout.addWidget(self.label)
         self.comp1_points = QtWidgets.QLabel(Scoreboard)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(1)
@@ -100,6 +113,19 @@ class Ui_Scoreboard(object):
         self.comp2_name.setAlignment(QtCore.Qt.AlignCenter)
         self.comp2_name.setObjectName("comp2_name")
         self.comp2_layout.addWidget(self.comp2_name)
+        self.label_2 = QtWidgets.QLabel(Scoreboard)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(1)
+        sizePolicy.setVerticalStretch(1)
+        sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
+        self.label_2.setSizePolicy(sizePolicy)
+        self.label_2.setMinimumSize(QtCore.QSize(128, 64))
+        self.label_2.setStyleSheet("image: url(:/flags/ca.png);\n"
+"background-color: rgb(255,255,255);\n"
+"padding: 2;")
+        self.label_2.setText("")
+        self.label_2.setObjectName("label_2")
+        self.comp2_layout.addWidget(self.label_2)
         self.comp2_points = QtWidgets.QLabel(Scoreboard)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(1)
@@ -211,7 +237,7 @@ class Ui_Scoreboard(object):
 
     def retranslateUi(self, Scoreboard):
         Scoreboard.setWindowTitle(QtWidgets.QApplication.translate("Scoreboard", "Openroll", None, -1))
-        self.comp1_name.setText(QtWidgets.QApplication.translate("Scoreboard", "Competitor 1", None, -1))
+        self.comp1_name.setText(QtWidgets.QApplication.translate("Scoreboard", "<html><head/><body><p>Competitor 1</p></body></html>", None, -1))
         self.comp1_points.setText(QtWidgets.QApplication.translate("Scoreboard", "0", None, -1))
         self.comp1_advantages.setText(QtWidgets.QApplication.translate("Scoreboard", "0", None, -1))
         self.comp1_penalties.setText(QtWidgets.QApplication.translate("Scoreboard", "0", None, -1))

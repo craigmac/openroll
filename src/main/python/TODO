@@ -1,11 +1,15 @@
 2.0.0:
-* Make controls z-index higher than scoreboard so that it visible at startup
-* When paused, background coloring of timers changes to red to show it is in paused state.
+* Check that everything is working as intended.
+* Make non-debug release and debug-enabled release
 
 2.1.0:
 * Create and place a widget spot for inserting flags
 * Populate country dropdown list (default to Canada).
 * Changing country index on dropdown changes flag image on scoreboard for that player.
+
+TASKS:
+* Read how to alter html/css of a QLabel widget programmatically.
+*
 
 2.2.0:
 * Button to browse and load custom sound for alarm.
@@ -22,6 +26,7 @@ use QInputDialog.getInteger()
 * don't allow closing scoreboard if parent still exists (Fix current hack of removing
 close button on scoreboard for supported platforms to include any close event, e.g.,
 coming from keyboard alt-f4 or system request to close).
+* Make controls z-index higher than scoreboard so that it visible at startup.
 
 PR IDEAS:
 * Contact Canadian Army combatives to tell them about my program when released so they
@@ -32,5 +37,5 @@ could use it at CAFCombatives. "2019 Military Combatives Grappling Concentration
 * r/pyside/2?
 * openroll.sourceforge.io updates
 * Show HN: openroll: my experience creating a pyside2 open-source application for Brazilian Jiu-Jitsu tournaments
-* 
-* 
+*
+*

@@ -567,8 +567,22 @@ color: 'white';</string>
           <verstretch>1</verstretch>
          </sizepolicy>
         </property>
+        <property name="maximumSize">
+         <size>
+          <width>500</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>24</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
         <property name="styleSheet">
-         <string notr="true">font: 36pt;
+         <string notr="true">font: 24pt;
 background-color: rgb(0, 0, 200);
 color: 'white';</string>
         </property>
@@ -604,8 +618,14 @@ color: 'white';</string>
           <verstretch>1</verstretch>
          </sizepolicy>
         </property>
+        <property name="maximumSize">
+         <size>
+          <width>500</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="styleSheet">
-         <string notr="true">font: 36pt;
+         <string notr="true">font: 24pt;
 background-color: 'white';</string>
         </property>
         <property name="text">
@@ -621,19 +641,6 @@ background-color: 'white';</string>
     <item>
      <layout class="QHBoxLayout" name="names_timer_hlayout">
       <item>
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
        <widget class="QLineEdit" name="comp1_lineedit">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -641,14 +648,55 @@ background-color: 'white';</string>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="text">
          <string>Competitor A</string>
+        </property>
+        <property name="maxLength">
+         <number>50</number>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
         </property>
         <property name="clearButtonEnabled">
          <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comp1_flag_combobox">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="currentText">
+         <string/>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>16</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="p1_pushButton">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>...</string>
         </property>
        </widget>
       </item>
@@ -706,8 +754,17 @@ background-color: 'white';</string>
           <verstretch>1</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="text">
          <string>Competitor B</string>
+        </property>
+        <property name="maxLength">
+         <number>50</number>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -718,17 +775,39 @@ background-color: 'white';</string>
        </widget>
       </item>
       <item>
-       <spacer name="horizontalSpacer_6">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
+       <widget class="QComboBox" name="comp2_flag_combobox">
+        <property name="maximumSize">
          <size>
-          <width>40</width>
-          <height>20</height>
+          <width>100</width>
+          <height>16777215</height>
          </size>
         </property>
-       </spacer>
+        <property name="currentIndex">
+         <number>-1</number>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>16</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="p2_pushButton">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>...</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>

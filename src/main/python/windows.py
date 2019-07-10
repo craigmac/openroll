@@ -56,7 +56,259 @@ DEBUG = True
 DEBUG_TIME = 60 * 1
 DEFAULT_DIVISION_IDX = 14  # ADULT WHITE 18-29 5:00
 DEFAULT_TIME = 60 * 5  # 5 minutes -> 300 seconds
-
+# flags and files are named according to ISO 3166-1
+COUNTRY_FLAG = {
+    'Afghanistan': 'af.png',
+    'Åland Islands': 'ax.png',
+    'Albania': 'al.png',
+    'Algeria': 'dz.png',
+    'American Samoa': 'as.png',
+    'Andorra': 'ad.png',
+    'Angola': 'ao.png',
+    'Anguilla': 'ai.png',
+    'Antarctica': 'aq.png',
+    'Antigua and Barbuda': 'ag.png',
+    'Argentina': 'ar.png',
+    'Armenia': 'am.png',
+    'Aruba': 'aw.png',
+    'Australia': 'au.png',
+    'Austria': 'at.png',
+    'Azerbaijan': 'az.png',
+    'Bahamas': 'bs.png',
+    'Bahrain': 'bh.png',
+    'Bangladesh': 'bd.png',
+    'Barbados': 'bb.png',
+    'Belarus': 'by.png',
+    'Belgium': 'be.png',
+    'Belize': 'bz.png',
+    'Benin': 'bj.png',
+    'Bermuda': 'bm.png',
+    'Bhutan': 'bt.png',
+    'Bolivia (Plurinational State of)': 'bo.png',
+    'Bonaire, Sint Eustatius and Saba': 'bq.png',
+    'Bosnia and Herzegovina': 'ba.png',
+    'Botswana': 'bw.png',
+    'Bouvet Island': 'bv.png',
+    'Brazil': 'br.png',
+    'British Indian Ocean Territory': 'io.png',
+    'Brunei Darussalam': 'bn.png',
+    'Bulgaria': 'bg.png',
+    'Burkina Faso': 'bf.png',
+    'Burundi': 'bi.png',
+    'Cabo Verde': 'cv.png',
+    'Cambodia': 'kh.png',
+    'Cameroon': 'cm.png',
+    'Canada': 'ca.png',
+    'Cayman Islands': 'ky.png',
+    'Central African Republic': 'cf.png',
+    'Chad': 'td.png',
+    'Chile': 'cl.png',
+    'China': 'cn.png',
+    'Christmas Island': 'cx.png',
+    'Cocos (Keeling) Islands': 'cc.png',
+    'Colombia': 'co.png',
+    'Comoros': 'km.png',
+    'Congo': 'cg.png',
+    'Congo, Democratic Republic of the': 'cd.png',
+    'Cook Islands': 'ck.png',
+    'Costa Rica': 'cr.png',
+    'Côte d\'Ivoire': 'ci.png',
+    'Croatia': 'hr.png',
+    'Cuba': 'cu.png',
+    'Curaçao': 'cw.png',
+    'Cyprus': 'cy.png',
+    'Czechia': 'cz.png',
+    'Denmark': 'dk.png',
+    'Djibouti': 'dj.png',
+    'Dominica': 'dm.png',
+    'Dominican Republic': 'do.png',
+    'Ecuador': 'ec.png',
+    'Egypt': 'eg.png',
+    'El Salvador': 'sv.png',
+    'Equatorial Guinea': 'gq.png',
+    'Eritrea': 'er.png',
+    'Estonia': 'ee.png',
+    'Eswatini': 'sz.png',
+    'Ethiopia': 'et.png',
+    'Falkland Islands (Malvinas)': 'fk.png',
+    'Faroe Islands': 'fo.png',
+    'Fiji': 'fj.png',
+    'Finland': 'fi.png',
+    'France': 'fr.png',
+    'French Guiana': 'gf.png',
+    'French Polynesia': 'pf.png',
+    'French Southern Territories': 'tf.png',
+    'Gabon': 'ga.png',
+    'Gambia': 'gm.png',
+    'Georgia': 'ge.png',
+    'Germany': 'de.png',
+    'Ghana': 'gh.png',
+    'Gibraltar': 'gi.png',
+    'Greece': 'gr.png',
+    'Greenland': 'gl.png',
+    'Grenada': 'gd.png',
+    'Guadeloupe': 'gp.png',
+    'Guam': 'gu.png',
+    'Guatemala': 'gt.png',
+    'Guernsey': 'gg.png',
+    'Guinea': 'gn.png',
+    'Guinea-Bissau': 'gw.png',
+    'Guyana': 'gy.png',
+    'Haiti': 'ht.png',
+    'Heard Island and McDonald Islands': 'hm.png',
+    'Holy See': 'va.png',
+    'Honduras': 'hn.png',
+    'Hong Kong': 'hk.png',
+    'Hungary': 'hu.png',
+    'Iceland': 'is.png',
+    'India': 'in.png',
+    'Indonesia': 'id.png',
+    'Iran (Islamic Republic of)': 'ir.png',
+    'Iraq': 'iq.png',
+    'Ireland': 'ie.png',
+    'Isle of Man': 'im.png',
+    'Israel': 'il.png',
+    'Italy': 'it.png',
+    'Jamaica': 'jm.png',
+    'Japan': 'jp.png',
+    'Jersey': 'je.png',
+    'Jordan': 'jo.png',
+    'Kazakhstan': 'kz.png',
+    'Kenya': 'ke.png',
+    'Kiribati': 'ki.png',
+    'Korea (Democratic People\'s Republic of)': 'kp.png',
+    'Korea, Republic of': 'kr.png',
+    'Kuwait': 'kw.png',
+    'Kyrgyzstan': 'kg.png',
+    'Lao People\'s Democratic Republic': 'la.png',
+    'Latvia': 'lv.png',
+    'Lebanon': 'lb.png',
+    'Lesotho': 'ls.png',
+    'Liberia': 'lr.png',
+    'Libya': 'ly.png',
+    'Liechtenstein': 'li.png',
+    'Lithuania': 'lt.png',
+    'Luxembourg': 'lu.png',
+    'Macao': 'mo.png',
+    'Madagascar': 'mg.png',
+    'Malawi': 'mw.png',
+    'Malaysia': 'my.png',
+    'Maldives': 'mv.png',
+    'Mali': 'ml.png',
+    'Malta': 'mt.png',
+    'Marshall Islands': 'mh.png',
+    'Martinique': 'mq.png',
+    'Mauritania': 'mr.png',
+    'Mauritius': 'mu.png',
+    'Mayotte': 'yt.png',
+    'Mexico': 'mx.png',
+    'Micronesia (Federated States of)': 'fm.png',
+    'Moldova, Republic of': 'md.png',
+    'Monaco': 'mc.png',
+    'Mongolia': 'mn.png',
+    'Montenegro': 'me.png',
+    'Montserrat': 'ms.png',
+    'Morocco': 'ma.png',
+    'Mozambique': 'mz.png',
+    'Myanmar': 'mm.png',
+    'Namibia': 'na.png',
+    'Nauru': 'nr.png',
+    'Nepal': 'np.png',
+    'Netherlands': 'nl.png',
+    'New Caledonia': 'nc.png',
+    'New Zealand': 'nz.png',
+    'Nicaragua': 'ni.png',
+    'Niger': 'ne.png',
+    'Nigeria': 'ng.png',
+    'Niue': 'nu.png',
+    'Norfolk Island': 'nf.png',
+    'North Macedonia': 'mk.png',
+    'Northern Mariana Islands': 'mp.png',
+    'Norway': 'no.png',
+    'Oman': 'om.png',
+    'Pakistan': 'pk.png',
+    'Palau': 'pw.png',
+    'Palestine, State of': 'ps.png',
+    'Panama': 'pa.png',
+    'Papua New Guinea': 'pg.png',
+    'Paraguay': 'py.png',
+    'Peru': 'pe.png',
+    'Philippines': 'ph.png',
+    'Pitcairn': 'pn.png',
+    'Poland': 'pl.png',
+    'Portugal': 'pt.png',
+    'Puerto Rico': 'pr.png',
+    'Qatar': 'qa.png',
+    'Réunion': 're.png',
+    'Romania': 'ro.png',
+    'Russian Federation': 'ru.png',
+    'Rwanda': 'rw.png',
+    'Saint Barthélemy': 'bl.png',
+    'Saint Helena, Ascension and Tristan da Cunha': 'sh.png',
+    'Saint Kitts and Nevis': 'kn.png',
+    'Saint Lucia': 'lc.png',
+    'Saint Martin (French part)': 'mf.png',
+    'Saint Pierre and Miquelon': 'pm.png',
+    'Saint Vincent and the Grenadines': 'vc.png',
+    'Samoa': 'ws.png',
+    'San Marino': 'sm.png',
+    'Sao Tome and Principe': 'st.png',
+    'Saudi Arabia': 'sa.png',
+    'Senegal': 'sn.png',
+    'Serbia': 'rs.png',
+    'Seychelles': 'sc.png',
+    'Sierra Leone': 'sl.png',
+    'Singapore': 'sg.png',
+    'Sint Maarten (Dutch part)': 'sx.png',
+    'Slovakia': 'sk.png',
+    'Slovenia': 'si.png',
+    'Solomon Islands': 'sb.png',
+    'Somalia': 'so.png',
+    'South Africa': 'za.png',
+    'South Georgia and the South Sandwich Islands': 'gs.png',
+    'South Sudan': 'ss.png',
+    'Spain': 'es.png',
+    'Sri Lanka': 'lk.png',
+    'Sudan': 'sd.png',
+    'Suriname': 'sr.png',
+    'Svalbard and Jan Mayen': 'sj.png',
+    'Sweden': 'se.png',
+    'Switzerland': 'ch.png',
+    'Syrian Arab Republic': 'sy.png',
+    'Taiwan, Province of China': 'tw.png',
+    'Tajikistan': 'tj.png',
+    'Tanzania, United Republic of': 'tz.png',
+    'Thailand': 'th.png',
+    'Timor-Leste': 'tl.png',
+    'Togo': 'tg.png',
+    'Tokelau': 'tk.png',
+    'Tonga': 'to.png',
+    'Trinidad and Tobago': 'tt.png',
+    'Tunisia': 'tn.png',
+    'Turkey': 'tr.png',
+    'Turkmenistan': 'tm.png',
+    'Turks and Caicos Islands': 'tc.png',
+    'Tuvalu': 'tv.png',
+    'Uganda': 'ug.png',
+    'Ukraine': 'ua.png',
+    'United Arab Emirates': 'ae.png',
+    'United Kingdom of Great Britain and Northern Ireland': 'gb.png',
+    'United States of America': 'us.png',
+    'United States Minor Outlying Islands': 'um.png',
+    'Uruguay': 'uy.png',
+    'Uzbekistan': 'uz.png',
+    'Vanuatu': 'vu.png',
+    'Venezuela (Bolivarian Republic of)': 've.png',
+    'Viet Nam': 'vn.png',
+    'Virgin Islands (British)': 'vg.png',
+    'Virgin Islands (U.S.)': 'vi.png',
+    'Wallis and Futuna': 'wf.png',
+    'Western Sahara': 'eh.png',
+    'Yemen': 'ye.png',
+    'Zambia': 'zm.png',
+    'Zimbabwe': 'zw.png',
+        }
+DEFAULT_FLAG_IDX = list(COUNTRY_FLAG.keys()).index('Canada')
 
 class Control_Window(QMainWindow):
     """Main window--controls the `self.scoreboard` `Scoreboard`
@@ -105,6 +357,7 @@ class Control_Window(QMainWindow):
         self.media_player.setVolume(100)
 
         self.populate_default_sounds_dropdown()
+        self.populate_flag_combobox()
 
         # DEV: move these to a method call
         self.c1_add2 = functools.partial(self.modify_points, self.ui.comp1_pts_label, 2)
@@ -189,8 +442,6 @@ class Control_Window(QMainWindow):
 
         self.setup_signal_slot_connections()
 
-        # self.ui.division_combobox.setCurrentIndex(14)
-
         if DEBUG:
             self.debug_dump()
             qDebug("========== Control_Window.__init__() done. ==========")
@@ -273,6 +524,11 @@ class Control_Window(QMainWindow):
         self.ui.stop_button.clicked.connect(self.stop_button_clicked)
         self.ui.comp1_lineedit.textChanged.connect(self.scoreboard.ui.comp1_name.setText)
         self.ui.comp2_lineedit.textChanged.connect(self.scoreboard.ui.comp2_name.setText)
+        self.ui.p1_pushButton.clicked.connect(self.c1_load_flag_clicked)
+        self.ui.p2_pushButton.clicked.connect(self.c2_load_flag_clicked)
+        self.ui.comp1_flag_combobox.currentIndexChanged[str].connect(self.comp1_flag_change)
+        self.ui.comp2_flag_combobox.currentIndexChanged[str].connect(self.comp2_flag_change)
+
 
     def debug_dump(self):
         """Returns a dictionary capturing current values
@@ -342,7 +598,7 @@ class Control_Window(QMainWindow):
         self.clock_minutes, self.clock_seconds = divmod(self.total_time, 60)
 
         # Set scoreboard.
-        # FIXME: might be a better way with signal/slot but this works
+        # DEV: might be a better way with signal/slot but this works
         self.scoreboard.ui.beltLabel.setText(self.current_belt)
         self.scoreboard.ui.divisionLabel.setText(self.current_division)
 
@@ -406,7 +662,7 @@ class Control_Window(QMainWindow):
         self.ui.play_pause_button.setDisabled(True)
 
     def play_pause_button_clicked(self):
-        """Start match timer."""
+        """Starts/stops match timer."""
         if DEBUG:
             qDebug("========== play_pause_button_clicked() in. ==========")
             self.debug_dump()
@@ -417,32 +673,29 @@ class Control_Window(QMainWindow):
             pause_icon = QIcon(":/images/pause.png")
             self.ui.play_pause_button.setIcon(pause_icon)
             self.ui.division_combobox.setDisabled(True)
+            self.scoreboard.ui.timer_display.setStyleSheet("background-color: rgb(0, 125, 0);\n"
+                                                           "font: 192pt \'Consolas\';\n")
             if DEBUG:
-                qDebug("Bottom of self.match_started=False branch.")
-                # self.debug_dump()
-        else:
-            if DEBUG:
-                qDebug("play_pause_button_clicked() 'else' branch.")
-            # self.match_started is true, meaning user pressed play button
-            # already to start the match. After first time, the code path
-            # should keep hitting this 'else' path until the state of the
-            # match is flipped to self.match_started = False
+                qDebug("Bottom of self.match_started=False branch. Started the match.")
+        else:  # Match was previously started, now check some other flags.
             if self.clock_paused:  # current image is 'play' icon
                 if DEBUG:
                     qDebug("match_started=True and clock_paused=True.")
-                    # self.debug_dump()
                 pause_icon = QIcon(":/images/pause.png")
                 self.ui.play_pause_button.setIcon(pause_icon)
                 self.clock_paused = False
                 self.clock_running = True
+                self.scoreboard.ui.timer_display.setStyleSheet("background-color: rgb(0, 125, 0);\n"
+                                                               "font: 192pt \'Consolas\';\n")
             elif self.clock_running:  # current image is 'pause' icon
                 if DEBUG:
                     qDebug("match_started=True and clock_running=True branch")
-                    # self.debug_dump()
                 play_icon = QIcon(":/images/play.png")
                 self.ui.play_pause_button.setIcon(play_icon)
                 self.clock_running = False
                 self.clock_paused = True
+                self.scoreboard.ui.timer_display.setStyleSheet("background-color: rgb(125, 0, 0);\n"
+                                                               "font: 192pt \'Consolas\';\n")
             else:  # Here be dragons... we should not reach here.
                 if DEBUG:
                     qDebug("ERROR: We should not have reached this branch.")
@@ -454,7 +707,6 @@ class Control_Window(QMainWindow):
     def stop_button_clicked(self):
         if DEBUG:
             qDebug("========== stop_button_clicked() ==========")
-            # self.debug_dump()
 
         # GOTCHA: case where we press stop without pressing pause first,
         # the icon doesn't flip back to play icon
@@ -514,12 +766,13 @@ class Control_Window(QMainWindow):
         self.ui.timer_label.setText(new_time)
         self.scoreboard.ui.timer_display.setText(new_time)
 
+        self.scoreboard.ui.timer_display.setStyleSheet("background-color: rgb(240, 240, 240);\n"
+                                                       "font: 192pt \'Consolas\';\n")
         if DEBUG:
-            # self.debug_dump()
             qDebug("========== reset_labels() out. ==========")
 
     def load_logo_clicked(self):
-        # returns (fileName: str, selectedFilter: str)
+        # returns (fileName: str, selectedFilter: str) tuple
         fname = QFileDialog.getOpenFileName(self, "Open Image",
                                             ".",
                                             "Image Files (*.png *.jpg *.bmp)")
@@ -533,6 +786,62 @@ class Control_Window(QMainWindow):
             qDebug("load_image(): trying to load {}".format(fname))
         logo = QPixmap(fname)
         self.scoreboard.ui.user_logo.setPixmap(logo)
+
+    def populate_flag_combobox(self):
+        if DEBUG:
+            qDebug("========== populate_flag_combobox() in. ==========")
+        for k,v in COUNTRY_FLAG.items():
+            flag = QIcon(":/flags/{}".format(COUNTRY_FLAG[k]))
+            self.ui.comp1_flag_combobox.addItem(flag, k)
+            self.ui.comp2_flag_combobox.addItem(flag, k)
+        if DEBUG:
+            qDebug("========== populate_flag_combobox() out. ==========")
+        self.ui.comp1_flag_combobox.setCurrentIndex(DEFAULT_FLAG_IDX)
+        self.ui.comp2_flag_combobox.setCurrentIndex(DEFAULT_FLAG_IDX)
+
+
+    def c1_load_flag_clicked(self):
+        # returns (fileName: str, selectedFilter: str) tuple
+        fname = QFileDialog.getOpenFileName(self, "Choose flag/emblem",
+                                            '.', 'Image Files (*.png *.jpg *.bmp)')
+        if DEBUG:
+            qDebug(fname[0])
+            self.load_custom_flag_emblem(fname[0], 1)
+
+    def c2_load_flag_clicked(self):
+        # returns (fileName: str, selectedFilter: str) tuple
+        fname = QFileDialog.getOpenFileName(self, "Choose flag/emblem",
+                                            '.', 'Image Files (*.png *.jpg *.bmp)')
+        if DEBUG:
+            qDebug(fname[0])
+            self.load_custom_flag_emblem(fname[0], 2)
+
+    def load_custom_flag_emblem(self, flag: str, player: int):
+        """Try to load a flag image from `flag` path given."""
+        if DEBUG:
+            qDebug("load_custom_flag_emblem(): trying to load {}".format(flag))
+        logo = QPixmap(flag)
+        if player == 1:
+            self.scoreboard.ui.comp1_flag_label.setPixmap(logo)
+            self.ui.p1_pushButton.setIcon(logo)
+        elif player == 2:
+            self.scoreboard.ui.comp2_flag_label.setPixmap(logo)
+            self.ui.p2_pushButton.setIcon(logo)
+        else:
+            if DEBUG:
+                qDebug('load_custom_flag_emblem(): invalid integer given for "player"')
+
+    def comp1_flag_change(self, flag: str):
+        """Run when user changes either flag combobox selection."""
+        new_flag = QIcon(":/flags/{}".format(COUNTRY_FLAG[flag]))
+        if DEBUG:
+            qDebug("comp1_flag_change(): changing to new flag {}".format(flag))
+
+    def comp2_flag_change(self, flag: str):
+        """Run when user changes either flag combobox selection."""
+        new_flag = QIcon(":/flags/{}".format(COUNTRY_FLAG[flag]))
+        if DEBUG:
+            qDebug("comp2_flag_change(): changing to new flag {}".format(flag))
 
     def update_clock(self):
         """Update timer labels if match not done and clock running."""
@@ -562,10 +871,6 @@ class Control_Window(QMainWindow):
         new_time = "{}:{}".format(self.clock_minutes, self.clock_seconds)
         self.ui.timer_label.setText(new_time)
         self.scoreboard.ui.timer_display.setText(new_time)
-
-        # if DEBUG:
-        #     qDebug("update_clock(): finished")
-        #     self.debug_dump()
 
 
 class Scoreboard_Window(QWidget):
