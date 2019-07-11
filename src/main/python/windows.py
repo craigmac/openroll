@@ -54,7 +54,6 @@ import functools
 
 DEBUG = True
 DEBUG_TIME = 60 * 1
-DEFAULT_DIVISION_IDX = 14  # ADULT WHITE 18-29 5:00
 DEFAULT_TIME = 60 * 5  # 5 minutes -> 300 seconds
 # flags and files are named according to ISO 3166-1
 COUNTRY_FLAG = {
@@ -309,6 +308,39 @@ COUNTRY_FLAG = {
     'Zimbabwe': 'zw.png',
         }
 DEFAULT_FLAG_IDX = list(COUNTRY_FLAG.keys()).index('Canada')
+DIVISIONS = {
+        'MIGHTY MITE 1 - AGE 4': ["ALL BELTS", 2 * 60],
+        'MIGHTY MITE 2 - AGE 5': ["ALL BELTS", 2 * 60],
+        'MIGHTY MITE 3 - AGE 6': ["ALL BELTS", 2 * 60],
+        'PEEWEE 1 - AGE 7': ["ALL BELTS", 3 * 60],
+        'PEEWEE 2 - AGE 8': ["ALL BELTS", 3 * 60],
+        'PEEWEE 3 - AGE 9': ["ALL BELTS", 3 * 60],
+        'JUNIOR 1 - AGE 10': ["ALL BELTS", 4 * 60],
+        'JUNIOR 2 - AGE 11': ["ALL BELTS", 4 * 60],
+        'JUNIOR 3 - AGE 12': ["ALL BELTS", 4 * 60],
+        'TEEN 1 - AGE 13': ["ALL BELTS", 4 * 60],
+        'TEEN 2 - AGE 14': ["ALL BELTS", 4 * 60],
+        'TEEN 3 - AGE 15': ["ALL BELTS", 4 * 60],
+        'JUVENILE 1 - AGE 16': ["ALL BELTS", 5 * 60],
+        'JUVENILE 2 - AGE 17': ["ALL BELTS", 5 * 60],
+        'ADULT 1a - AGE 18-29': ["WHITE", 5 * 60],
+        'ADULT 1b - AGE 18-29': ["BLUE", 6 * 60],
+        'ADULT 1c - AGE 18-29': ["PURPLE", 7 * 60],
+        'ADULT 1d - AGE 18-29': ["BROWN", 8 * 60],
+        'ADULT 1e - AGE 18-29': ["BLACK", 9 * 60],
+        'MASTER 1a - AGE 30-35': ["WHITE", 5 * 60],
+        'MASTER 1b - AGE 30-35': ["BLUE", 5 * 60],
+        'MASTER 1c - AGE 30-35': ["PURPLE", 6 * 60],
+        'MASTER 1d - AGE 30-35': ["BROWN", 6 * 60],
+        'MASTER 1e - AGE 30-35': ["BLACK", 6 * 60],
+        'MASTER 2 - AGE 36-40': ["ALL BELTS", 5 * 60],
+        'MASTER 3 - AGE 41-45': ["ALL BELTS", 5 * 60],
+        'MASTER 4 - AGE 46-50': ["ALL BELTS", 5 * 60],
+        'MASTER 5 - AGE 51-55': ["ALL BELTS", 5 * 60],
+        'MASTER 6 - AGE 56+': ["ALL BELTS", 5 * 60],
+        }
+DEFAULT_DIVISION_IDX = 14  # 'ADULT 1a - AGE 18-29'
+
 
 class Control_Window(QMainWindow):
     """Main window--controls the `self.scoreboard` `Scoreboard`
@@ -358,6 +390,7 @@ class Control_Window(QMainWindow):
 
         self.populate_default_sounds_dropdown()
         self.populate_flag_combobox()
+        self.populate_divisions_combobox()
 
         # DEV: move these to a method call
         self.c1_add2 = functools.partial(self.modify_points, self.ui.comp1_pts_label, 2)
@@ -529,7 +562,6 @@ class Control_Window(QMainWindow):
         self.ui.comp1_flag_combobox.currentIndexChanged[str].connect(self.comp1_flag_change)
         self.ui.comp2_flag_combobox.currentIndexChanged[str].connect(self.comp2_flag_change)
 
-
     def debug_dump(self):
         """Returns a dictionary capturing current values
         of variables in use for the program.
@@ -557,48 +589,18 @@ class Control_Window(QMainWindow):
             qDebug("division_changed() called"
                    " with int value: {}".format(index))
 
-        switch_dict = {
-            0: ["ALL BELTS", 2 * 60, 'MIGHTY MITE - AGE 4'],
-            1: ["ALL BELTS", 2 * 60, 'MIGHTY MITE 2 - AGE 5'],
-            2: ["ALL BELTS", 2 * 60, 'MIGHTY MITE 3 - AGE 6'],
-            3: ["ALL BELTS", 3 * 60, 'PEEWEE 1 - AGE 7'],
-            4: ["ALL BELTS", 3 * 60, 'PEEWEE 2 - AGE 8'],
-            5: ["ALL BELTS", 3 * 60, 'PEEWEE 3 - AGE 9'],
-            6: ["ALL BELTS", 4 * 60, 'JUNIOR 1 - AGE 10'],
-            7: ["ALL BELTS", 4 * 60, 'JUNIOR 2 - AGE 11'],
-            8: ["ALL BELTS", 4 * 60, 'JUNIOR 3 - AGE 12'],
-            9: ["ALL BELTS", 4 * 60, 'TEEN 1 - AGE 13'],
-            10: ["ALL BELTS", 4 * 60, 'TEEN 2 - AGE 14'],
-            11: ["ALL BELTS", 4 * 60, 'TEEN 3 - AGE 15'],
-            12: ["ALL BELTS", 5 * 60, 'JUVENILE 1 - AGE 16'],
-            13: ["ALL BELTS", 5 * 60, 'JUVENILE 2 - AGE 17'],
-            14: ["WHITE", 5 * 60, 'ADULT - AGE 18-29'],
-            15: ["BLUE", 6 * 60, 'ADULT - AGE 18-29'],
-            16: ["PURPLE", 7 * 60, 'ADULT - AGE 18-29'],
-            17: ["BROWN", 8 * 60, 'ADULT - AGE 18-29'],
-            18: ["BLACK", 9 * 60, 'ADULT - AGE 18-29'],
-            19: ["WHITE", 5 * 60, 'MASTER 1 - AGE 30-35'],
-            20: ["BLUE", 5 * 60, 'MASTER 1 - AGE 30-35'],
-            21: ["PURPLE", 6 * 60, 'MASTER 1 - AGE 30-35'],
-            22: ["BROWN", 6 * 60, 'MASTER 1 - AGE 30-35'],
-            23: ["BLACK", 6 * 60, 'MASTER 1 - AGE 30-35'],
-            24: ["ALL BELTS", 5 * 60, 'MASTER 2 - AGE 36-40'],
-            25: ["ALL BELTS", 5 * 60, 'MASTER 3 - AGE 41-45'],
-            26: ["ALL BELTS", 5 * 60, 'MASTER 4 - AGE 46-50'],
-            27: ["ALL BELTS", 5 * 60, 'MASTER 5 - AGE 51-55'],
-            28: ["ALL BELTS", 5 * 60, 'MASTER 6 - AGE 56+'],
-        }
-
-        # Return some defaults here on key error, the 'default:' switch case
-        new_values = switch_dict.get(index,
-                                     ["WHITE", 5 * 60, 'ADULT - AGE 18-29'])
-
-        # Unpack the list
-        self.current_belt, self.total_time, self.current_division = new_values
+        # We are using int instead of str from the dropdown signal because the str
+        # is a combination and we'd have to do a bunch of string manipulation to
+        # get the real key string from it. Because of this we need to figure out
+        # from the given int what key string it maps to. We have to do it this way
+        # because python dicts can't be accessed by int index position, so we convert
+        # the keys of the dict to list, and then using the given index from the signal
+        # we pulled out the string we will use for the index into the dictionary.
+        division_str = list(DIVISIONS.keys())[index]
+        self.current_belt, self.total_time = DIVISIONS[division_str]
         self.clock_minutes, self.clock_seconds = divmod(self.total_time, 60)
 
-        # Set scoreboard.
-        # DEV: might be a better way with signal/slot but this works
+        # Set scoreboard labels.
         self.scoreboard.ui.beltLabel.setText(self.current_belt)
         self.scoreboard.ui.divisionLabel.setText(self.current_division)
 
@@ -787,6 +789,15 @@ class Control_Window(QMainWindow):
         logo = QPixmap(fname)
         self.scoreboard.ui.user_logo.setPixmap(logo)
 
+    def populate_divisions_combobox(self):
+        if DEBUG:
+            qDebug("========== populate_divisions_combobox() in. ==========")
+        for k,v in DIVISIONS.items():
+            self.ui.division_combobox.addItem("{} - {}".format(k, v[0]))
+        self.ui.division_combobox.setCurrentIndex(DEFAULT_DIVISION_IDX)
+        if DEBUG:
+            qDebug("========== populate_divisions_combobox() out. ==========")
+
     def populate_flag_combobox(self):
         if DEBUG:
             qDebug("========== populate_flag_combobox() in. ==========")
@@ -799,34 +810,32 @@ class Control_Window(QMainWindow):
         self.ui.comp1_flag_combobox.setCurrentIndex(DEFAULT_FLAG_IDX)
         self.ui.comp2_flag_combobox.setCurrentIndex(DEFAULT_FLAG_IDX)
 
-
     def c1_load_flag_clicked(self):
         # returns (fileName: str, selectedFilter: str) tuple
-        fname = QFileDialog.getOpenFileName(self, "Choose flag/emblem",
+        fname, __ = QFileDialog.getOpenFileName(self, "Choose flag/emblem",
                                             '.', 'Image Files (*.png *.jpg *.bmp)')
         if DEBUG:
-            qDebug(fname[0])
-            self.load_custom_flag_emblem(fname[0], 1)
+            qDebug(fname)
+        self.load_custom_flag_emblem(fname, 1)
 
     def c2_load_flag_clicked(self):
         # returns (fileName: str, selectedFilter: str) tuple
-        fname = QFileDialog.getOpenFileName(self, "Choose flag/emblem",
+        fname, __ = QFileDialog.getOpenFileName(self, "Choose flag/emblem",
                                             '.', 'Image Files (*.png *.jpg *.bmp)')
         if DEBUG:
-            qDebug(fname[0])
-            self.load_custom_flag_emblem(fname[0], 2)
+            qDebug(fname)
+        self.load_custom_flag_emblem(fname, 2)
 
-    def load_custom_flag_emblem(self, flag: str, player: int):
-        """Try to load a flag image from `flag` path given."""
+    def load_custom_flag_emblem(self, path: str, player: int):
+        """Try to load a flag image from path given by adjusting stylesheet."""
         if DEBUG:
-            qDebug("load_custom_flag_emblem(): trying to load {}".format(flag))
-        logo = QPixmap(flag)
+            qDebug("load_custom_flag_emblem(): trying to load {}".format(path))
         if player == 1:
-            self.scoreboard.ui.comp1_flag_label.setPixmap(logo)
-            self.ui.p1_pushButton.setIcon(logo)
+            self.scoreboard.ui.comp1_flag_label.setStyleSheet("image: url({}); background-color: rgb(0,0,200);"
+                                                              "padding: 2;".format(path))
         elif player == 2:
-            self.scoreboard.ui.comp2_flag_label.setPixmap(logo)
-            self.ui.p2_pushButton.setIcon(logo)
+            self.scoreboard.ui.comp2_flag_label.setStyleSheet("image: url({}); background-color: rgb(255,255,255);"
+                                                              "padding: 2;".format(path))
         else:
             if DEBUG:
                 qDebug('load_custom_flag_emblem(): invalid integer given for "player"')
@@ -836,12 +845,16 @@ class Control_Window(QMainWindow):
         new_flag = QIcon(":/flags/{}".format(COUNTRY_FLAG[flag]))
         if DEBUG:
             qDebug("comp1_flag_change(): changing to new flag {}".format(flag))
+        self.scoreboard.ui.comp1_flag_label.setStyleSheet("image: url(:/flags/{}); background-color: rgb(0,0,200);"
+                                                          "padding: 2;".format(COUNTRY_FLAG[flag]))
 
     def comp2_flag_change(self, flag: str):
         """Run when user changes either flag combobox selection."""
         new_flag = QIcon(":/flags/{}".format(COUNTRY_FLAG[flag]))
         if DEBUG:
             qDebug("comp2_flag_change(): changing to new flag {}".format(flag))
+        self.scoreboard.ui.comp2_flag_label.setStyleSheet("image: url(:/flags/{}); background-color: rgb(255,255,255);"
+                                                          "padding: 2;".format(COUNTRY_FLAG[flag]))
 
     def update_clock(self):
         """Update timer labels if match not done and clock running."""

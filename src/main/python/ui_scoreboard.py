@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'scoreboard.ui',
 # licensing of 'scoreboard.ui' applies.
 #
-# Created: Wed Jul 10 11:13:18 2019
+# Created: Thu Jul 11 09:49:30 2019
 #      by: pyside2-uic  running on PySide2 5.13.0
 #
 # WARNING! All changes made in this file will be lost!
@@ -30,23 +30,24 @@ class Ui_Scoreboard(object):
         self.comp1_name.setSizePolicy(sizePolicy)
         self.comp1_name.setStyleSheet("font: 36pt \'Arial\';\n"
 "background-color: rgb(0, 0, 200);\n"
-"color: \'white\';")
+"color: \'white\';\n"
+"")
         self.comp1_name.setAlignment(QtCore.Qt.AlignCenter)
         self.comp1_name.setObjectName("comp1_name")
         self.comp1_layout.addWidget(self.comp1_name)
-        self.label = QtWidgets.QLabel(Scoreboard)
+        self.comp1_flag_label = QtWidgets.QLabel(Scoreboard)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
-        sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
-        self.label.setSizePolicy(sizePolicy)
-        self.label.setMinimumSize(QtCore.QSize(128, 64))
-        self.label.setStyleSheet("image: url(:/flags/ca.png);\n"
+        sizePolicy.setHeightForWidth(self.comp1_flag_label.sizePolicy().hasHeightForWidth())
+        self.comp1_flag_label.setSizePolicy(sizePolicy)
+        self.comp1_flag_label.setMinimumSize(QtCore.QSize(128, 64))
+        self.comp1_flag_label.setStyleSheet("image: url(:/flags/ca.png);\n"
 "background-color:rgb(0,0,200);\n"
 "padding: 2;")
-        self.label.setText("")
-        self.label.setObjectName("label")
-        self.comp1_layout.addWidget(self.label)
+        self.comp1_flag_label.setText("")
+        self.comp1_flag_label.setObjectName("comp1_flag_label")
+        self.comp1_layout.addWidget(self.comp1_flag_label)
         self.comp1_points = QtWidgets.QLabel(Scoreboard)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(1)
@@ -113,19 +114,19 @@ class Ui_Scoreboard(object):
         self.comp2_name.setAlignment(QtCore.Qt.AlignCenter)
         self.comp2_name.setObjectName("comp2_name")
         self.comp2_layout.addWidget(self.comp2_name)
-        self.label_2 = QtWidgets.QLabel(Scoreboard)
+        self.comp2_flag_label = QtWidgets.QLabel(Scoreboard)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
-        sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
-        self.label_2.setSizePolicy(sizePolicy)
-        self.label_2.setMinimumSize(QtCore.QSize(128, 64))
-        self.label_2.setStyleSheet("image: url(:/flags/ca.png);\n"
+        sizePolicy.setHeightForWidth(self.comp2_flag_label.sizePolicy().hasHeightForWidth())
+        self.comp2_flag_label.setSizePolicy(sizePolicy)
+        self.comp2_flag_label.setMinimumSize(QtCore.QSize(128, 64))
+        self.comp2_flag_label.setStyleSheet("image: url(:/flags/ca.png);\n"
 "background-color: rgb(255,255,255);\n"
 "padding: 2;")
-        self.label_2.setText("")
-        self.label_2.setObjectName("label_2")
-        self.comp2_layout.addWidget(self.label_2)
+        self.comp2_flag_label.setText("")
+        self.comp2_flag_label.setObjectName("comp2_flag_label")
+        self.comp2_layout.addWidget(self.comp2_flag_label)
         self.comp2_points = QtWidgets.QLabel(Scoreboard)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(1)
