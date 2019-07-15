@@ -1,59 +1,83 @@
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
-!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
-!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
-!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
-!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
-!_TAG_PROGRAM_VERSION	0.0.0	/1b747b38/
-AppContext	main.py	/^class AppContext(ApplicationContext):$/;"	c
-COUNTRY_FLAG	windows.py	/^COUNTRY_FLAG = {$/;"	v
-Control_Window	windows.py	/^class Control_Window(QMainWindow):$/;"	c
-DEBUG	windows.py	/^DEBUG = True$/;"	v
-DEBUG_TIME	windows.py	/^DEBUG_TIME = 60 * 1$/;"	v
-DEFAULT_DIVISION_IDX	windows.py	/^DEFAULT_DIVISION_IDX = 14  # ADULT WHITE 18-29 5:00$/;"	v
-DEFAULT_FLAG_IDX	windows.py	/^DEFAULT_FLAG_IDX = list(COUNTRY_FLAG.keys()).index('Canada')$/;"	v
-DEFAULT_TIME	windows.py	/^DEFAULT_TIME = 60 * 5  # 5 minutes -> 300 seconds$/;"	v
-Scoreboard_Window	windows.py	/^class Scoreboard_Window(QWidget):$/;"	c
-Ui_Control	ui_control.py	/^class Ui_Control(object):$/;"	c
-Ui_Scoreboard	ui_scoreboard.py	/^class Ui_Scoreboard(object):$/;"	c
-__init__	windows.py	/^    def __init__(self, parent, qt_window_flags):$/;"	m	class:Scoreboard_Window
-__init__	windows.py	/^    def __init__(self, version, parent=None):$/;"	m	class:Control_Window
-app_ctx	main.py	/^    app_ctx = AppContext()$/;"	v
-build	Makefile	/^build:$/;"	t
-c1_load_flag_clicked	windows.py	/^    def c1_load_flag_clicked(self):$/;"	m	class:Control_Window
-c2_load_flag_clicked	windows.py	/^    def c2_load_flag_clicked(self):$/;"	m	class:Control_Window
-clean	Makefile	/^clean:$/;"	t
-closeEvent	windows.py	/^    def closeEvent(self, event: QCloseEvent):$/;"	m	class:Control_Window
-closeEvent	windows.py	/^    def closeEvent(self, event: QCloseEvent):$/;"	m	class:Scoreboard_Window
-comp1_flag_change	windows.py	/^    def comp1_flag_change(self, flag: str):$/;"	m	class:Control_Window
-comp2_flag_change	windows.py	/^    def comp2_flag_change(self, flag: str):$/;"	m	class:Control_Window
-compile	Makefile	/^compile:$/;"	t
-convert-rc	Makefile	/^convert-rc:$/;"	t
-convert-ui	Makefile	/^convert-ui:$/;"	t
-debug_dump	windows.py	/^    def debug_dump(self):$/;"	m	class:Control_Window
-division_changed	windows.py	/^    def division_changed(self, index: int):$/;"	m	class:Control_Window
-full	Makefile	/^full: convert-ui convert-rc$/;"	t
-load_custom_flag_emblem	windows.py	/^    def load_custom_flag_emblem(self, flag: str, player: int):$/;"	m	class:Control_Window
-load_image	windows.py	/^    def load_image(self, fname: str):$/;"	m	class:Control_Window
-load_logo_clicked	windows.py	/^    def load_logo_clicked(self):$/;"	m	class:Control_Window
-modify_points	windows.py	/^    def modify_points(self, label, amount):$/;"	m	class:Control_Window
-play_pause_button_clicked	windows.py	/^    def play_pause_button_clicked(self):$/;"	m	class:Control_Window
-play_sound	windows.py	/^    def play_sound(self):$/;"	m	class:Control_Window
-populate_default_sounds_dropdown	windows.py	/^    def populate_default_sounds_dropdown(self):$/;"	m	class:Control_Window
-populate_flag_combobox	windows.py	/^    def populate_flag_combobox(self):$/;"	m	class:Control_Window
-qCleanupResources	openroll_rc.py	/^def qCleanupResources():$/;"	f
-qInitResources	openroll_rc.py	/^def qInitResources():$/;"	f
-qt_resource_data	openroll_rc.py	/^qt_resource_data = b"\\$/;"	v
-qt_resource_name	openroll_rc.py	/^qt_resource_name = b"\\$/;"	v
-qt_resource_struct	openroll_rc.py	/^qt_resource_struct = b"\\$/;"	v
-reset_labels	windows.py	/^    def reset_labels(self):$/;"	m	class:Control_Window
-retranslateUi	ui_control.py	/^    def retranslateUi(self, Control):$/;"	m	class:Ui_Control
-retranslateUi	ui_scoreboard.py	/^    def retranslateUi(self, Scoreboard):$/;"	m	class:Ui_Scoreboard
-run	main.py	/^    def run(self):$/;"	m	class:AppContext
-setupUi	ui_control.py	/^    def setupUi(self, Control):$/;"	m	class:Ui_Control
-setupUi	ui_scoreboard.py	/^    def setupUi(self, Scoreboard):$/;"	m	class:Ui_Scoreboard
-setup_signal_slot_connections	windows.py	/^    def setup_signal_slot_connections(self):$/;"	m	class:Control_Window
-sound_combobox_changed	windows.py	/^    def sound_combobox_changed(self, soundname: str):$/;"	m	class:Control_Window
-stop_button_clicked	windows.py	/^    def stop_button_clicked(self):$/;"	m	class:Control_Window
-toggle_controls	windows.py	/^    def toggle_controls(self):$/;"	m	class:Control_Window
-update_clock	windows.py	/^    def update_clock(self):$/;"	m	class:Control_Window
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AppContext	main.py	/^class AppContext(ApplicationContext):$/;"	kind:class	inherits:ApplicationContext
+ApplicationContext	main.py	/^from fbs_runtime.application_context.PySide2 import ApplicationContext$/;"	kind:namespace
+COUNTRY_FLAG	windows.py	/^COUNTRY_FLAG = {$/;"	kind:variable
+Control_Window	main.py	/^from windows import Control_Window$/;"	kind:namespace
+Control_Window	windows.py	/^class Control_Window(QMainWindow):$/;"	kind:class	inherits:QMainWindow
+DEBUG	windows.py	/^DEBUG = True$/;"	kind:variable
+DEBUG_TIME	windows.py	/^DEBUG_TIME = 60 * 1$/;"	kind:variable
+DEFAULT_DIVISION_IDX	windows.py	/^DEFAULT_DIVISION_IDX = 14  # 'ADULT 1a - AGE 18-29'$/;"	kind:variable
+DEFAULT_FLAG_IDX	windows.py	/^DEFAULT_FLAG_IDX = list(COUNTRY_FLAG.keys()).index('Canada')$/;"	kind:variable
+DEFAULT_TIME	windows.py	/^DEFAULT_TIME = 60 * 5  # 5 minutes -> 300 seconds$/;"	kind:variable
+DIVISIONS	windows.py	/^DIVISIONS = {$/;"	kind:variable
+QCloseEvent	windows.py	/^from PySide2.QtGui import QCloseEvent, QPixmap, QIcon$/;"	kind:namespace
+QDir	windows.py	/^from PySide2.QtCore import (Qt, QTimer, QUrl, QDir, qDebug)$/;"	kind:namespace
+QFileDialog	windows.py	/^from PySide2.QtWidgets import (QMainWindow, QWidget, QFileDialog, QMessageBox)$/;"	kind:namespace
+QIcon	windows.py	/^from PySide2.QtGui import QCloseEvent, QPixmap, QIcon$/;"	kind:namespace
+QMainWindow	windows.py	/^from PySide2.QtWidgets import (QMainWindow, QWidget, QFileDialog, QMessageBox)$/;"	kind:namespace
+QMediaPlayer	windows.py	/^from PySide2.QtMultimedia import QMediaPlayer$/;"	kind:namespace
+QMessageBox	windows.py	/^from PySide2.QtWidgets import (QMainWindow, QWidget, QFileDialog, QMessageBox)$/;"	kind:namespace
+QPixmap	windows.py	/^from PySide2.QtGui import QCloseEvent, QPixmap, QIcon$/;"	kind:namespace
+QTimer	windows.py	/^from PySide2.QtCore import (Qt, QTimer, QUrl, QDir, qDebug)$/;"	kind:namespace
+QUrl	windows.py	/^from PySide2.QtCore import (Qt, QTimer, QUrl, QDir, qDebug)$/;"	kind:namespace
+QWidget	windows.py	/^from PySide2.QtWidgets import (QMainWindow, QWidget, QFileDialog, QMessageBox)$/;"	kind:namespace
+Qt	windows.py	/^from PySide2.QtCore import (Qt, QTimer, QUrl, QDir, qDebug)$/;"	kind:namespace
+QtCore	openroll_rc.py	/^from PySide2 import QtCore$/;"	kind:namespace
+QtCore	ui_control.py	/^from PySide2 import QtCore, QtGui, QtWidgets$/;"	kind:namespace
+QtCore	ui_scoreboard.py	/^from PySide2 import QtCore, QtGui, QtWidgets$/;"	kind:namespace
+QtGui	ui_control.py	/^from PySide2 import QtCore, QtGui, QtWidgets$/;"	kind:namespace
+QtGui	ui_scoreboard.py	/^from PySide2 import QtCore, QtGui, QtWidgets$/;"	kind:namespace
+QtWidgets	ui_control.py	/^from PySide2 import QtCore, QtGui, QtWidgets$/;"	kind:namespace
+QtWidgets	ui_scoreboard.py	/^from PySide2 import QtCore, QtGui, QtWidgets$/;"	kind:namespace
+Scoreboard_Window	windows.py	/^class Scoreboard_Window(QWidget):$/;"	kind:class	inherits:QWidget
+Ui_Control	ui_control.py	/^class Ui_Control(object):$/;"	kind:class	inherits:object
+Ui_Control	windows.py	/^from ui_control import Ui_Control$/;"	kind:namespace
+Ui_Scoreboard	ui_scoreboard.py	/^class Ui_Scoreboard(object):$/;"	kind:class	inherits:object
+Ui_Scoreboard	windows.py	/^from ui_scoreboard import Ui_Scoreboard$/;"	kind:namespace
+__init__	windows.py	/^    def __init__(self, parent, qt_window_flags):$/;"	kind:member	class:Scoreboard_Window	access:public
+__init__	windows.py	/^    def __init__(self, version, parent=None):$/;"	kind:member	class:Control_Window	access:public
+app_ctx	main.py	/^    app_ctx = AppContext()$/;"	kind:variable	class:AppContext
+c1_load_flag_clicked	windows.py	/^    def c1_load_flag_clicked(self):$/;"	kind:member	class:Control_Window	access:public
+c2_load_flag_clicked	windows.py	/^    def c2_load_flag_clicked(self):$/;"	kind:member	class:Control_Window	access:public
+closeEvent	windows.py	/^    def closeEvent(self, event: QCloseEvent):$/;"	kind:member	class:Control_Window	access:public
+closeEvent	windows.py	/^    def closeEvent(self, event: QCloseEvent):$/;"	kind:member	class:Scoreboard_Window	access:public
+comp1_flag_change	windows.py	/^    def comp1_flag_change(self, flag: str):$/;"	kind:member	class:Control_Window	access:public
+comp2_flag_change	windows.py	/^    def comp2_flag_change(self, flag: str):$/;"	kind:member	class:Control_Window	access:public
+debug_dump	windows.py	/^    def debug_dump(self):$/;"	kind:member	class:Control_Window	access:public
+division_changed	windows.py	/^    def division_changed(self, index: int):$/;"	kind:member	class:Control_Window	access:public
+functools	windows.py	/^import functools$/;"	kind:namespace
+json	windows.py	/^        import json$/;"	kind:namespace
+load_custom_flag_emblem	windows.py	/^    def load_custom_flag_emblem(self, path: str, player: int):$/;"	kind:member	class:Control_Window	access:public
+load_image	windows.py	/^    def load_image(self, fname: str):$/;"	kind:member	class:Control_Window	access:public
+load_logo_clicked	windows.py	/^    def load_logo_clicked(self):$/;"	kind:member	class:Control_Window	access:public
+modify_points	windows.py	/^    def modify_points(self, label, amount):$/;"	kind:member	class:Control_Window	access:public
+openroll_rc	ui_control.py	/^import openroll_rc$/;"	kind:namespace
+openroll_rc	ui_scoreboard.py	/^import openroll_rc$/;"	kind:namespace
+play_pause_button_clicked	windows.py	/^    def play_pause_button_clicked(self):$/;"	kind:member	class:Control_Window	access:public
+play_sound	windows.py	/^    def play_sound(self):$/;"	kind:member	class:Control_Window	access:public
+populate_default_sounds_dropdown	windows.py	/^    def populate_default_sounds_dropdown(self):$/;"	kind:member	class:Control_Window	access:public
+populate_divisions_combobox	windows.py	/^    def populate_divisions_combobox(self):$/;"	kind:member	class:Control_Window	access:public
+populate_flag_combobox	windows.py	/^    def populate_flag_combobox(self):$/;"	kind:member	class:Control_Window	access:public
+qCleanupResources	openroll_rc.py	/^def qCleanupResources():$/;"	kind:function	access:public
+qDebug	windows.py	/^from PySide2.QtCore import (Qt, QTimer, QUrl, QDir, qDebug)$/;"	kind:namespace
+qInitResources	openroll_rc.py	/^def qInitResources():$/;"	kind:function	access:public
+qt_resource_data	openroll_rc.py	/^"$/;"	kind:variable
+qt_resource_name	openroll_rc.py	/^"$/;"	kind:variable
+qt_resource_struct	openroll_rc.py	/^"$/;"	kind:variable
+reset_labels	windows.py	/^    def reset_labels(self):$/;"	kind:member	class:Control_Window	access:public
+retranslateUi	ui_control.py	/^    def retranslateUi(self, Control):$/;"	kind:member	class:Ui_Control	access:public
+retranslateUi	ui_scoreboard.py	/^    def retranslateUi(self, Scoreboard):$/;"	kind:member	class:Ui_Scoreboard	access:public
+run	main.py	/^    def run(self):$/;"	kind:member	class:AppContext	access:public
+setupUi	ui_control.py	/^    def setupUi(self, Control):$/;"	kind:member	class:Ui_Control	access:public
+setupUi	ui_scoreboard.py	/^    def setupUi(self, Scoreboard):$/;"	kind:member	class:Ui_Scoreboard	access:public
+setup_signal_slot_connections	windows.py	/^    def setup_signal_slot_connections(self):$/;"	kind:member	class:Control_Window	access:public
+sound_combobox_changed	windows.py	/^    def sound_combobox_changed(self, soundname: str):$/;"	kind:member	class:Control_Window	access:public
+stop_button_clicked	windows.py	/^    def stop_button_clicked(self):$/;"	kind:member	class:Control_Window	access:public
+sys	main.py	/^import sys$/;"	kind:namespace
+toggle_controls	windows.py	/^    def toggle_controls(self):$/;"	kind:member	class:Control_Window	access:public
+update_clock	windows.py	/^    def update_clock(self):$/;"	kind:member	class:Control_Window	access:public
