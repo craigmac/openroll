@@ -1,6 +1,7 @@
 # Build script for creating a Windows installer using NSIS application.
 # Put this file in same directory as source.
-# Modified from https://nsis.sourceforge.io/A_simple_installer_with_start_menu_shortcut_and_uninstaller
+# Modified from
+# https://nsis.sourceforge.io/A_simple_installer_with_start_menu_shortcut_and_uninstaller
 
 !define APPNAME "Openroll"
 !define COMPANYNAME "Barker Software"
@@ -11,11 +12,10 @@
 !define OPENROLLDIR "C:\Users\cmaceachern\projects\openroll\src\main\python"
 
 # RequestExecutionLevel admin
-
 InstallDir "$APPDATA\${COMPANYNAME}\${APPNAME}"
 
 # use rtf, txt must have DOS eol (\r\n), must be in same dir
-LicenseData "lgpl.rtf"
+LicenseData "COPYING.LESSER.rtf"
 
 # Name of the installer itself
 Name "${COMPANYNAME} - ${APPNAME}"
