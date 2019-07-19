@@ -41,6 +41,8 @@
 """Qt Windows used in openroll program"""
 
 
+import functools
+
 from PySide2.QtWidgets import (QMainWindow, QWidget, QFileDialog, QMessageBox)
 from PySide2.QtCore import (Qt, QTimer, QUrl, QDir, qDebug)
 from PySide2.QtMultimedia import QMediaPlayer
@@ -49,8 +51,6 @@ from PySide2.QtGui import QCloseEvent, QPixmap, QIcon
 from ui_control import Ui_Control
 from ui_scoreboard import Ui_Scoreboard
 
-import functools
-
 
 DEBUG = True
 DEBUG_TIME = 60 * 1
@@ -58,18 +58,13 @@ DEFAULT_TIME = 60 * 5  # 5 minutes -> 300 seconds
 # flags and files are named according to ISO 3166-1
 COUNTRY_FLAG = {
     'Afghanistan': 'af.png',
-    'Åland Islands': 'ax.png',
     'Albania': 'al.png',
     'Algeria': 'dz.png',
-    'American Samoa': 'as.png',
     'Andorra': 'ad.png',
     'Angola': 'ao.png',
-    'Anguilla': 'ai.png',
-    'Antarctica': 'aq.png',
     'Antigua and Barbuda': 'ag.png',
     'Argentina': 'ar.png',
     'Armenia': 'am.png',
-    'Aruba': 'aw.png',
     'Australia': 'au.png',
     'Austria': 'at.png',
     'Azerbaijan': 'az.png',
@@ -81,15 +76,11 @@ COUNTRY_FLAG = {
     'Belgium': 'be.png',
     'Belize': 'bz.png',
     'Benin': 'bj.png',
-    'Bermuda': 'bm.png',
     'Bhutan': 'bt.png',
     'Bolivia (Plurinational State of)': 'bo.png',
-    'Bonaire, Sint Eustatius and Saba': 'bq.png',
     'Bosnia and Herzegovina': 'ba.png',
     'Botswana': 'bw.png',
-    'Bouvet Island': 'bv.png',
     'Brazil': 'br.png',
-    'British Indian Ocean Territory': 'io.png',
     'Brunei Darussalam': 'bn.png',
     'Bulgaria': 'bg.png',
     'Burkina Faso': 'bf.png',
@@ -98,23 +89,18 @@ COUNTRY_FLAG = {
     'Cambodia': 'kh.png',
     'Cameroon': 'cm.png',
     'Canada': 'ca.png',
-    'Cayman Islands': 'ky.png',
     'Central African Republic': 'cf.png',
     'Chad': 'td.png',
     'Chile': 'cl.png',
     'China': 'cn.png',
-    'Christmas Island': 'cx.png',
-    'Cocos (Keeling) Islands': 'cc.png',
     'Colombia': 'co.png',
     'Comoros': 'km.png',
     'Congo': 'cg.png',
     'Congo, Democratic Republic of the': 'cd.png',
-    'Cook Islands': 'ck.png',
     'Costa Rica': 'cr.png',
     'Côte d\'Ivoire': 'ci.png',
     'Croatia': 'hr.png',
     'Cuba': 'cu.png',
-    'Curaçao': 'cw.png',
     'Cyprus': 'cy.png',
     'Czechia': 'cz.png',
     'Denmark': 'dk.png',
@@ -129,35 +115,23 @@ COUNTRY_FLAG = {
     'Estonia': 'ee.png',
     'Eswatini': 'sz.png',
     'Ethiopia': 'et.png',
-    'Falkland Islands (Malvinas)': 'fk.png',
-    'Faroe Islands': 'fo.png',
     'Fiji': 'fj.png',
     'Finland': 'fi.png',
     'France': 'fr.png',
-    'French Guiana': 'gf.png',
-    'French Polynesia': 'pf.png',
-    'French Southern Territories': 'tf.png',
     'Gabon': 'ga.png',
     'Gambia': 'gm.png',
     'Georgia': 'ge.png',
     'Germany': 'de.png',
     'Ghana': 'gh.png',
-    'Gibraltar': 'gi.png',
     'Greece': 'gr.png',
-    'Greenland': 'gl.png',
     'Grenada': 'gd.png',
-    'Guadeloupe': 'gp.png',
-    'Guam': 'gu.png',
     'Guatemala': 'gt.png',
-    'Guernsey': 'gg.png',
     'Guinea': 'gn.png',
     'Guinea-Bissau': 'gw.png',
     'Guyana': 'gy.png',
     'Haiti': 'ht.png',
-    'Heard Island and McDonald Islands': 'hm.png',
     'Holy See': 'va.png',
     'Honduras': 'hn.png',
-    'Hong Kong': 'hk.png',
     'Hungary': 'hu.png',
     'Iceland': 'is.png',
     'India': 'in.png',
@@ -165,12 +139,10 @@ COUNTRY_FLAG = {
     'Iran (Islamic Republic of)': 'ir.png',
     'Iraq': 'iq.png',
     'Ireland': 'ie.png',
-    'Isle of Man': 'im.png',
     'Israel': 'il.png',
     'Italy': 'it.png',
     'Jamaica': 'jm.png',
     'Japan': 'jp.png',
-    'Jersey': 'je.png',
     'Jordan': 'jo.png',
     'Kazakhstan': 'kz.png',
     'Kenya': 'ke.png',
@@ -188,7 +160,6 @@ COUNTRY_FLAG = {
     'Liechtenstein': 'li.png',
     'Lithuania': 'lt.png',
     'Luxembourg': 'lu.png',
-    'Macao': 'mo.png',
     'Madagascar': 'mg.png',
     'Malawi': 'mw.png',
     'Malaysia': 'my.png',
@@ -196,17 +167,14 @@ COUNTRY_FLAG = {
     'Mali': 'ml.png',
     'Malta': 'mt.png',
     'Marshall Islands': 'mh.png',
-    'Martinique': 'mq.png',
     'Mauritania': 'mr.png',
     'Mauritius': 'mu.png',
-    'Mayotte': 'yt.png',
     'Mexico': 'mx.png',
     'Micronesia (Federated States of)': 'fm.png',
     'Moldova, Republic of': 'md.png',
     'Monaco': 'mc.png',
     'Mongolia': 'mn.png',
     'Montenegro': 'me.png',
-    'Montserrat': 'ms.png',
     'Morocco': 'ma.png',
     'Mozambique': 'mz.png',
     'Myanmar': 'mm.png',
@@ -214,40 +182,28 @@ COUNTRY_FLAG = {
     'Nauru': 'nr.png',
     'Nepal': 'np.png',
     'Netherlands': 'nl.png',
-    'New Caledonia': 'nc.png',
     'New Zealand': 'nz.png',
     'Nicaragua': 'ni.png',
     'Niger': 'ne.png',
     'Nigeria': 'ng.png',
-    'Niue': 'nu.png',
-    'Norfolk Island': 'nf.png',
     'North Macedonia': 'mk.png',
-    'Northern Mariana Islands': 'mp.png',
     'Norway': 'no.png',
     'Oman': 'om.png',
     'Pakistan': 'pk.png',
     'Palau': 'pw.png',
-    'Palestine, State of': 'ps.png',
     'Panama': 'pa.png',
     'Papua New Guinea': 'pg.png',
     'Paraguay': 'py.png',
     'Peru': 'pe.png',
     'Philippines': 'ph.png',
-    'Pitcairn': 'pn.png',
     'Poland': 'pl.png',
     'Portugal': 'pt.png',
-    'Puerto Rico': 'pr.png',
     'Qatar': 'qa.png',
-    'Réunion': 're.png',
     'Romania': 'ro.png',
     'Russian Federation': 'ru.png',
     'Rwanda': 'rw.png',
-    'Saint Barthélemy': 'bl.png',
-    'Saint Helena, Ascension and Tristan da Cunha': 'sh.png',
     'Saint Kitts and Nevis': 'kn.png',
     'Saint Lucia': 'lc.png',
-    'Saint Martin (French part)': 'mf.png',
-    'Saint Pierre and Miquelon': 'pm.png',
     'Saint Vincent and the Grenadines': 'vc.png',
     'Samoa': 'ws.png',
     'San Marino': 'sm.png',
@@ -258,19 +214,15 @@ COUNTRY_FLAG = {
     'Seychelles': 'sc.png',
     'Sierra Leone': 'sl.png',
     'Singapore': 'sg.png',
-    'Sint Maarten (Dutch part)': 'sx.png',
     'Slovakia': 'sk.png',
     'Slovenia': 'si.png',
     'Solomon Islands': 'sb.png',
     'Somalia': 'so.png',
     'South Africa': 'za.png',
-    'South Georgia and the South Sandwich Islands': 'gs.png',
-    'South Sudan': 'ss.png',
     'Spain': 'es.png',
     'Sri Lanka': 'lk.png',
     'Sudan': 'sd.png',
     'Suriname': 'sr.png',
-    'Svalbard and Jan Mayen': 'sj.png',
     'Sweden': 'se.png',
     'Switzerland': 'ch.png',
     'Syrian Arab Republic': 'sy.png',
@@ -280,28 +232,22 @@ COUNTRY_FLAG = {
     'Thailand': 'th.png',
     'Timor-Leste': 'tl.png',
     'Togo': 'tg.png',
-    'Tokelau': 'tk.png',
     'Tonga': 'to.png',
     'Trinidad and Tobago': 'tt.png',
     'Tunisia': 'tn.png',
     'Turkey': 'tr.png',
     'Turkmenistan': 'tm.png',
-    'Turks and Caicos Islands': 'tc.png',
     'Tuvalu': 'tv.png',
     'Uganda': 'ug.png',
     'Ukraine': 'ua.png',
     'United Arab Emirates': 'ae.png',
     'United Kingdom of Great Britain and Northern Ireland': 'gb.png',
     'United States of America': 'us.png',
-    'United States Minor Outlying Islands': 'um.png',
     'Uruguay': 'uy.png',
     'Uzbekistan': 'uz.png',
     'Vanuatu': 'vu.png',
     'Venezuela (Bolivarian Republic of)': 've.png',
     'Viet Nam': 'vn.png',
-    'Virgin Islands (British)': 'vg.png',
-    'Virgin Islands (U.S.)': 'vi.png',
-    'Wallis and Futuna': 'wf.png',
     'Western Sahara': 'eh.png',
     'Yemen': 'ye.png',
     'Zambia': 'zm.png',
@@ -342,16 +288,16 @@ DIVISIONS = {
 DEFAULT_DIVISION_IDX = 14  # 'ADULT 1a - AGE 18-29'
 
 
-class Control_Window(QMainWindow):
+class ControlWindow(QMainWindow):
     """Main window--controls the `self.scoreboard` `Scoreboard`
     instance via buttons and Signal/Slot (i.e., callback) mechanisms.
     """
 
     def __init__(self, version, parent=None):
-        super(Control_Window, self).__init__(parent)
+        super(ControlWindow, self).__init__(parent)
 
         if DEBUG:
-            qDebug("========== Control_Window.__init__() ==========")
+            qDebug("========== ControlWindow.__init__() ==========")
 
         self.ui = Ui_Control()
         self.ui.setupUi(self)
@@ -364,8 +310,8 @@ class Control_Window(QMainWindow):
         # because we setup scoreboard instance as independent Qt.Window, not a child of
         # the control window (to make 2 separate windows, otherwise Qt would draw
         # scoreboard window INSIDE control window).
-        self.scoreboard = Scoreboard_Window(self, Qt.Window | Qt.CustomizeWindowHint
-                                            | Qt.WindowTitleHint | Qt.WindowMinMaxButtonsHint)
+        self.scoreboard = ScoreboardWindow(self, Qt.Window | Qt.CustomizeWindowHint
+                                           | Qt.WindowTitleHint | Qt.WindowMinMaxButtonsHint)
         self.scoreboard.show()
         self.scoreboard.setWindowTitle("Openroll {}".format(self.version))
 
@@ -417,21 +363,21 @@ class Control_Window(QMainWindow):
         self.c1_del4_scoreboard = functools.partial(self.modify_points,
                                                     self.scoreboard.ui.comp1_points, -4)
 
-        self.c1_addA = functools.partial(self.modify_points, self.ui.comp1_adv_label, 1)
-        self.c1_addA_scoreboard = functools.partial(self.modify_points,
-                                                    self.scoreboard.ui.comp1_advantages, 1)
+        self.c1_add_a = functools.partial(self.modify_points, self.ui.comp1_adv_label, 1)
+        self.c1_add_a_scoreboard = functools.partial(self.modify_points,
+                                                     self.scoreboard.ui.comp1_advantages, 1)
 
-        self.c1_addP = functools.partial(self.modify_points, self.ui.comp1_pen_label, 1)
-        self.c1_addP_scoreboard = functools.partial(self.modify_points,
-                                                    self.scoreboard.ui.comp1_penalties, 1)
+        self.c1_add_p = functools.partial(self.modify_points, self.ui.comp1_pen_label, 1)
+        self.c1_add_p_scoreboard = functools.partial(self.modify_points,
+                                                     self.scoreboard.ui.comp1_penalties, 1)
 
-        self.c1_delA = functools.partial(self.modify_points, self.ui.comp1_adv_label, -1)
-        self.c1_delA_scoreboard = functools.partial(self.modify_points,
-                                                    self.scoreboard.ui.comp1_advantages, -1)
+        self.c1_del_a = functools.partial(self.modify_points, self.ui.comp1_adv_label, -1)
+        self.c1_del_a_scoreboard = functools.partial(self.modify_points,
+                                                     self.scoreboard.ui.comp1_advantages, -1)
 
-        self.c1_delP = functools.partial(self.modify_points, self.ui.comp1_pen_label, -1)
-        self.c1_delP_scoreboard = functools.partial(self.modify_points,
-                                                    self.scoreboard.ui.comp1_penalties, -1)
+        self.c1_del_p = functools.partial(self.modify_points, self.ui.comp1_pen_label, -1)
+        self.c1_del_p_scoreboard = functools.partial(self.modify_points,
+                                                     self.scoreboard.ui.comp1_penalties, -1)
 
         self.c2_add2 = functools.partial(self.modify_points, self.ui.comp2_pts_label, 2)
         self.c2_add2_scoreboard = functools.partial(self.modify_points,
@@ -457,27 +403,27 @@ class Control_Window(QMainWindow):
         self.c2_del4_scoreboard = functools.partial(self.modify_points,
                                                     self.scoreboard.ui.comp2_points, -4)
 
-        self.c2_addA = functools.partial(self.modify_points, self.ui.comp2_adv_label, 1)
-        self.c2_addA_scoreboard = functools.partial(self.modify_points,
+        self.c2_adda = functools.partial(self.modify_points, self.ui.comp2_adv_label, 1)
+        self.c2_adda_scoreboard = functools.partial(self.modify_points,
                                                     self.scoreboard.ui.comp2_advantages, 1)
 
-        self.c2_addP = functools.partial(self.modify_points, self.ui.comp2_pen_label, 1)
-        self.c2_addP_scoreboard = functools.partial(self.modify_points,
-                                                    self.scoreboard.ui.comp2_penalties, 1)
+        self.c2_add_p = functools.partial(self.modify_points, self.ui.comp2_pen_label, 1)
+        self.c2_add_p_scoreboard = functools.partial(self.modify_points,
+                                                     self.scoreboard.ui.comp2_penalties, 1)
 
-        self.c2_delA = functools.partial(self.modify_points, self.ui.comp2_adv_label, -1)
-        self.c2_delA_scoreboard = functools.partial(self.modify_points,
-                                                    self.scoreboard.ui.comp2_advantages, -1)
+        self.c2_del_a = functools.partial(self.modify_points, self.ui.comp2_adv_label, -1)
+        self.c2_del_a_scoreboard = functools.partial(self.modify_points,
+                                                     self.scoreboard.ui.comp2_advantages, -1)
 
-        self.c2_delP = functools.partial(self.modify_points, self.ui.comp2_pen_label, -1)
-        self.c2_delP_scoreboard = functools.partial(self.modify_points,
-                                                    self.scoreboard.ui.comp2_penalties, -1)
+        self.c2_del_p = functools.partial(self.modify_points, self.ui.comp2_pen_label, -1)
+        self.c2_del_p_scoreboard = functools.partial(self.modify_points,
+                                                     self.scoreboard.ui.comp2_penalties, -1)
 
         self.setup_signal_slot_connections()
 
         if DEBUG:
             self.debug_dump()
-            qDebug("========== Control_Window.__init__() done. ==========")
+            qDebug("========== ControlWindow.__init__() done. ==========")
 
     def modify_points(self, label, amount):
         """Base method that we use to construct our partials
@@ -490,75 +436,75 @@ class Control_Window(QMainWindow):
     def closeEvent(self, event: QCloseEvent):
         """Method MUST be named this way to work."""
         if DEBUG:
-            qDebug("Control_Window caught close signal.")
+            qDebug("ControlWindow caught close signal.")
 
         # DEV: change to QMessageBox.question() to simplify with yes/no/cancel
         # built in buttons, reducing code here.
-        msgBox = QMessageBox()
-        msgBox.setText("Do you really want to close the application?")
+        msg_box = QMessageBox()
+        msg_box.setText("Do you really want to close the application?")
 
-        yesButton = msgBox.addButton("Yes", QMessageBox.YesRole)
-        noButton = msgBox.addButton("No", QMessageBox.NoRole)
-        msgBox.setDefaultButton(noButton)
-        msgBox.exec_()
-        if msgBox.clickedButton() == yesButton:
+        yes_button = msg_box.addButton("Yes", QMessageBox.YesRole)
+        no_button = msg_box.addButton("No", QMessageBox.NoRole)
+        msg_box.setDefaultButton(no_button)
+        msg_box.exec_()
+        if msg_box.clickedButton() == yes_button:
             event.accept()
-        elif msgBox.clickedButton() == noButton:
+        elif msg_box.clickedButton() == no_button:
             event.ignore()
 
     def setup_signal_slot_connections(self):
         """Creates the Qt SIGNAL->SLOT connections, calling
         functions when certain events happen.
         """
-        self.ui.comp1_add2.clicked.connect(self.c1_add2)
-        self.ui.comp1_add2.clicked.connect(self.c1_add2_scoreboard)
-        self.ui.comp1_add3.clicked.connect(self.c1_add3)
-        self.ui.comp1_add3.clicked.connect(self.c1_add3_scoreboard)
-        self.ui.comp1_add4.clicked.connect(self.c1_add4)
-        self.ui.comp1_add4.clicked.connect(self.c1_add4_scoreboard)
-        self.ui.comp1_addA.clicked.connect(self.c1_addA)
-        self.ui.comp1_addA.clicked.connect(self.c1_addA_scoreboard)
-        self.ui.comp1_addP.clicked.connect(self.c1_addP)
-        self.ui.comp1_addP.clicked.connect(self.c1_addP_scoreboard)
-        self.ui.comp1_del2.clicked.connect(self.c1_del2)
-        self.ui.comp1_del2.clicked.connect(self.c1_del2_scoreboard)
-        self.ui.comp1_del3.clicked.connect(self.c1_del3)
-        self.ui.comp1_del3.clicked.connect(self.c1_del3_scoreboard)
-        self.ui.comp1_del4.clicked.connect(self.c1_del4)
-        self.ui.comp1_del4.clicked.connect(self.c1_del4_scoreboard)
-        self.ui.comp1_delA.clicked.connect(self.c1_delA)
-        self.ui.comp1_delA.clicked.connect(self.c1_delA_scoreboard)
-        self.ui.comp1_delP.clicked.connect(self.c1_delP)
-        self.ui.comp1_delP.clicked.connect(self.c1_delP_scoreboard)
-        self.ui.comp2_add2.clicked.connect(self.c2_add2)
-        self.ui.comp2_add2.clicked.connect(self.c2_add2_scoreboard)
-        self.ui.comp2_add3.clicked.connect(self.c2_add3)
-        self.ui.comp2_add3.clicked.connect(self.c2_add3_scoreboard)
-        self.ui.comp2_add4.clicked.connect(self.c2_add4)
-        self.ui.comp2_add4.clicked.connect(self.c2_add4_scoreboard)
-        self.ui.comp2_addA.clicked.connect(self.c2_addA)
-        self.ui.comp2_addA.clicked.connect(self.c2_addA_scoreboard)
-        self.ui.comp2_addP.clicked.connect(self.c2_addP)
-        self.ui.comp2_addP.clicked.connect(self.c2_addP_scoreboard)
-        self.ui.comp2_del2.clicked.connect(self.c2_del2)
-        self.ui.comp2_del2.clicked.connect(self.c2_del2_scoreboard)
-        self.ui.comp2_del3.clicked.connect(self.c2_del3)
-        self.ui.comp2_del3.clicked.connect(self.c2_del3_scoreboard)
-        self.ui.comp2_del4.clicked.connect(self.c2_del4)
-        self.ui.comp2_del4.clicked.connect(self.c2_del4_scoreboard)
-        self.ui.comp2_delA.clicked.connect(self.c2_delA)
-        self.ui.comp2_delA.clicked.connect(self.c2_delA_scoreboard)
-        self.ui.comp2_delP.clicked.connect(self.c2_delP)
-        self.ui.comp2_delP.clicked.connect(self.c2_delP_scoreboard)
+        self.ui.comp1_add_2.clicked.connect(self.c1_add2)
+        self.ui.comp1_add_2.clicked.connect(self.c1_add2_scoreboard)
+        self.ui.comp1_add_3.clicked.connect(self.c1_add3)
+        self.ui.comp1_add_3.clicked.connect(self.c1_add3_scoreboard)
+        self.ui.comp1_add_4.clicked.connect(self.c1_add4)
+        self.ui.comp1_add_4.clicked.connect(self.c1_add4_scoreboard)
+        self.ui.comp1_add_a.clicked.connect(self.c1_add_a)
+        self.ui.comp1_add_a.clicked.connect(self.c1_add_a_scoreboard)
+        self.ui.comp1_add_p.clicked.connect(self.c1_add_p)
+        self.ui.comp1_add_p.clicked.connect(self.c1_add_p_scoreboard)
+        self.ui.comp1_del_2.clicked.connect(self.c1_del2)
+        self.ui.comp1_del_2.clicked.connect(self.c1_del2_scoreboard)
+        self.ui.comp1_del_3.clicked.connect(self.c1_del3)
+        self.ui.comp1_del_3.clicked.connect(self.c1_del3_scoreboard)
+        self.ui.comp1_del_4.clicked.connect(self.c1_del4)
+        self.ui.comp1_del_4.clicked.connect(self.c1_del4_scoreboard)
+        self.ui.comp1_del_a.clicked.connect(self.c1_del_a)
+        self.ui.comp1_del_a.clicked.connect(self.c1_del_a_scoreboard)
+        self.ui.comp1_del_p.clicked.connect(self.c1_del_p)
+        self.ui.comp1_del_p.clicked.connect(self.c1_del_p_scoreboard)
+        self.ui.comp2_add_2.clicked.connect(self.c2_add2)
+        self.ui.comp2_add_2.clicked.connect(self.c2_add2_scoreboard)
+        self.ui.comp2_add_3.clicked.connect(self.c2_add3)
+        self.ui.comp2_add_3.clicked.connect(self.c2_add3_scoreboard)
+        self.ui.comp2_add_4.clicked.connect(self.c2_add4)
+        self.ui.comp2_add_4.clicked.connect(self.c2_add4_scoreboard)
+        self.ui.comp2_add_a.clicked.connect(self.c2_adda)
+        self.ui.comp2_add_a.clicked.connect(self.c2_adda_scoreboard)
+        self.ui.comp2_add_p.clicked.connect(self.c2_add_p)
+        self.ui.comp2_add_p.clicked.connect(self.c2_add_p_scoreboard)
+        self.ui.comp2_del_2.clicked.connect(self.c2_del2)
+        self.ui.comp2_del_2.clicked.connect(self.c2_del2_scoreboard)
+        self.ui.comp2_del_3.clicked.connect(self.c2_del3)
+        self.ui.comp2_del_3.clicked.connect(self.c2_del3_scoreboard)
+        self.ui.comp2_del_4.clicked.connect(self.c2_del4)
+        self.ui.comp2_del_4.clicked.connect(self.c2_del4_scoreboard)
+        self.ui.comp2_del_a.clicked.connect(self.c2_del_a)
+        self.ui.comp2_del_a.clicked.connect(self.c2_del_a_scoreboard)
+        self.ui.comp2_del_p.clicked.connect(self.c2_del_p)
+        self.ui.comp2_del_p.clicked.connect(self.c2_del_p_scoreboard)
         self.ui.sound_combobox.currentIndexChanged[str].connect(self.sound_combobox_changed)
         self.ui.division_combobox.currentIndexChanged.connect(self.division_changed)
-        self.ui.loadLogoButton.clicked.connect(self.load_logo_clicked)
+        self.ui.load_logo_button.clicked.connect(self.load_logo_clicked)
         self.ui.play_pause_button.clicked.connect(self.play_pause_button_clicked)
         self.ui.stop_button.clicked.connect(self.stop_button_clicked)
         self.ui.comp1_lineedit.textChanged.connect(self.scoreboard.ui.comp1_name.setText)
         self.ui.comp2_lineedit.textChanged.connect(self.scoreboard.ui.comp2_name.setText)
-        self.ui.p1_pushButton.clicked.connect(self.c1_load_flag_clicked)
-        self.ui.p2_pushButton.clicked.connect(self.c2_load_flag_clicked)
+        self.ui.p1_push_button.clicked.connect(self.c1_load_flag_clicked)
+        self.ui.p2_push_button.clicked.connect(self.c2_load_flag_clicked)
         self.ui.comp1_flag_combobox.currentIndexChanged[str].connect(self.comp1_flag_change)
         self.ui.comp2_flag_combobox.currentIndexChanged[str].connect(self.comp2_flag_change)
 
@@ -577,7 +523,7 @@ class Control_Window(QMainWindow):
             'match_done': self.match_done,
             'current_division': self.current_division,
             'current_belt': self.current_belt,
-                 }
+        }
         # qDebug requires str only so we convert using json module
         qDebug(json.dumps(state))
 
@@ -601,8 +547,8 @@ class Control_Window(QMainWindow):
         self.clock_minutes, self.clock_seconds = divmod(self.total_time, 60)
 
         # Set scoreboard labels.
-        self.scoreboard.ui.beltLabel.setText(self.current_belt)
-        self.scoreboard.ui.divisionLabel.setText(self.current_division)
+        self.scoreboard.ui.belt_label.setText(self.current_belt)
+        self.scoreboard.ui.division_label.setText(self.current_division)
 
         if DEBUG:
             self.debug_dump()
@@ -634,31 +580,31 @@ class Control_Window(QMainWindow):
     def toggle_controls(self):
         """Call setDisabled() on widgets using isEnabled() inverse"""
 
-        self.ui.comp1_add2.setDisabled(not self.ui.comp1_add2.isEnabled())
-        self.ui.comp1_add3.setDisabled(not self.ui.comp1_add3.isEnabled())
-        self.ui.comp1_add4.setDisabled(not self.ui.comp1_add4.isEnabled())
-        self.ui.comp1_addA.setDisabled(not self.ui.comp1_addA.isEnabled())
-        self.ui.comp1_addP.setDisabled(not self.ui.comp1_addP.isEnabled())
-        self.ui.comp1_del2.setDisabled(not self.ui.comp1_del2.isEnabled())
-        self.ui.comp1_del3.setDisabled(not self.ui.comp1_del3.isEnabled())
-        self.ui.comp1_del4.setDisabled(not self.ui.comp1_del4.isEnabled())
-        self.ui.comp1_delA.setDisabled(not self.ui.comp1_delA.isEnabled())
-        self.ui.comp1_delP.setDisabled(not self.ui.comp1_delP.isEnabled())
+        self.ui.comp1_add_2.setDisabled(not self.ui.comp1_add_2.isEnabled())
+        self.ui.comp1_add_3.setDisabled(not self.ui.comp1_add_3.isEnabled())
+        self.ui.comp1_add_4.setDisabled(not self.ui.comp1_add_4.isEnabled())
+        self.ui.comp1_add_a.setDisabled(not self.ui.comp1_add_a.isEnabled())
+        self.ui.comp1_add_p.setDisabled(not self.ui.comp1_add_p.isEnabled())
+        self.ui.comp1_del_2.setDisabled(not self.ui.comp1_del_2.isEnabled())
+        self.ui.comp1_del_3.setDisabled(not self.ui.comp1_del_3.isEnabled())
+        self.ui.comp1_del_4.setDisabled(not self.ui.comp1_del_4.isEnabled())
+        self.ui.comp1_del_a.setDisabled(not self.ui.comp1_del_a.isEnabled())
+        self.ui.comp1_del_p.setDisabled(not self.ui.comp1_del_p.isEnabled())
 
-        self.ui.comp2_add2.setDisabled(not self.ui.comp2_add2.isEnabled())
-        self.ui.comp2_add3.setDisabled(not self.ui.comp2_add3.isEnabled())
-        self.ui.comp2_add4.setDisabled(not self.ui.comp2_add4.isEnabled())
-        self.ui.comp2_addA.setDisabled(not self.ui.comp2_addA.isEnabled())
-        self.ui.comp2_addP.setDisabled(not self.ui.comp2_addP.isEnabled())
-        self.ui.comp2_del2.setDisabled(not self.ui.comp2_del2.isEnabled())
-        self.ui.comp2_del3.setDisabled(not self.ui.comp2_del3.isEnabled())
-        self.ui.comp2_del4.setDisabled(not self.ui.comp2_del4.isEnabled())
-        self.ui.comp2_delA.setDisabled(not self.ui.comp2_delA.isEnabled())
-        self.ui.comp2_delP.setDisabled(not self.ui.comp2_delP.isEnabled())
+        self.ui.comp2_add_2.setDisabled(not self.ui.comp2_add_2.isEnabled())
+        self.ui.comp2_add_3.setDisabled(not self.ui.comp2_add_3.isEnabled())
+        self.ui.comp2_add_4.setDisabled(not self.ui.comp2_add_4.isEnabled())
+        self.ui.comp2_add_a.setDisabled(not self.ui.comp2_add_a.isEnabled())
+        self.ui.comp2_add_p.setDisabled(not self.ui.comp2_add_p.isEnabled())
+        self.ui.comp2_del_2.setDisabled(not self.ui.comp2_del_2.isEnabled())
+        self.ui.comp2_del_3.setDisabled(not self.ui.comp2_del_3.isEnabled())
+        self.ui.comp2_del_4.setDisabled(not self.ui.comp2_del_4.isEnabled())
+        self.ui.comp2_del_a.setDisabled(not self.ui.comp2_del_a.isEnabled())
+        self.ui.comp2_del_p.setDisabled(not self.ui.comp2_del_p.isEnabled())
 
     def play_sound(self):
         """Play media sound if sound option is on."""
-        if self.ui.soundOnRadioButton.isChecked():
+        if self.ui.sound_on_radio_button.isChecked():
             self.media_player.play()
         # DEV: is this needed?
         self.ui.play_pause_button.setDisabled(True)
@@ -707,6 +653,7 @@ class Control_Window(QMainWindow):
             qDebug("========== play_pause_button_clicked() out. ==========")
 
     def stop_button_clicked(self):
+        """Stop clock then call reset_labels."""
         if DEBUG:
             qDebug("========== stop_button_clicked() ==========")
 
@@ -774,6 +721,7 @@ class Control_Window(QMainWindow):
             qDebug("========== reset_labels() out. ==========")
 
     def load_logo_clicked(self):
+        """Try to load a new logo from file picked by user."""
         # returns (fileName: str, selectedFilter: str) tuple
         fname = QFileDialog.getOpenFileName(self, "Open Image",
                                             ".",
@@ -784,44 +732,49 @@ class Control_Window(QMainWindow):
             self.load_image(fname[0])
 
     def load_image(self, fname: str):
+        """Convert filename to a QPixmap and set label pixmap to it."""
         if DEBUG:
             qDebug("load_image(): trying to load {}".format(fname))
         logo = QPixmap(fname)
         self.scoreboard.ui.user_logo.setPixmap(logo)
 
     def populate_divisions_combobox(self):
+        """Auto-populate the division selection dropdown box."""
         if DEBUG:
             qDebug("========== populate_divisions_combobox() in. ==========")
-        for k,v in DIVISIONS.items():
-            self.ui.division_combobox.addItem("{} - {}".format(k, v[0]))
+        for key, val in DIVISIONS.items():
+            self.ui.division_combobox.addItem("{} - {}".format(key, val[0]))
         self.ui.division_combobox.setCurrentIndex(DEFAULT_DIVISION_IDX)
         if DEBUG:
             qDebug("========== populate_divisions_combobox() out. ==========")
 
     def populate_flag_combobox(self):
+        """Auto-populate the flag choices in the dropdown box."""
         if DEBUG:
             qDebug("========== populate_flag_combobox() in. ==========")
-        for k,v in COUNTRY_FLAG.items():
-            flag = QIcon(":/flags/{}".format(COUNTRY_FLAG[k]))
-            self.ui.comp1_flag_combobox.addItem(flag, k)
-            self.ui.comp2_flag_combobox.addItem(flag, k)
+        for key, __ in COUNTRY_FLAG.items():
+            flag = QIcon(":/flags/{}".format(COUNTRY_FLAG[key]))
+            self.ui.comp1_flag_combobox.addItem(flag, key)
+            self.ui.comp2_flag_combobox.addItem(flag, key)
         if DEBUG:
             qDebug("========== populate_flag_combobox() out. ==========")
         self.ui.comp1_flag_combobox.setCurrentIndex(DEFAULT_FLAG_IDX)
         self.ui.comp2_flag_combobox.setCurrentIndex(DEFAULT_FLAG_IDX)
 
     def c1_load_flag_clicked(self):
+        """Change flag image for competitor 1."""
         # returns (fileName: str, selectedFilter: str) tuple
         fname, __ = QFileDialog.getOpenFileName(self, "Choose flag/emblem",
-                                            '.', 'Image Files (*.png *.jpg *.bmp)')
+                                                '.', 'Image Files (*.png *.jpg *.bmp)')
         if DEBUG:
             qDebug(fname)
         self.load_custom_flag_emblem(fname, 1)
 
     def c2_load_flag_clicked(self):
+        """Change flag image for competitor 2."""
         # returns (fileName: str, selectedFilter: str) tuple
         fname, __ = QFileDialog.getOpenFileName(self, "Choose flag/emblem",
-                                            '.', 'Image Files (*.png *.jpg *.bmp)')
+                                                '.', 'Image Files (*.png *.jpg *.bmp)')
         if DEBUG:
             qDebug(fname)
         self.load_custom_flag_emblem(fname, 2)
@@ -842,7 +795,6 @@ class Control_Window(QMainWindow):
 
     def comp1_flag_change(self, flag: str):
         """Run when user changes either flag combobox selection."""
-        new_flag = QIcon(":/flags/{}".format(COUNTRY_FLAG[flag]))
         if DEBUG:
             qDebug("comp1_flag_change(): changing to new flag {}".format(flag))
         self.scoreboard.ui.comp1_flag_label.setStyleSheet("image: url(:/flags/{}); background-color: rgb(0,0,200);"
@@ -850,7 +802,6 @@ class Control_Window(QMainWindow):
 
     def comp2_flag_change(self, flag: str):
         """Run when user changes either flag combobox selection."""
-        new_flag = QIcon(":/flags/{}".format(COUNTRY_FLAG[flag]))
         if DEBUG:
             qDebug("comp2_flag_change(): changing to new flag {}".format(flag))
         self.scoreboard.ui.comp2_flag_label.setStyleSheet("image: url(:/flags/{}); background-color: rgb(255,255,255);"
@@ -886,14 +837,14 @@ class Control_Window(QMainWindow):
         self.scoreboard.ui.timer_display.setText(new_time)
 
 
-class Scoreboard_Window(QWidget):
-    """Scoreboard window, child of Control_Window but
+class ScoreboardWindow(QWidget):
+    """Scoreboard window, child of ControlWindow but
     given initialization flags to be an independent window,
     otherwise would draw into same window space as parent.
     """
 
     def __init__(self, parent, qt_window_flags):
-        super(Scoreboard_Window, self).__init__(parent, qt_window_flags)
+        super(ScoreboardWindow, self).__init__(parent, qt_window_flags)
         self.ui = Ui_Scoreboard()
         self.ui.setupUi(self)
         # self.setWindowFlags(Qt.CustomizeWindowHint)
@@ -907,9 +858,12 @@ class Scoreboard_Window(QWidget):
         signal to this window somehow)
         """
         if DEBUG:
-            qDebug("Scoreboard_Window caught close signal")
+            qDebug("ScoreboardWindow caught close signal")
             qDebug("My parent window is: {}".format(self.parentWidget()))
 
         # We should never need to event.accept() anyway because
         # closing the parent class automatically closes this one.
-        event.ignore() if self.parentWidget() else event.accept()
+        if self.parentWidget():
+            event.ignore()
+        else:
+            event.accept()

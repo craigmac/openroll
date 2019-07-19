@@ -3,12 +3,12 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 AppContext	main.py	/^class AppContext(ApplicationContext):$/;"	kind:class	inherits:ApplicationContext
 ApplicationContext	main.py	/^from fbs_runtime.application_context.PySide2 import ApplicationContext$/;"	kind:namespace
 COUNTRY_FLAG	windows.py	/^COUNTRY_FLAG = {$/;"	kind:variable
-Control_Window	main.py	/^from windows import Control_Window$/;"	kind:namespace
-Control_Window	windows.py	/^class Control_Window(QMainWindow):$/;"	kind:class	inherits:QMainWindow
+ControlWindow	main.py	/^from windows import ControlWindow$/;"	kind:namespace
+ControlWindow	windows.py	/^class ControlWindow(QMainWindow):$/;"	kind:class	inherits:QMainWindow
 DEBUG	windows.py	/^DEBUG = True$/;"	kind:variable
 DEBUG_TIME	windows.py	/^DEBUG_TIME = 60 * 1$/;"	kind:variable
 DEFAULT_DIVISION_IDX	windows.py	/^DEFAULT_DIVISION_IDX = 14  # 'ADULT 1a - AGE 18-29'$/;"	kind:variable
@@ -34,50 +34,50 @@ QtGui	ui_control.py	/^from PySide2 import QtCore, QtGui, QtWidgets$/;"	kind:name
 QtGui	ui_scoreboard.py	/^from PySide2 import QtCore, QtGui, QtWidgets$/;"	kind:namespace
 QtWidgets	ui_control.py	/^from PySide2 import QtCore, QtGui, QtWidgets$/;"	kind:namespace
 QtWidgets	ui_scoreboard.py	/^from PySide2 import QtCore, QtGui, QtWidgets$/;"	kind:namespace
-Scoreboard_Window	windows.py	/^class Scoreboard_Window(QWidget):$/;"	kind:class	inherits:QWidget
+ScoreboardWindow	windows.py	/^class ScoreboardWindow(QWidget):$/;"	kind:class	inherits:QWidget
 Ui_Control	ui_control.py	/^class Ui_Control(object):$/;"	kind:class	inherits:object
 Ui_Control	windows.py	/^from ui_control import Ui_Control$/;"	kind:namespace
 Ui_Scoreboard	ui_scoreboard.py	/^class Ui_Scoreboard(object):$/;"	kind:class	inherits:object
 Ui_Scoreboard	windows.py	/^from ui_scoreboard import Ui_Scoreboard$/;"	kind:namespace
-__init__	windows.py	/^    def __init__(self, parent, qt_window_flags):$/;"	kind:member	class:Scoreboard_Window	access:public
-__init__	windows.py	/^    def __init__(self, version, parent=None):$/;"	kind:member	class:Control_Window	access:public
+__init__	windows.py	/^    def __init__(self, parent, qt_window_flags):$/;"	kind:member	class:ScoreboardWindow	access:public
+__init__	windows.py	/^    def __init__(self, version, parent=None):$/;"	kind:member	class:ControlWindow	access:public
 app_ctx	main.py	/^    app_ctx = AppContext()$/;"	kind:variable	class:AppContext
-c1_load_flag_clicked	windows.py	/^    def c1_load_flag_clicked(self):$/;"	kind:member	class:Control_Window	access:public
-c2_load_flag_clicked	windows.py	/^    def c2_load_flag_clicked(self):$/;"	kind:member	class:Control_Window	access:public
-closeEvent	windows.py	/^    def closeEvent(self, event: QCloseEvent):$/;"	kind:member	class:Control_Window	access:public
-closeEvent	windows.py	/^    def closeEvent(self, event: QCloseEvent):$/;"	kind:member	class:Scoreboard_Window	access:public
-comp1_flag_change	windows.py	/^    def comp1_flag_change(self, flag: str):$/;"	kind:member	class:Control_Window	access:public
-comp2_flag_change	windows.py	/^    def comp2_flag_change(self, flag: str):$/;"	kind:member	class:Control_Window	access:public
-debug_dump	windows.py	/^    def debug_dump(self):$/;"	kind:member	class:Control_Window	access:public
-division_changed	windows.py	/^    def division_changed(self, index: int):$/;"	kind:member	class:Control_Window	access:public
+c1_load_flag_clicked	windows.py	/^    def c1_load_flag_clicked(self):$/;"	kind:member	class:ControlWindow	access:public
+c2_load_flag_clicked	windows.py	/^    def c2_load_flag_clicked(self):$/;"	kind:member	class:ControlWindow	access:public
+closeEvent	windows.py	/^    def closeEvent(self, event: QCloseEvent):$/;"	kind:member	class:ControlWindow	access:public
+closeEvent	windows.py	/^    def closeEvent(self, event: QCloseEvent):$/;"	kind:member	class:ScoreboardWindow	access:public
+comp1_flag_change	windows.py	/^    def comp1_flag_change(self, flag: str):$/;"	kind:member	class:ControlWindow	access:public
+comp2_flag_change	windows.py	/^    def comp2_flag_change(self, flag: str):$/;"	kind:member	class:ControlWindow	access:public
+debug_dump	windows.py	/^    def debug_dump(self):$/;"	kind:member	class:ControlWindow	access:public
+division_changed	windows.py	/^    def division_changed(self, index: int):$/;"	kind:member	class:ControlWindow	access:public
 functools	windows.py	/^import functools$/;"	kind:namespace
 json	windows.py	/^        import json$/;"	kind:namespace
-load_custom_flag_emblem	windows.py	/^    def load_custom_flag_emblem(self, path: str, player: int):$/;"	kind:member	class:Control_Window	access:public
-load_image	windows.py	/^    def load_image(self, fname: str):$/;"	kind:member	class:Control_Window	access:public
-load_logo_clicked	windows.py	/^    def load_logo_clicked(self):$/;"	kind:member	class:Control_Window	access:public
-modify_points	windows.py	/^    def modify_points(self, label, amount):$/;"	kind:member	class:Control_Window	access:public
+load_custom_flag_emblem	windows.py	/^    def load_custom_flag_emblem(self, path: str, player: int):$/;"	kind:member	class:ControlWindow	access:public
+load_image	windows.py	/^    def load_image(self, fname: str):$/;"	kind:member	class:ControlWindow	access:public
+load_logo_clicked	windows.py	/^    def load_logo_clicked(self):$/;"	kind:member	class:ControlWindow	access:public
+modify_points	windows.py	/^    def modify_points(self, label, amount):$/;"	kind:member	class:ControlWindow	access:public
 openroll_rc	ui_control.py	/^import openroll_rc$/;"	kind:namespace
 openroll_rc	ui_scoreboard.py	/^import openroll_rc$/;"	kind:namespace
-play_pause_button_clicked	windows.py	/^    def play_pause_button_clicked(self):$/;"	kind:member	class:Control_Window	access:public
-play_sound	windows.py	/^    def play_sound(self):$/;"	kind:member	class:Control_Window	access:public
-populate_default_sounds_dropdown	windows.py	/^    def populate_default_sounds_dropdown(self):$/;"	kind:member	class:Control_Window	access:public
-populate_divisions_combobox	windows.py	/^    def populate_divisions_combobox(self):$/;"	kind:member	class:Control_Window	access:public
-populate_flag_combobox	windows.py	/^    def populate_flag_combobox(self):$/;"	kind:member	class:Control_Window	access:public
+play_pause_button_clicked	windows.py	/^    def play_pause_button_clicked(self):$/;"	kind:member	class:ControlWindow	access:public
+play_sound	windows.py	/^    def play_sound(self):$/;"	kind:member	class:ControlWindow	access:public
+populate_default_sounds_dropdown	windows.py	/^    def populate_default_sounds_dropdown(self):$/;"	kind:member	class:ControlWindow	access:public
+populate_divisions_combobox	windows.py	/^    def populate_divisions_combobox(self):$/;"	kind:member	class:ControlWindow	access:public
+populate_flag_combobox	windows.py	/^    def populate_flag_combobox(self):$/;"	kind:member	class:ControlWindow	access:public
 qCleanupResources	openroll_rc.py	/^def qCleanupResources():$/;"	kind:function	access:public
 qDebug	windows.py	/^from PySide2.QtCore import (Qt, QTimer, QUrl, QDir, qDebug)$/;"	kind:namespace
 qInitResources	openroll_rc.py	/^def qInitResources():$/;"	kind:function	access:public
 qt_resource_data	openroll_rc.py	/^"$/;"	kind:variable
 qt_resource_name	openroll_rc.py	/^"$/;"	kind:variable
 qt_resource_struct	openroll_rc.py	/^"$/;"	kind:variable
-reset_labels	windows.py	/^    def reset_labels(self):$/;"	kind:member	class:Control_Window	access:public
+reset_labels	windows.py	/^    def reset_labels(self):$/;"	kind:member	class:ControlWindow	access:public
 retranslateUi	ui_control.py	/^    def retranslateUi(self, Control):$/;"	kind:member	class:Ui_Control	access:public
 retranslateUi	ui_scoreboard.py	/^    def retranslateUi(self, Scoreboard):$/;"	kind:member	class:Ui_Scoreboard	access:public
 run	main.py	/^    def run(self):$/;"	kind:member	class:AppContext	access:public
 setupUi	ui_control.py	/^    def setupUi(self, Control):$/;"	kind:member	class:Ui_Control	access:public
 setupUi	ui_scoreboard.py	/^    def setupUi(self, Scoreboard):$/;"	kind:member	class:Ui_Scoreboard	access:public
-setup_signal_slot_connections	windows.py	/^    def setup_signal_slot_connections(self):$/;"	kind:member	class:Control_Window	access:public
-sound_combobox_changed	windows.py	/^    def sound_combobox_changed(self, soundname: str):$/;"	kind:member	class:Control_Window	access:public
-stop_button_clicked	windows.py	/^    def stop_button_clicked(self):$/;"	kind:member	class:Control_Window	access:public
+setup_signal_slot_connections	windows.py	/^    def setup_signal_slot_connections(self):$/;"	kind:member	class:ControlWindow	access:public
+sound_combobox_changed	windows.py	/^    def sound_combobox_changed(self, soundname: str):$/;"	kind:member	class:ControlWindow	access:public
+stop_button_clicked	windows.py	/^    def stop_button_clicked(self):$/;"	kind:member	class:ControlWindow	access:public
 sys	main.py	/^import sys$/;"	kind:namespace
-toggle_controls	windows.py	/^    def toggle_controls(self):$/;"	kind:member	class:Control_Window	access:public
-update_clock	windows.py	/^    def update_clock(self):$/;"	kind:member	class:Control_Window	access:public
+toggle_controls	windows.py	/^    def toggle_controls(self):$/;"	kind:member	class:ControlWindow	access:public
+update_clock	windows.py	/^    def update_clock(self):$/;"	kind:member	class:ControlWindow	access:public

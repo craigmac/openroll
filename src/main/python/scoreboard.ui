@@ -376,7 +376,7 @@ color: 'white';</string>
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer_2">
+      <spacer name="horizontal_spacer_2">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -408,7 +408,7 @@ color: 'white';</string>
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer">
+      <spacer name="horizonta_spacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -421,9 +421,9 @@ color: 'white';</string>
       </spacer>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QVBoxLayout" name="vertical_layout">
        <item>
-        <widget class="QLabel" name="divisionLabel">
+        <widget class="QLabel" name="division_label">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>1</horstretch>
@@ -452,7 +452,7 @@ color: 'white';</string>
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="beltLabel">
+        <widget class="QLabel" name="belt_label">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>1</horstretch>

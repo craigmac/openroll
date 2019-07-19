@@ -45,7 +45,7 @@ import sys
 
 from fbs_runtime.application_context.PySide2 import ApplicationContext
 
-from windows import Control_Window
+from windows import ControlWindow
 
 
 class AppContext(ApplicationContext):
@@ -58,7 +58,7 @@ class AppContext(ApplicationContext):
     """
     def run(self):
         """fbs tooling required entrypoint."""
-        window = Control_Window(self.build_settings['version'])
+        window = ControlWindow(self.build_settings['version'])
         version = self.build_settings['version']
         window.setWindowTitle("Openroll {}".format(version))
         window.resize(800, 600)

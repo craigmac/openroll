@@ -35,12 +35,12 @@
    <iconset resource="openroll.qrc">
     <normaloff>:/icons/icon.ico</normaloff>:/icons/icon.ico</iconset>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="central_widget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <layout class="QHBoxLayout" name="minutes_layout">
       <item>
-       <spacer name="horizontalSpacer">
+       <spacer name="horizontal_spacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -60,7 +60,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="loadLogoButton">
+       <widget class="QPushButton" name="load_logo_button">
         <property name="text">
          <string>...</string>
         </property>
@@ -100,7 +100,7 @@
        <widget class="QComboBox" name="sound_combobox"/>
       </item>
       <item>
-       <widget class="QGroupBox" name="groupBox">
+       <widget class="QGroupBox" name="group_box">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>1</horstretch>
@@ -118,7 +118,7 @@
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QRadioButton" name="soundOnRadioButton">
+          <widget class="QRadioButton" name="sound_on_radio_button">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
              <horstretch>1</horstretch>
@@ -138,7 +138,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="soundOffRadioButton">
+          <widget class="QRadioButton" name="sound_off_radio_button">
            <property name="text">
             <string/>
            </property>
@@ -152,7 +152,7 @@
        </widget>
       </item>
       <item>
-       <spacer name="horizontalSpacer_2">
+       <spacer name="horizontal_spacer_2">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -208,7 +208,7 @@
        </widget>
       </item>
       <item>
-       <spacer name="horizontalSpacer_8">
+       <spacer name="horizontal_spacer_8">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -331,7 +331,7 @@ color: 'white';</string>
        </widget>
       </item>
       <item>
-       <spacer name="horizontalSpacer_7">
+       <spacer name="horizontal_spacer_7">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -450,7 +450,7 @@ color: 'white';</string>
        </widget>
       </item>
       <item>
-       <spacer name="horizontalSpacer_9">
+       <spacer name="horizontal_spacer_9">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -543,7 +543,7 @@ background-color: 'white';</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="p1_pushButton">
+       <widget class="QPushButton" name="p1_push_button">
         <property name="maximumSize">
          <size>
           <width>50</width>
@@ -556,7 +556,7 @@ background-color: 'white';</string>
        </widget>
       </item>
       <item>
-       <spacer name="horizontalSpacer_4">
+       <spacer name="horizontal_spacer_4">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -589,7 +589,7 @@ background-color: 'white';</string>
        </widget>
       </item>
       <item>
-       <spacer name="horizontalSpacer_5">
+       <spacer name="horizontal_spacer_5">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -649,7 +649,7 @@ background-color: 'white';</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="p2_pushButton">
+       <widget class="QPushButton" name="p2_push_button">
         <property name="maximumSize">
          <size>
           <width>50</width>
@@ -669,7 +669,7 @@ background-color: 'white';</string>
     <item>
      <layout class="QHBoxLayout" name="add_score_layout">
       <item>
-       <widget class="QPushButton" name="comp1_add2">
+       <widget class="QPushButton" name="comp1_add_2">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -687,7 +687,7 @@ color: 'white';</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp1_add3">
+       <widget class="QPushButton" name="comp1_add_3">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -706,7 +706,7 @@ color: rgb(255, 255, 255);
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp1_add4">
+       <widget class="QPushButton" name="comp1_add_4">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -724,7 +724,7 @@ color: rgb(255, 255, 255);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp1_addA">
+       <widget class="QPushButton" name="comp1_add_a">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -742,7 +742,7 @@ font: 20pt 'Arial';
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp1_addP">
+       <widget class="QPushButton" name="comp1_add_p">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -783,7 +783,7 @@ color: rgb(255, 255, 255);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp2_add2">
+       <widget class="QPushButton" name="comp2_add_2">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -801,7 +801,7 @@ color: rgb(255, 255, 255);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp2_add3">
+       <widget class="QPushButton" name="comp2_add_3">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -819,7 +819,7 @@ color: rgb(255, 255, 255);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp2_add4">
+       <widget class="QPushButton" name="comp2_add_4">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -837,7 +837,7 @@ color: rgb(255, 255, 255);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp2_addA">
+       <widget class="QPushButton" name="comp2_add_a">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -855,7 +855,7 @@ font: 20pt 'Arial';
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp2_addP">
+       <widget class="QPushButton" name="comp2_add_p">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -877,7 +877,7 @@ color: rgb(255, 255, 255);</string>
     <item>
      <layout class="QHBoxLayout" name="del_score_layout">
       <item>
-       <widget class="QPushButton" name="comp1_del2">
+       <widget class="QPushButton" name="comp1_del_2">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -896,7 +896,7 @@ color: rgb(255, 255, 255);
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp1_del3">
+       <widget class="QPushButton" name="comp1_del_3">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -914,7 +914,7 @@ color: rgb(255, 255, 255);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp1_del4">
+       <widget class="QPushButton" name="comp1_del_4">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -932,7 +932,7 @@ color: rgb(255, 255, 255);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp1_delA">
+       <widget class="QPushButton" name="comp1_del_a">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -950,7 +950,7 @@ font: 20pt 'Arial';
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp1_delP">
+       <widget class="QPushButton" name="comp1_del_p">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -991,7 +991,7 @@ color: rgb(255, 255, 255);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp2_del2">
+       <widget class="QPushButton" name="comp2_del_2">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -1009,7 +1009,7 @@ color: rgb(255, 255, 255);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp2_del3">
+       <widget class="QPushButton" name="comp2_del_3">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -1027,7 +1027,7 @@ color: rgb(255, 255, 255);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp2_del4">
+       <widget class="QPushButton" name="comp2_del_4">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -1045,7 +1045,7 @@ color: rgb(255, 255, 255);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp2_delA">
+       <widget class="QPushButton" name="comp2_del_a">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -1063,7 +1063,7 @@ font: 20pt 'Arial';
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="comp2_delP">
+       <widget class="QPushButton" name="comp2_del_p">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>

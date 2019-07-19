@@ -3,8 +3,8 @@
 # Form implementation generated from reading ui file 'scoreboard.ui',
 # licensing of 'scoreboard.ui' applies.
 #
-# Created: Thu Jul 11 09:49:30 2019
-#      by: pyside2-uic  running on PySide2 5.13.0
+# Created: Fri Jul 19 14:15:44 2019
+#      by: pyside2-uic  running on PySide2 5.12.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -203,34 +203,34 @@ class Ui_Scoreboard(object):
         self.timer_layout.addWidget(self.timer_display)
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.timer_layout.addItem(spacerItem1)
-        self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.divisionLabel = QtWidgets.QLabel(Scoreboard)
+        self.vertical_layout = QtWidgets.QVBoxLayout()
+        self.vertical_layout.setObjectName("vertical_layout")
+        self.division_label = QtWidgets.QLabel(Scoreboard)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
-        sizePolicy.setHeightForWidth(self.divisionLabel.sizePolicy().hasHeightForWidth())
-        self.divisionLabel.setSizePolicy(sizePolicy)
-        self.divisionLabel.setStyleSheet("font: 24pt \'Arial\';\n"
+        sizePolicy.setHeightForWidth(self.division_label.sizePolicy().hasHeightForWidth())
+        self.division_label.setSizePolicy(sizePolicy)
+        self.division_label.setStyleSheet("font: 24pt \'Arial\';\n"
 "")
-        self.divisionLabel.setScaledContents(False)
-        self.divisionLabel.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft)
-        self.divisionLabel.setIndent(-1)
-        self.divisionLabel.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse)
-        self.divisionLabel.setObjectName("divisionLabel")
-        self.verticalLayout.addWidget(self.divisionLabel)
-        self.beltLabel = QtWidgets.QLabel(Scoreboard)
+        self.division_label.setScaledContents(False)
+        self.division_label.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft)
+        self.division_label.setIndent(-1)
+        self.division_label.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse)
+        self.division_label.setObjectName("division_label")
+        self.vertical_layout.addWidget(self.division_label)
+        self.belt_label = QtWidgets.QLabel(Scoreboard)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
-        sizePolicy.setHeightForWidth(self.beltLabel.sizePolicy().hasHeightForWidth())
-        self.beltLabel.setSizePolicy(sizePolicy)
-        self.beltLabel.setStyleSheet("font:  24pt \'Arial\';\n"
+        sizePolicy.setHeightForWidth(self.belt_label.sizePolicy().hasHeightForWidth())
+        self.belt_label.setSizePolicy(sizePolicy)
+        self.belt_label.setStyleSheet("font:  24pt \'Arial\';\n"
 "")
-        self.beltLabel.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
-        self.beltLabel.setObjectName("beltLabel")
-        self.verticalLayout.addWidget(self.beltLabel)
-        self.timer_layout.addLayout(self.verticalLayout)
+        self.belt_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.belt_label.setObjectName("belt_label")
+        self.vertical_layout.addWidget(self.belt_label)
+        self.timer_layout.addLayout(self.vertical_layout)
         self.main_vlayout.addLayout(self.timer_layout)
 
         self.retranslateUi(Scoreboard)
@@ -247,7 +247,7 @@ class Ui_Scoreboard(object):
         self.comp2_advantages.setText(QtWidgets.QApplication.translate("Scoreboard", "0", None, -1))
         self.comp2_penalties.setText(QtWidgets.QApplication.translate("Scoreboard", "0", None, -1))
         self.timer_display.setText(QtWidgets.QApplication.translate("Scoreboard", "5:00", None, -1))
-        self.divisionLabel.setText(QtWidgets.QApplication.translate("Scoreboard", "<html><head/><body><p><span style=\" font-size:18pt;\">ADULT - AGE 18-29</span></p></body></html>", None, -1))
-        self.beltLabel.setText(QtWidgets.QApplication.translate("Scoreboard", "<html><head/><body><p><span style=\" font-size:18pt;\">WHITE</span></p></body></html>", None, -1))
+        self.division_label.setText(QtWidgets.QApplication.translate("Scoreboard", "<html><head/><body><p><span style=\" font-size:18pt;\">ADULT - AGE 18-29</span></p></body></html>", None, -1))
+        self.belt_label.setText(QtWidgets.QApplication.translate("Scoreboard", "<html><head/><body><p><span style=\" font-size:18pt;\">WHITE</span></p></body></html>", None, -1))
 
 import openroll_rc
