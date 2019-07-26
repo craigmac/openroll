@@ -1,8 +1,0 @@
-# Openroll
-
-## Requirements
-
-## Installation
-
-## License
-
