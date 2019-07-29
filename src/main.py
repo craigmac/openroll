@@ -2,13 +2,13 @@
 
 """Main entry point to the openroll application."""
 
+import argparse
+
 import wx
 
 from board import Board
 from controls import Controls
 from local_version import __VERSION__
-
-import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-d', '--debug', action='store_true',
@@ -30,7 +30,7 @@ if DEBUG:
 class Application(AppBaseClass):
     """wxPython entry, inheriting from wx.App and which should override
     OnInit method to create a main frame and return True."""
-    def OnInit(self)->True:
+    def OnInit(self):
         """
         Required override method. Must return True.
 

@@ -1,0 +1,10 @@
+* Finish scoreboard ui
+* Get +2/-2 button logic to work with controls ui
+* Get +2/-2 button logic to work with scoreboard ui
+* 3/4/A/P button logic workign with board ui
+* Populate sounds dropdown at init
+* Populate flag dropdowns at init
+* Event handler for sound dropdown
+* Event handler to flag dropdown
+* Load custom flag/emblem button handler
+

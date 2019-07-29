@@ -1,21 +1,25 @@
 #!/usr/bin/env python
 
 """Controls window."""
+from os.path import curdir, join, abspath
 import wx
 
 from local_version import __VERSION__
 
 
 class Controls(wx.Frame):
+    """Controls window."""
     def __init__(self, *args, **kwargs):
         """ Creates Controls window instance."""
+        kwargs["style"] = kwargs.get("style", 0) | wx.CAPTION | wx.CLIP_CHILDREN | wx.CLOSE_BOX | wx.STAY_ON_TOP | wx.SYSTEM_MENU
         super().__init__(*args, **kwargs)
-        self.SetSize((923, 363))
+        self.SetSize((915, 363))
 
         self.__create_menus()
         self.__create_widgets()
         self.__set_properties()
         self.__do_layout()
+        self.__do_bindings()
 
     def __create_menus(self):
         """Build menus for this frame."""
@@ -71,8 +75,9 @@ class Controls(wx.Frame):
     def __set_properties(self):
         # begin wxGlade: Controls.__set_properties
         self.SetTitle("Openroll - Controls - {}".format(__VERSION__))
+        self.SetBackgroundColour(wx.Colour(255, 255, 255))
         _icon = wx.NullIcon
-        _icon.CopyFromBitmap(wx.Bitmap("C:\\Users\\cmaceachern\\projects\\openroll\\src\\resources\\icons\\Icon.ico", wx.BITMAP_TYPE_ANY))
+        _icon.CopyFromBitmap(wx.Bitmap(join(abspath(curdir), 'resources', 'icons', 'Icon.ico'), wx.BITMAP_TYPE_ANY))
         self.SetIcon(_icon)
         self.c1_pts_label.SetMinSize((100, 37))
         self.c1_pts_label.SetBackgroundColour(wx.Colour(125, 170, 125))
@@ -124,7 +129,8 @@ class Controls(wx.Frame):
         self.c1_add_p_btn.SetBackgroundColour(wx.Colour(200, 0, 0))
         self.c1_add_p_btn.SetFont(wx.Font(20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, 0, ""))
         self.play_pause_btn.SetMinSize((150, 75))
-        self.play_pause_btn.SetBitmap(wx.Bitmap("C:\\Users\\cmaceachern\\projects\\openroll\\src\\resources\\ui\\baseline_play_arrow_black_18dp.png", wx.BITMAP_TYPE_ANY))
+        self.play_pause_btn.SetBitmap(wx.Bitmap(join(abspath(curdir), 'resources', 'ui', 'baseline_play_arrow_black_18dp.png'),
+                wx.BITMAP_TYPE_ANY))
         self.c2_add_2_btn.SetMinSize((75, 75))
         self.c2_add_2_btn.SetBackgroundColour(wx.Colour(125, 170, 125))
         self.c2_add_2_btn.SetFont(wx.Font(20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, 0, ""))
@@ -156,7 +162,8 @@ class Controls(wx.Frame):
         self.c1_del_p_btn.SetBackgroundColour(wx.Colour(200, 0, 0))
         self.c1_del_p_btn.SetFont(wx.Font(20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, 0, ""))
         self.stop_btn.SetMinSize((150, 75))
-        self.stop_btn.SetBitmap(wx.Bitmap("C:\\Users\\cmaceachern\\projects\\openroll\\src\\resources\\ui\\baseline_stop_black_18dp.png", wx.BITMAP_TYPE_ANY))
+        self.stop_btn.SetBitmap(wx.Bitmap(join(abspath(curdir), 'resources', 'ui', 'baseline_stop_black_18dp.png'),
+                                          wx.BITMAP_TYPE_ANY))
         self.c2_del_2_btn.SetMinSize((75, 75))
         self.c2_del_2_btn.SetBackgroundColour(wx.Colour(125, 170, 125))
         self.c2_del_2_btn.SetFont(wx.Font(20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, 0, ""))
@@ -256,3 +263,270 @@ class Controls(wx.Frame):
         self.Layout()
         self.Centre()
 
+    def __do_bindings(self):
+        """Create wxWidget event binds to methods."""
+        self.Bind(wx.EVT_BUTTON, self.on_c1_add_2_clicked, self.c1_add_2_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c1_del_2_clicked, self.c1_del_2_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c1_add_3_clicked, self.c1_add_3_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c1_del_3_clicked, self.c1_del_3_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c1_add_4_clicked, self.c1_add_4_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c1_del_4_clicked, self.c1_del_4_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c1_add_a_clicked, self.c1_add_a_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c1_del_a_clicked, self.c1_del_a_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c1_add_p_clicked, self.c1_add_p_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c1_del_p_clicked, self.c1_del_p_btn)
+
+        self.Bind(wx.EVT_BUTTON, self.on_c2_add_2_clicked, self.c2_add_2_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c2_del_2_clicked, self.c2_del_2_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c2_add_3_clicked, self.c2_add_3_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c2_del_3_clicked, self.c2_del_3_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c2_add_4_clicked, self.c2_add_4_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c2_del_4_clicked, self.c2_del_4_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c2_add_a_clicked, self.c2_add_a_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c2_del_a_clicked, self.c2_del_a_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c2_add_p_clicked, self.c2_add_p_btn)
+        self.Bind(wx.EVT_BUTTON, self.on_c2_del_p_clicked, self.c2_del_p_btn)
+
+    def on_c1_add_2_clicked(self, event):
+        """
+        Adds 2 to competitor 1 total score on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c1_pts_label.GetLabelText())
+        current_value += 2
+        self.c1_pts_label.SetLabelText("{}".format(current_value))
+
+    def on_c1_del_2_clicked(self, event):
+        """
+        Subtract 2 from competitor 1 total score on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c1_pts_label.GetLabelText())
+        current_value -= 2
+        if current_value <= 0:
+            current_value = 0
+        self.c1_pts_label.SetLabelText("{}".format(current_value))
+
+    def on_c1_add_3_clicked(self, event):
+        """
+        Adds 3 to competitor 1 total score on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c1_pts_label.GetLabelText())
+        current_value += 3
+        self.c1_pts_label.SetLabelText("{}".format(current_value))
+
+    def on_c1_del_3_clicked(self, event):
+        """
+        Subtract 3 from competitor 1 total score on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c1_pts_label.GetLabelText())
+        current_value -= 3
+        if current_value <= 0:
+            current_value = 0
+        self.c1_pts_label.SetLabelText("{}".format(current_value))
+
+    def on_c1_add_4_clicked(self, event):
+        """
+        Adds 4 to competitor 1 total score on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c1_pts_label.GetLabelText())
+        current_value += 4
+        self.c1_pts_label.SetLabelText("{}".format(current_value))
+
+    def on_c1_del_4_clicked(self, event):
+        """
+        Substracts 4 from competitor 1 total score on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c1_pts_label.GetLabelText())
+        current_value -= 4
+        if current_value <= 0:
+            current_value = 0
+        self.c1_pts_label.SetLabelText("{}".format(current_value))
+
+    def on_c1_del_a_clicked(self, event):
+        """
+        Substracts 1 from competitor 1 advantages on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c1_adv_label.GetLabelText())
+        current_value -= 1
+        if current_value <= 0:
+            current_value = 0
+        self.c1_adv_label.SetLabelText("{}".format(current_value))
+
+    def on_c1_del_p_clicked(self, event):
+        """
+        Substracts 1 from competitor 1 penalties on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c1_pen_label.GetLabelText())
+        current_value -= 1
+        if current_value <= 0:
+            current_value = 0
+        self.c1_pen_label.SetLabelText("{}".format(current_value))
+
+    def on_c1_add_a_clicked(self, event):
+        """
+        Add 1 to competitor 1 advantages on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c1_adv_label.GetLabelText())
+        current_value += 1
+        self.c1_adv_label.SetLabelText("{}".format(current_value))
+
+    def on_c1_add_p_clicked(self, event):
+        """
+        Add 1 to competitor 1 penalties on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c1_pen_label.GetLabelText())
+        current_value += 1
+        self.c1_pen_label.SetLabelText("{}".format(current_value))
+
+    # ----------------------------------------
+    # COMPETITOR 2
+    # ----------------------------------------
+
+    def on_c2_add_a_clicked(self, event):
+        """
+        Add 1 to competitor 2 advantages on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c2_adv_label.GetLabelText())
+        current_value += 1
+        self.c2_adv_label.SetLabelText("{}".format(current_value))
+
+    def on_c2_add_p_clicked(self, event):
+        """
+        Add 1 to competitor 2 penalties on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c2_pen_label.GetLabelText())
+        current_value += 1
+        self.c2_pen_label.SetLabelText("{}".format(current_value))
+
+    def on_c2_add_2_clicked(self, event):
+        """
+        Adds 2 to competitor 2 total score on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c2_pts_label.GetLabelText())
+        current_value += 2
+        self.c2_pts_label.SetLabelText("{}".format(current_value))
+
+    def on_c2_add_3_clicked(self, event):
+        """
+        Adds 3 to competitor 2 total score on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c2_pts_label.GetLabelText())
+        current_value += 3
+        self.c2_pts_label.SetLabelText("{}".format(current_value))
+
+    def on_c2_add_4_clicked(self, event):
+        """
+        Adds 4 to competitor 2 total score on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c2_pts_label.GetLabelText())
+        current_value += 4
+        self.c2_pts_label.SetLabelText("{}".format(current_value))
+
+    def on_c2_del_2_clicked(self, event):
+        """
+        Subtract 2 from competitor 2 total score on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c2_pts_label.GetLabelText())
+        current_value -= 2
+        if current_value <= 0:
+            current_value = 0
+        self.c2_pts_label.SetLabelText("{}".format(current_value))
+
+    def on_c2_del_3_clicked(self, event):
+        """
+        Subtract 3 from competitor 2 total score on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c2_pts_label.GetLabelText())
+        current_value -= 3
+        if current_value <= 0:
+            current_value = 0
+        self.c2_pts_label.SetLabelText("{}".format(current_value))
+
+    def on_c2_del_4_clicked(self, event):
+        """
+        Substracts 4 from competitor 2 total score on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c2_pts_label.GetLabelText())
+        current_value -= 4
+        if current_value <= 0:
+            current_value = 0
+        self.c2_pts_label.SetLabelText("{}".format(current_value))
+
+    def on_c2_del_a_clicked(self, event):
+        """
+        Substracts 1 from competitor 2 advantages on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c2_adv_label.GetLabelText())
+        current_value -= 1
+        if current_value <= 0:
+            current_value = 0
+        self.c2_adv_label.SetLabelText("{}".format(current_value))
+
+    def on_c2_del_p_clicked(self, event):
+        """
+        Substracts 1 from competitor 2 penalties on both windows.
+
+        :param self wx.Frame: default: current instance.
+        :param event wx.Event: default: given automatically by event caller.
+        """
+        current_value = int(self.c2_pen_label.GetLabelText())
+        current_value -= 1
+        if current_value <= 0:
+            current_value = 0
+        self.c2_pen_label.SetLabelText("{}".format(current_value))
