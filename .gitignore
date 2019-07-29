@@ -115,4 +115,6 @@ ENV/
 # #####################
 .vscode/
 secret.json
-openroll.sublime-workspace
+openroll.sublime-workspace*.*.bak
+*.bak
+src/wxGlade-windows.wxg.bak
