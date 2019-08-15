@@ -12,20 +12,23 @@ program, and not develop/alter it, this is all you need to do.
 ## Windows
 To build on a Windows machine, you will need:
 
-* Qt Creator 4.9.2+, which comes with Qt 5.12.4+ available from [Qt website](https://www.qt.io/download).
+* Qt Creator 4.9.2+, which comes with Qt 5.12.4+ available from [Qt
+  website](https://www.qt.io/download).
 * MSVC 2017 64-bit Kit is used for Debug and Release builds in Qt Creator.
 
 ## Mac OS X
 To build on OS X, you will need:
 
 * XCode installed (free, from Apple, find it in the App Store).
-* Qt Creator 4.9.2+, which comes with Qt 5.12.4+ available from [Qt website](https://www.qt.io/download).
+* Qt Creator 4.9.2+, which comes with Qt 5.12.4+ available from [Qt
+  website](https://www.qt.io/download).
 * Build Debug/Release versions using default clang-64 kit.
 
 ## Linux/BSD Systems
 To build on most linux/unix-based systems, you will need:
 
-* Qt Creator 4.9.2+, which comes with Qt 5.12.4+ available from [Qt website](https://www.qt.io/download).
+* Qt Creator 4.9.2+, which comes with Qt 5.12.4+ available from [Qt
+  website](https://www.qt.io/download).
 * Build Debug/Release versions using clang 64-bit kit (usually you must
 install clang separately usually, unlike OS X, which comes with clang as part
 of XCode)
@@ -53,7 +56,8 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
+along with this program.  If not, see the [GNU General Public
+License](https://www.gnu.org/licenses/).
 
 Images are licensed by C.D. MacEachern under [Apache License
 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) from Google (C) 2014.
