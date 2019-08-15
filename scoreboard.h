@@ -2,6 +2,7 @@
 #define SCOREBOARD_H
 
 #include <QWidget>
+#include <QCloseEvent>
 
 namespace Ui {
 class Scoreboard;
@@ -11,9 +12,12 @@ class Scoreboard : public QWidget
 {
     Q_OBJECT
 
+protected:
+    void closeEvent(QCloseEvent *event) override;
+
 public:
     explicit Scoreboard(QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
-    ~Scoreboard();
+    ~Scoreboard() override;
 
 public slots:
     /* These are connected to signals emitted from another object using
@@ -31,15 +35,18 @@ public slots:
     void setCompetitor1Name(QString name);
     void setCompetitor2Name(QString name);
 
+    void setTimeLabel(QString newtime);
+    void setDivisionLabel(QString division);
+    void setBeltLabel(QString newbelt);
+
+    void setLogo(QString logo);
+    void resetScores();
+    // TODO: make space for c1 and c2 flag boxes
+    // TODO: setC1Flag(QString flagpath)
+    // TODO: setC2Flag(QString flagpath)
+
 private:
     Ui::Scoreboard *ui;
-    int m_c1_points = 0;
-    int m_c1_advantages = 0;
-    int m_c1_penalties = 0;
-    int m_c2_points = 0;
-    int m_c2_advantages = 0;
-    int m_c2_penalties = 0;
-
 };
 
 #endif // SCOREBOARD_H

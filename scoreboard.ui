@@ -55,13 +55,22 @@ color: 'white';</string>
          <verstretch>1</verstretch>
         </sizepolicy>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>128</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
        <property name="autoFillBackground">
         <bool>false</bool>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(60, 125, 60);
 color: 'white';
-font: 192pt &quot;Arial&quot;;
+font: 128pt &quot;Arial&quot;;
 </string>
        </property>
        <property name="frameShape">
@@ -93,7 +102,7 @@ font: 192pt &quot;Arial&quot;;
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 192pt 'Arial';
+        <string notr="true">font: 128pt 'Arial';
 background-color: rgb(225, 225, 0);
 color: 'white';</string>
        </property>
@@ -123,7 +132,7 @@ color: 'white';</string>
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 192pt 'Arial';
+        <string notr="true">font: 128pt 'Arial';
 background-color: rgb(200,0,0);
 color: 'white';</string>
        </property>
@@ -180,7 +189,7 @@ background-color: 'white';</string>
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 192pt 'Arial';
+        <string notr="true">font: 128pt 'Arial';
 background-color: rgb(60, 125, 60);
 color: 'white';</string>
        </property>
@@ -207,7 +216,7 @@ color: 'white';</string>
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 192pt 'Arial';
+        <string notr="true">font: 128pt 'Arial';
 background-color: rgb(225, 225, 0);
 color: 'white';</string>
        </property>
@@ -234,7 +243,7 @@ color: 'white';</string>
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 192pt 'Arial';
+        <string notr="true">font: 128pt 'Arial';
 background-color: rgb(200, 0, 0);
 color: 'white';</string>
        </property>
@@ -315,7 +324,7 @@ color: 'white';</string>
         <string notr="true">font: 192pt 'Consolas';</string>
        </property>
        <property name="text">
-        <string>00:00</string>
+        <string>5:00</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
