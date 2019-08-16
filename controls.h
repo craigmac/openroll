@@ -6,6 +6,7 @@
 #include <QTimer>
 #include <QCloseEvent>
 #include <QtMultimedia/QMediaPlayer>
+#include <QMap>
 #include "scoreboard.h"
 
 namespace Ui {
@@ -64,13 +65,13 @@ private slots:
 
     // Actions
     void modify_points(QLabel *label, int amount);
-    void stopClock();
     void updateClock();
     void playSound();
     void disableControls();
     void enableControls();
     void updateDisplay();
     QString calcNewTimeString();
+    void resetMatchStates();
 
 private:
     Ui::Controls *ui;
@@ -98,7 +99,7 @@ private:
     QUrl m_defaultSound = QUrl("qrc://sounds/airhorn.wav");
 
     // Used to return division time from dropdown index
-    std::map<int, int> divisionIdxToTimeMap;
+    QMap<int, int> divisionIdxToTimeMap;
 
 signals:
     void competitor1PointsChanged(int value);

@@ -23,7 +23,6 @@ Controls::Controls(QWidget *parent) :
     board->setWindowTitle("Openroll - Scoreboard - " + Controls::s_VERSION);
     board->show();
 
-    std::map<int, int> divisionIdxToTimeMap;
     divisionIdxToTimeMap[0] = 120;
     divisionIdxToTimeMap[1] = 120;
     divisionIdxToTimeMap[2] = 120;
@@ -119,11 +118,6 @@ void Controls::modify_points(QLabel *label, int amount)
     int oldValue = label->text().toInt();
     int newValue = oldValue + amount < 0 ? 0 : oldValue + amount;
     label->setText(QString::number(newValue));
-}
-
-void Controls::stopClock()
-{
-
 }
 
 QString Controls::calcNewTimeString()
@@ -489,6 +483,9 @@ void Controls::on_playPauseButton_pressed()
 
 void Controls::on_resetButton_pressed()
 {
+    qDebug() << "------------------------------------------";
+    qDebug() << "Controls::on_resetButton_pressed() -- in.";
+    qDebug() << "------------------------------------------";
     ui->c1NameLabel->setText("Competitor 1");
     ui->c1PointsLabel->setText("0");
     ui->c1AdvantagesLabel->setText("0");
@@ -512,10 +509,33 @@ void Controls::on_resetButton_pressed()
      * than requiring user to change those each time they hit reset.
      */
     totalTime = divisionIdxToTimeMap[ui->divisionComboBox->currentIndex()];
+
+    qDebug() << "Contents of divisionIdxToTimeMap: " << divisionIdxToTimeMap;
+
     clockMinutes = totalTime / 60;
     clockSeconds = totalTime % 60;
 
-    // now emit that match has been fully reset
+    qDebug() << "Using totalTime: " << totalTime;
+    qDebug() << "Using clockMinutes: " << clockMinutes;
+    qDebug() << "Using clockSeconds: " << clockSeconds;
+
+    // require updating display here to show reset values
+    updateDisplay();
+
+    // Update match states
+    resetMatchStates();
+
+    qDebug() << "------------------------------------------";
+    qDebug() << "Controls::on_resetButton_pressed() -- out.";
+    qDebug() << "------------------------------------------";
+}
+
+void Controls::resetMatchStates()
+{
+    matchStarted = false;
+    clockRunning = false;
+    clockPaused = false;
+    matchDone = false;
     emit matchReset();
 }
 
