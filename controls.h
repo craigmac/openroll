@@ -62,6 +62,7 @@ private slots:
     // Dropdowns
     void on_divisionComboBox_currentIndexChanged(int index);
     void on_soundComboBox_currentIndexChanged(const QString &sound);
+    void populateFlagDropDowns();
 
     // Actions
     void modify_points(QLabel *label, int amount);
@@ -101,6 +102,9 @@ private:
     // Used to return division time from dropdown index
     QMap<int, int> divisionIdxToTimeMap;
 
+    // Maps country display name to icon in qrc file
+    QMap<QString, QString> countryToResourceMap;
+
 signals:
     void competitor1PointsChanged(int value);
     void competitor1AdvantagesChanged(int value);
@@ -128,8 +132,6 @@ signals:
     void beltUpdated(QString belt);
     void logoUpdated(QString filename);
 
-    // TODO: populate flag dropdown for c1 programmatically
-    // TODO: populate flag dropdown for c2 programmatically
 
     // TODO: c1 and c2 Flag changed signals hook up
     void c1FlagChanged(QString flagpath);

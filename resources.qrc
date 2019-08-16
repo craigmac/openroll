@@ -1,201 +1,201 @@
 <RCC>
     <qresource prefix="/flags">
-        <file>resources/flags/ad.png</file>
-        <file>resources/flags/ae.png</file>
-        <file>resources/flags/af.png</file>
-        <file>resources/flags/ag.png</file>
-        <file>resources/flags/al.png</file>
-        <file>resources/flags/am.png</file>
-        <file>resources/flags/ao.png</file>
-        <file>resources/flags/ar.png</file>
-        <file>resources/flags/at.png</file>
-        <file>resources/flags/au.png</file>
-        <file>resources/flags/az.png</file>
-        <file>resources/flags/ba.png</file>
-        <file>resources/flags/bb.png</file>
-        <file>resources/flags/bd.png</file>
-        <file>resources/flags/be.png</file>
-        <file>resources/flags/bf.png</file>
-        <file>resources/flags/bg.png</file>
-        <file>resources/flags/bh.png</file>
-        <file>resources/flags/bi.png</file>
-        <file>resources/flags/bj.png</file>
-        <file>resources/flags/bn.png</file>
-        <file>resources/flags/bo.png</file>
-        <file>resources/flags/br.png</file>
-        <file>resources/flags/bs.png</file>
-        <file>resources/flags/bt.png</file>
-        <file>resources/flags/bw.png</file>
-        <file>resources/flags/by.png</file>
-        <file>resources/flags/bz.png</file>
-        <file>resources/flags/ca.png</file>
-        <file>resources/flags/cd.png</file>
-        <file>resources/flags/cf.png</file>
-        <file>resources/flags/cg.png</file>
-        <file>resources/flags/ch.png</file>
-        <file>resources/flags/ci.png</file>
-        <file>resources/flags/cl.png</file>
-        <file>resources/flags/cm.png</file>
-        <file>resources/flags/cn.png</file>
-        <file>resources/flags/co.png</file>
-        <file>resources/flags/cr.png</file>
-        <file>resources/flags/cu.png</file>
-        <file>resources/flags/cv.png</file>
-        <file>resources/flags/cy.png</file>
-        <file>resources/flags/cz.png</file>
-        <file>resources/flags/de.png</file>
-        <file>resources/flags/dj.png</file>
-        <file>resources/flags/dk.png</file>
-        <file>resources/flags/dm.png</file>
-        <file>resources/flags/do.png</file>
-        <file>resources/flags/dz.png</file>
-        <file>resources/flags/ec.png</file>
-        <file>resources/flags/ee.png</file>
-        <file>resources/flags/eg.png</file>
-        <file>resources/flags/eh.png</file>
-        <file>resources/flags/er.png</file>
-        <file>resources/flags/es.png</file>
-        <file>resources/flags/et.png</file>
-        <file>resources/flags/fi.png</file>
-        <file>resources/flags/fj.png</file>
-        <file>resources/flags/fm.png</file>
-        <file>resources/flags/fr.png</file>
-        <file>resources/flags/ga.png</file>
-        <file>resources/flags/gb.png</file>
-        <file>resources/flags/gd.png</file>
-        <file>resources/flags/ge.png</file>
-        <file>resources/flags/gh.png</file>
-        <file>resources/flags/gm.png</file>
-        <file>resources/flags/gn.png</file>
-        <file>resources/flags/gq.png</file>
-        <file>resources/flags/gr.png</file>
-        <file>resources/flags/gt.png</file>
-        <file>resources/flags/gw.png</file>
-        <file>resources/flags/gy.png</file>
-        <file>resources/flags/hn.png</file>
-        <file>resources/flags/hr.png</file>
-        <file>resources/flags/ht.png</file>
-        <file>resources/flags/hu.png</file>
-        <file>resources/flags/id.png</file>
-        <file>resources/flags/ie.png</file>
-        <file>resources/flags/il.png</file>
-        <file>resources/flags/in.png</file>
-        <file>resources/flags/iq.png</file>
-        <file>resources/flags/ir.png</file>
-        <file>resources/flags/is.png</file>
-        <file>resources/flags/it.png</file>
-        <file>resources/flags/jm.png</file>
-        <file>resources/flags/jo.png</file>
-        <file>resources/flags/jp.png</file>
-        <file>resources/flags/ke.png</file>
-        <file>resources/flags/kg.png</file>
-        <file>resources/flags/kh.png</file>
-        <file>resources/flags/ki.png</file>
-        <file>resources/flags/km.png</file>
-        <file>resources/flags/kn.png</file>
-        <file>resources/flags/kp.png</file>
-        <file>resources/flags/kr.png</file>
-        <file>resources/flags/ks.png</file>
-        <file>resources/flags/kw.png</file>
-        <file>resources/flags/kz.png</file>
-        <file>resources/flags/la.png</file>
-        <file>resources/flags/lb.png</file>
-        <file>resources/flags/lc.png</file>
-        <file>resources/flags/li.png</file>
-        <file>resources/flags/lk.png</file>
-        <file>resources/flags/lr.png</file>
-        <file>resources/flags/ls.png</file>
-        <file>resources/flags/lt.png</file>
-        <file>resources/flags/lu.png</file>
-        <file>resources/flags/lv.png</file>
-        <file>resources/flags/ly.png</file>
-        <file>resources/flags/ma.png</file>
-        <file>resources/flags/mc.png</file>
-        <file>resources/flags/md.png</file>
-        <file>resources/flags/me.png</file>
-        <file>resources/flags/mg.png</file>
-        <file>resources/flags/mh.png</file>
-        <file>resources/flags/mk.png</file>
-        <file>resources/flags/ml.png</file>
-        <file>resources/flags/mm.png</file>
-        <file>resources/flags/mn.png</file>
-        <file>resources/flags/mr.png</file>
-        <file>resources/flags/mt.png</file>
-        <file>resources/flags/mu.png</file>
-        <file>resources/flags/mv.png</file>
-        <file>resources/flags/mw.png</file>
-        <file>resources/flags/mx.png</file>
-        <file>resources/flags/my.png</file>
-        <file>resources/flags/mz.png</file>
-        <file>resources/flags/na.png</file>
-        <file>resources/flags/ne.png</file>
-        <file>resources/flags/ng.png</file>
-        <file>resources/flags/ni.png</file>
-        <file>resources/flags/nl.png</file>
-        <file>resources/flags/no.png</file>
-        <file>resources/flags/np.png</file>
-        <file>resources/flags/nr.png</file>
-        <file>resources/flags/nz.png</file>
-        <file>resources/flags/om.png</file>
-        <file>resources/flags/pa.png</file>
-        <file>resources/flags/pe.png</file>
-        <file>resources/flags/pg.png</file>
-        <file>resources/flags/ph.png</file>
-        <file>resources/flags/pk.png</file>
-        <file>resources/flags/pl.png</file>
-        <file>resources/flags/pt.png</file>
-        <file>resources/flags/pw.png</file>
-        <file>resources/flags/py.png</file>
-        <file>resources/flags/qa.png</file>
-        <file>resources/flags/ro.png</file>
-        <file>resources/flags/rs.png</file>
-        <file>resources/flags/ru.png</file>
-        <file>resources/flags/rw.png</file>
-        <file>resources/flags/sa.png</file>
-        <file>resources/flags/sb.png</file>
-        <file>resources/flags/sc.png</file>
-        <file>resources/flags/sd.png</file>
-        <file>resources/flags/se.png</file>
-        <file>resources/flags/sg.png</file>
-        <file>resources/flags/si.png</file>
-        <file>resources/flags/sk.png</file>
-        <file>resources/flags/sl.png</file>
-        <file>resources/flags/sm.png</file>
-        <file>resources/flags/sn.png</file>
-        <file>resources/flags/so.png</file>
-        <file>resources/flags/sr.png</file>
-        <file>resources/flags/st.png</file>
-        <file>resources/flags/sv.png</file>
-        <file>resources/flags/sy.png</file>
-        <file>resources/flags/sz.png</file>
-        <file>resources/flags/td.png</file>
-        <file>resources/flags/tg.png</file>
-        <file>resources/flags/th.png</file>
-        <file>resources/flags/tj.png</file>
-        <file>resources/flags/tl.png</file>
-        <file>resources/flags/tm.png</file>
-        <file>resources/flags/tn.png</file>
-        <file>resources/flags/to.png</file>
-        <file>resources/flags/tr.png</file>
-        <file>resources/flags/tt.png</file>
-        <file>resources/flags/tv.png</file>
-        <file>resources/flags/tw.png</file>
-        <file>resources/flags/tz.png</file>
-        <file>resources/flags/ua.png</file>
-        <file>resources/flags/ug.png</file>
-        <file>resources/flags/us.png</file>
-        <file>resources/flags/uy.png</file>
-        <file>resources/flags/uz.png</file>
-        <file>resources/flags/va.png</file>
-        <file>resources/flags/vc.png</file>
-        <file>resources/flags/ve.png</file>
-        <file>resources/flags/vn.png</file>
-        <file>resources/flags/vu.png</file>
-        <file>resources/flags/ws.png</file>
-        <file>resources/flags/ye.png</file>
-        <file>resources/flags/za.png</file>
-        <file>resources/flags/zm.png</file>
-        <file>resources/flags/zw.png</file>
+        <file alias="ad">resources/flags/ad.png</file>
+        <file alias="ae">resources/flags/ae.png</file>
+        <file alias="af">resources/flags/af.png</file>
+        <file alias="ag">resources/flags/ag.png</file>
+        <file alias="al">resources/flags/al.png</file>
+        <file alias="am">resources/flags/am.png</file>
+        <file alias="ao">resources/flags/ao.png</file>
+        <file alias="ar">resources/flags/ar.png</file>
+        <file alias="at">resources/flags/at.png</file>
+        <file alias="au">resources/flags/au.png</file>
+        <file alias="az">resources/flags/az.png</file>
+        <file alias="ba">resources/flags/ba.png</file>
+        <file alias="bb">resources/flags/bb.png</file>
+        <file alias="bd">resources/flags/bd.png</file>
+        <file alias="be">resources/flags/be.png</file>
+        <file alias="bf">resources/flags/bf.png</file>
+        <file alias="bg">resources/flags/bg.png</file>
+        <file alias="bh">resources/flags/bh.png</file>
+        <file alias="bi">resources/flags/bi.png</file>
+        <file alias="bj">resources/flags/bj.png</file>
+        <file alias="bn">resources/flags/bn.png</file>
+        <file alias="bo">resources/flags/bo.png</file>
+        <file alias="br">resources/flags/br.png</file>
+        <file alias="bs">resources/flags/bs.png</file>
+        <file alias="bt">resources/flags/bt.png</file>
+        <file alias="bw">resources/flags/bw.png</file>
+        <file alias="by">resources/flags/by.png</file>
+        <file alias="bz">resources/flags/bz.png</file>
+        <file alias="ca">resources/flags/ca.png</file>
+        <file alias="cd">resources/flags/cd.png</file>
+        <file alias="cf">resources/flags/cf.png</file>
+        <file alias="cg">resources/flags/cg.png</file>
+        <file alias="ch">resources/flags/ch.png</file>
+        <file alias="ci">resources/flags/ci.png</file>
+        <file alias="cl">resources/flags/cl.png</file>
+        <file alias="cm">resources/flags/cm.png</file>
+        <file alias="cn">resources/flags/cn.png</file>
+        <file alias="co">resources/flags/co.png</file>
+        <file alias="cr">resources/flags/cr.png</file>
+        <file alias="cu">resources/flags/cu.png</file>
+        <file alias="cv">resources/flags/cv.png</file>
+        <file alias="cy">resources/flags/cy.png</file>
+        <file alias="cz">resources/flags/cz.png</file>
+        <file alias="de">resources/flags/de.png</file>
+        <file alias="dj">resources/flags/dj.png</file>
+        <file alias="dk">resources/flags/dk.png</file>
+        <file alias="dm">resources/flags/dm.png</file>
+        <file alias="do">resources/flags/do.png</file>
+        <file alias="dz">resources/flags/dz.png</file>
+        <file alias="ec">resources/flags/ec.png</file>
+        <file alias="ee">resources/flags/ee.png</file>
+        <file alias="eg">resources/flags/eg.png</file>
+        <file alias="eh">resources/flags/eh.png</file>
+        <file alias="er">resources/flags/er.png</file>
+        <file alias="es">resources/flags/es.png</file>
+        <file alias="et">resources/flags/et.png</file>
+        <file alias="fi">resources/flags/fi.png</file>
+        <file alias="fj">resources/flags/fj.png</file>
+        <file alias="fm">resources/flags/fm.png</file>
+        <file alias="fr">resources/flags/fr.png</file>
+        <file alias="ga">resources/flags/ga.png</file>
+        <file alias="gb">resources/flags/gb.png</file>
+        <file alias="gd">resources/flags/gd.png</file>
+        <file alias="ge">resources/flags/ge.png</file>
+        <file alias="gh">resources/flags/gh.png</file>
+        <file alias="gm">resources/flags/gm.png</file>
+        <file alias="gn">resources/flags/gn.png</file>
+        <file alias="gq">resources/flags/gq.png</file>
+        <file alias="gr">resources/flags/gr.png</file>
+        <file alias="gt">resources/flags/gt.png</file>
+        <file alias="gw">resources/flags/gw.png</file>
+        <file alias="gy">resources/flags/gy.png</file>
+        <file alias="hn">resources/flags/hn.png</file>
+        <file alias="hr">resources/flags/hr.png</file>
+        <file alias="ht">resources/flags/ht.png</file>
+        <file alias="hu">resources/flags/hu.png</file>
+        <file alias="id">resources/flags/id.png</file>
+        <file alias="ie">resources/flags/ie.png</file>
+        <file alias="il">resources/flags/il.png</file>
+        <file alias="in">resources/flags/in.png</file>
+        <file alias="iq">resources/flags/iq.png</file>
+        <file alias="ir">resources/flags/ir.png</file>
+        <file alias="is">resources/flags/is.png</file>
+        <file alias="it">resources/flags/it.png</file>
+        <file alias="jm">resources/flags/jm.png</file>
+        <file alias="jo">resources/flags/jo.png</file>
+        <file alias="jp">resources/flags/jp.png</file>
+        <file alias="ke">resources/flags/ke.png</file>
+        <file alias="kg">resources/flags/kg.png</file>
+        <file alias="kh">resources/flags/kh.png</file>
+        <file alias="ki">resources/flags/ki.png</file>
+        <file alias="km">resources/flags/km.png</file>
+        <file alias="kn">resources/flags/kn.png</file>
+        <file alias="kp">resources/flags/kp.png</file>
+        <file alias="kr">resources/flags/kr.png</file>
+        <file alias="ks">resources/flags/ks.png</file>
+        <file alias="kw">resources/flags/kw.png</file>
+        <file alias="kz">resources/flags/kz.png</file>
+        <file alias="la">resources/flags/la.png</file>
+        <file alias="lb">resources/flags/lb.png</file>
+        <file alias="lc">resources/flags/lc.png</file>
+        <file alias="li">resources/flags/li.png</file>
+        <file alias="lk">resources/flags/lk.png</file>
+        <file alias="lr">resources/flags/lr.png</file>
+        <file alias="ls">resources/flags/ls.png</file>
+        <file alias="lt">resources/flags/lt.png</file>
+        <file alias="lu">resources/flags/lu.png</file>
+        <file alias="lv">resources/flags/lv.png</file>
+        <file alias="ly">resources/flags/ly.png</file>
+        <file alias="ma">resources/flags/ma.png</file>
+        <file alias="mc">resources/flags/mc.png</file>
+        <file alias="md">resources/flags/md.png</file>
+        <file alias="me">resources/flags/me.png</file>
+        <file alias="mg">resources/flags/mg.png</file>
+        <file alias="mh">resources/flags/mh.png</file>
+        <file alias="mk">resources/flags/mk.png</file>
+        <file alias="ml">resources/flags/ml.png</file>
+        <file alias="mm">resources/flags/mm.png</file>
+        <file alias="mn">resources/flags/mn.png</file>
+        <file alias="mr">resources/flags/mr.png</file>
+        <file alias="mt">resources/flags/mt.png</file>
+        <file alias="mu">resources/flags/mu.png</file>
+        <file alias="mv">resources/flags/mv.png</file>
+        <file alias="mw">resources/flags/mw.png</file>
+        <file alias="mx">resources/flags/mx.png</file>
+        <file alias="my">resources/flags/my.png</file>
+        <file alias="mz">resources/flags/mz.png</file>
+        <file alias="na">resources/flags/na.png</file>
+        <file alias="ne">resources/flags/ne.png</file>
+        <file alias="ng">resources/flags/ng.png</file>
+        <file alias="ni">resources/flags/ni.png</file>
+        <file alias="nl">resources/flags/nl.png</file>
+        <file alias="no">resources/flags/no.png</file>
+        <file alias="np">resources/flags/np.png</file>
+        <file alias="nr">resources/flags/nr.png</file>
+        <file alias="nz">resources/flags/nz.png</file>
+        <file alias="om">resources/flags/om.png</file>
+        <file alias="pa">resources/flags/pa.png</file>
+        <file alias="pe">resources/flags/pe.png</file>
+        <file alias="pg">resources/flags/pg.png</file>
+        <file alias="ph">resources/flags/ph.png</file>
+        <file alias="pk">resources/flags/pk.png</file>
+        <file alias="pl">resources/flags/pl.png</file>
+        <file alias="pt">resources/flags/pt.png</file>
+        <file alias="pw">resources/flags/pw.png</file>
+        <file alias="py">resources/flags/py.png</file>
+        <file alias="qa">resources/flags/qa.png</file>
+        <file alias="ro">resources/flags/ro.png</file>
+        <file alias="rs">resources/flags/rs.png</file>
+        <file alias="ru">resources/flags/ru.png</file>
+        <file alias="rw">resources/flags/rw.png</file>
+        <file alias="sa">resources/flags/sa.png</file>
+        <file alias="sb">resources/flags/sb.png</file>
+        <file alias="sc">resources/flags/sc.png</file>
+        <file alias="sd">resources/flags/sd.png</file>
+        <file alias="se">resources/flags/se.png</file>
+        <file alias="sg">resources/flags/sg.png</file>
+        <file alias="si">resources/flags/si.png</file>
+        <file alias="sk">resources/flags/sk.png</file>
+        <file alias="sl">resources/flags/sl.png</file>
+        <file alias="sm">resources/flags/sm.png</file>
+        <file alias="sn">resources/flags/sn.png</file>
+        <file alias="so">resources/flags/so.png</file>
+        <file alias="sr">resources/flags/sr.png</file>
+        <file alias="st">resources/flags/st.png</file>
+        <file alias="sv">resources/flags/sv.png</file>
+        <file alias="sy">resources/flags/sy.png</file>
+        <file alias="sz">resources/flags/sz.png</file>
+        <file alias="td">resources/flags/td.png</file>
+        <file alias="tg">resources/flags/tg.png</file>
+        <file alias="th">resources/flags/th.png</file>
+        <file alias="tj">resources/flags/tj.png</file>
+        <file alias="tl">resources/flags/tl.png</file>
+        <file alias="tm">resources/flags/tm.png</file>
+        <file alias="tn">resources/flags/tn.png</file>
+        <file alias="to">resources/flags/to.png</file>
+        <file alias="tr">resources/flags/tr.png</file>
+        <file alias="tt">resources/flags/tt.png</file>
+        <file alias="tv">resources/flags/tv.png</file>
+        <file alias="tw">resources/flags/tw.png</file>
+        <file alias="tz">resources/flags/tz.png</file>
+        <file alias="ua">resources/flags/ua.png</file>
+        <file alias="ug">resources/flags/ug.png</file>
+        <file alias="us">resources/flags/us.png</file>
+        <file alias="uy">resources/flags/uy.png</file>
+        <file alias="uz">resources/flags/uz.png</file>
+        <file alias="va">resources/flags/va.png</file>
+        <file alias="vc">resources/flags/vc.png</file>
+        <file alias="ve">resources/flags/ve.png</file>
+        <file alias="vn">resources/flags/vn.png</file>
+        <file alias="vu">resources/flags/vu.png</file>
+        <file alias="ws">resources/flags/ws.png</file>
+        <file alias="ye">resources/flags/ye.png</file>
+        <file alias="za">resources/flags/za.png</file>
+        <file alias="zm">resources/flags/zm.png</file>
+        <file alias="zw">resources/flags/zw.png</file>
     </qresource>
     <qresource prefix="/icons">
         <file alias="icon">resources/icons/Icon.ico</file>
