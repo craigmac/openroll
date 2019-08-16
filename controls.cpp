@@ -1,6 +1,7 @@
 #include "controls.h"
 #include "scoreboard.h"
 #include "ui_controls.h"
+#include <map>
 #include <QDebug>
 #include <QTime>
 #include <QtWidgets>
@@ -21,6 +22,37 @@ Controls::Controls(QWidget *parent) :
     Scoreboard *board = new Scoreboard(this, Qt::WindowFlags(Qt::Window));
     board->setWindowTitle("Openroll - Scoreboard - " + Controls::s_VERSION);
     board->show();
+
+    std::map<int, int> divisionIdxToTimeMap;
+    divisionIdxToTimeMap[0] = 120;
+    divisionIdxToTimeMap[1] = 120;
+    divisionIdxToTimeMap[2] = 120;
+    divisionIdxToTimeMap[3] = 180;
+    divisionIdxToTimeMap[4] = 180;
+    divisionIdxToTimeMap[5] = 180;
+    divisionIdxToTimeMap[6] = 240;
+    divisionIdxToTimeMap[7] = 240;
+    divisionIdxToTimeMap[8] = 240;
+    divisionIdxToTimeMap[9] = 240;
+    divisionIdxToTimeMap[10] = 240;
+    divisionIdxToTimeMap[11] = 240;
+    divisionIdxToTimeMap[12] = 300;
+    divisionIdxToTimeMap[13] = 300;
+    divisionIdxToTimeMap[14] = 300;
+    divisionIdxToTimeMap[15] = 360;
+    divisionIdxToTimeMap[16] = 420;
+    divisionIdxToTimeMap[17] = 480;
+    divisionIdxToTimeMap[18] = 600;
+    divisionIdxToTimeMap[19] = 300;
+    divisionIdxToTimeMap[20] = 300;
+    divisionIdxToTimeMap[21] = 360;
+    divisionIdxToTimeMap[22] = 360;
+    divisionIdxToTimeMap[23] = 360;
+    divisionIdxToTimeMap[24] = 300;
+    divisionIdxToTimeMap[25] = 300;
+    divisionIdxToTimeMap[26] = 300;
+    divisionIdxToTimeMap[27] = 300;
+    divisionIdxToTimeMap[28] = 300;
 
     qDebug() << "totalTime is: " << totalTime;
     qDebug() << "clockMinutes default is: " << clockMinutes;
@@ -94,25 +126,10 @@ void Controls::stopClock()
 
 }
 
-void Controls::updateClock()
+QString Controls::calcNewTimeString()
 {
-    if (matchDone) {
-        return; // stop here
-    }
-
-    if (totalTime <= 0) {
-        Controls::playSound();
-        matchDone = true;
-        return; // stop here
-    }
-
-    if (matchStarted && clockRunning) {
-        totalTime--;
-    }
-
-    // Update display even if clockPaused
-    clockMinutes = totalTime / 60;  // e.g. 5
-    clockSeconds = totalTime % 60;  // e.g. 0
+    clockMinutes = totalTime / 60;
+    clockSeconds = totalTime % 60;
 
     QString minutes = QString::number(clockMinutes);
     QString seconds = QString::number(clockSeconds);
@@ -123,20 +140,46 @@ void Controls::updateClock()
     }
 
     QString newTime = minutes + ":" + seconds;
+    return newTime;
+}
 
-    // Update labels
-    QLabel *timeLabel = ui->timerLabel;
-    timeLabel->setText(newTime);
+void Controls::updateDisplay()
+{
+    QString newTime = calcNewTimeString();
+    // Update label
+    ui->timerLabel->setText(newTime);
 
+    // emit signals saying what we did
     emit timerUpdated(newTime);
     emit divisionUpdated(m_currentDivision);
     emit beltUpdated(m_currentBelt);
+}
 
-    /*
-     *  board->updateTime(newTime);
-     *  board->updateDivisionLabel(m_currentDivision);
-     *  board->updateBeltLabel(m_currentBelt);
-     */
+void Controls::updateClock()
+{
+    if (matchDone) {
+        qDebug() << "updateClock(): matchDone = true condition hit.";
+        /* GOTCHA: just update the display and stop here, this handles
+         * case where match was started and clock was ticking and
+         * user hits reset button without hitting pause first.
+         */
+        updateDisplay();
+        return;
+    }
+
+    if (totalTime <= 0) {
+        qDebug() << "updateClock(): totalTime <=0 condition hit.";
+        Controls::playSound();
+        matchDone = true;
+        return; // stop here
+    }
+
+    if (matchStarted && clockRunning) {
+        qDebug() << "updateClock(): matchStarted && clockRunning = true condition hit.";
+        totalTime--;
+        updateDisplay();
+    }
+
 }
 
 void Controls::playSound()
@@ -148,54 +191,16 @@ void Controls::playSound()
 
 }
 
+// TODO: combine disable/enable to single flip state call
 void Controls::disableControls()
 {
-    ui->c1Add2Button->setDisabled(true);
-    ui->c1Add3Button->setDisabled(true);
-    ui->c1Add4Button->setDisabled(true);
-    ui->c1AddAButton->setDisabled(true);
-    ui->c1AddPButton->setDisabled(true);
-    ui->c1Del2Button->setDisabled(true);
-    ui->c1Del3Button->setDisabled(true);
-    ui->c1Del4Button->setDisabled(true);
-    ui->c1DelAButton->setDisabled(true);
-    ui->c1DelPButton->setDisabled(true);
-
-    ui->c2Add2Button->setDisabled(true);
-    ui->c2Add3Button->setDisabled(true);
-    ui->c2Add4Button->setDisabled(true);
-    ui->c2AddAButton->setDisabled(true);
-    ui->c2AddPButton->setDisabled(true);
-    ui->c2Del2Button->setDisabled(true);
-    ui->c2Del3Button->setDisabled(true);
-    ui->c2Del4Button->setDisabled(true);
-    ui->c2DelAButton->setDisabled(true);
-    ui->c2DelPButton->setDisabled(true);
+    ui->divisionComboBox->setDisabled(true);
 }
 
 void Controls::enableControls()
 {
-    ui->c1Add2Button->setDisabled(false);
-    ui->c1Add3Button->setDisabled(false);
-    ui->c1Add4Button->setDisabled(false);
-    ui->c1AddAButton->setDisabled(false);
-    ui->c1AddPButton->setDisabled(false);
-    ui->c1Del2Button->setDisabled(false);
-    ui->c1Del3Button->setDisabled(false);
-    ui->c1Del4Button->setDisabled(false);
-    ui->c1DelAButton->setDisabled(false);
-    ui->c1DelPButton->setDisabled(false);
-
-    ui->c2Add2Button->setDisabled(false);
-    ui->c2Add3Button->setDisabled(false);
-    ui->c2Add4Button->setDisabled(false);
-    ui->c2AddAButton->setDisabled(false);
-    ui->c2AddPButton->setDisabled(false);
-    ui->c2Del2Button->setDisabled(false);
-    ui->c2Del3Button->setDisabled(false);
-    ui->c2Del4Button->setDisabled(false);
-    ui->c2DelAButton->setDisabled(false);
-    ui->c2DelPButton->setDisabled(false);
+    ui->playPauseButton->setDisabled(false);
+    ui->divisionComboBox->setDisabled(false);
 }
 
 void Controls::closeEvent(QCloseEvent *event)
@@ -446,12 +451,15 @@ void Controls::on_playPauseButton_pressed()
                 "clockPaused: " << clockPaused;
 
     if (!matchStarted) {
+        /* current image is play icon, flip to pause icon and
+         * disable any controls we don't want user pressing
+         * after match has officially started.
+         */
         matchStarted = true;
         clockRunning = true;
         clockPaused = false;
-        QIcon pauseIcon = QIcon(":/images/pause.png");
-        ui->playPauseButton->setIcon(pauseIcon);
-        ui->divisionComboBox->setDisabled(true);
+        ui->playPauseButton->setIcon(QIcon(":/ui/pause"));
+        disableControls();
     }
     else {
         /* matchStarted is true, meaning user pressed play button
@@ -460,16 +468,14 @@ void Controls::on_playPauseButton_pressed()
          * hitting this 'else' path until the state of the match is
          * flipped to matchStarted = false
          */
-        if (clockPaused) { // current image is 'play' icon
-            QIcon pauseIcon = QIcon(":/images/pause.png");
-            ui->playPauseButton->setIcon(pauseIcon);
+        if (clockPaused) { // current image is 'play' icon, flip to pause icon
+            ui->playPauseButton->setIcon(QIcon(":/ui/pause"));
             clockPaused = false;
             clockRunning = true;
         }
         else if (clockRunning) { // current image is 'pause' icon
             // stop clock and flip image to 'play'
-            QIcon playIcon = QIcon(":/images/play.png");
-            ui->playPauseButton->setIcon(playIcon);
+            ui->playPauseButton->setIcon(QIcon(":/ui/play"));
             clockRunning = false;
             clockPaused = true;
         }
@@ -495,10 +501,21 @@ void Controls::on_resetButton_pressed()
     ui->c2PenaltiesLabel->setText("0");
     ui->c2PointsLabel->setText("0");
 
-    // TODO: reset timings as well here
-    // DEV: we want to reset names and scores and time but keep same division and same division time
-    // and sound and logo settings.
+    ui->playPauseButton->setIcon(QIcon(":/ui/play"));
 
+    // re-enable any controls that were disabled during running of match timer
+    enableControls();
+
+    // TODO: reset timings as well here
+    /* Give current index to our map to get total seconds for reset value,
+     * because we to keep the same division and timings when reset is pressed rather
+     * than requiring user to change those each time they hit reset.
+     */
+    totalTime = divisionIdxToTimeMap[ui->divisionComboBox->currentIndex()];
+    clockMinutes = totalTime / 60;
+    clockSeconds = totalTime % 60;
+
+    // now emit that match has been fully reset
     emit matchReset();
 }
 

@@ -69,6 +69,8 @@ private slots:
     void playSound();
     void disableControls();
     void enableControls();
+    void updateDisplay();
+    QString calcNewTimeString();
 
 private:
     Ui::Controls *ui;
@@ -94,6 +96,9 @@ private:
     QTimer *timer;
     QMediaPlayer *m_player;
     QUrl m_defaultSound = QUrl("qrc://sounds/airhorn.wav");
+
+    // Used to return division time from dropdown index
+    std::map<int, int> divisionIdxToTimeMap;
 
 signals:
     void competitor1PointsChanged(int value);
