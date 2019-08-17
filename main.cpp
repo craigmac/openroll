@@ -10,7 +10,10 @@ const QString Controls::s_VERSION = "2.0.0";
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    //flags = Qt::Window | Qt::WindowStaysOnTopHint;
     Controls w;
+    Qt::WindowFlags flags(Qt::Window | Qt::WindowStaysOnTopHint);
+    w.setWindowFlags(flags);
     w.show();
 
     return a.exec();
