@@ -41,7 +41,8 @@ public slots:
 
     void setLogo(QString logo);
     void resetScores();
-    // TODO: make space for c1 and c2 flag boxes
+    // TODO: UI: manually add all entries to UI to avoid dynamically
+    // loading at runtime
     // TODO: setC1Flag(QString flagpath)
     // TODO: setC2Flag(QString flagpath)
 
