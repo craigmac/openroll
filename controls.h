@@ -49,7 +49,6 @@ private slots:
     void on_c2DelAButton_pressed();
     void on_c2AddPButton_pressed();
     void on_c2DelPButton_pressed();
-    void on_c2FlagComboBox_currentIndexChanged(int index);
     void on_c2LineEdit_textEdited(const QString &arg1);
 
     // General Buttons
@@ -61,12 +60,12 @@ private slots:
     // Dropdowns
     void on_divisionComboBox_currentIndexChanged(int index);
     void on_soundComboBox_currentIndexChanged(const QString &sound);
-    void populateFlagDropDowns();
     void on_c1FlagComboBox_currentIndexChanged(const QString &flag);
     void on_c2FlagComboBox_currentIndexChanged(const QString &flag);
 
     // Actions
     void modify_points(QLabel *label, int amount);
+    void populateFlagDropDowns();
     void updateClock();
     void playSound();
     void disableControls();
@@ -107,36 +106,27 @@ private:
     QMap<QString, QString> countryToResourceMap;
 
 signals:
+    // TODO: refactor to make these signals uniformly named
     void competitor1PointsChanged(int value);
     void competitor1AdvantagesChanged(int value);
     void competitor1PenaltiesChanged(int value);
+    void competitor1NameChanged(QString name);
+    void c1FlagChanged(QString flagpath);
 
     void competitor2PointsChanged(int value);
     void competitor2AdvantagesChanged(int value);
     void competitor2PenaltiesChanged(int value);
-
-    void competitor1FlagChanged(int index);
-    void competitor2FlagChanged(int index);
-    void competitor1CustomFlagLoaded(QString flag);
-    void competitor2CustomFlagLoaded(QString flag);
+    void competitor2NameChanged(QString name);
+    void c2FlagChanged(QString flagpath);
 
     //void soundChanged(int index);
-
     void playPauseStateChanged(bool isPaused);
     void matchReset();
-
-    void competitor1NameChanged(QString name);
-    void competitor2NameChanged(QString name);
 
     void timerUpdated(QString time);
     void divisionUpdated(QString division);
     void beltUpdated(QString belt);
     void logoUpdated(QString filename);
-
-
-    // TODO: c1 and c2 Flag changed signals hook up
-    void c1FlagChanged(QString flagpath);
-    void c2FlagChanged(QString flagpath);
 
 protected:
     void closeEvent(QCloseEvent *event) override;

@@ -9,6 +9,12 @@
 #include <QStringList>
 #include <QFileDialog>
 
+// TODO: how to best use DEBUG in Qt to remove qDebug() calls etc?
+// TODO: research better way to use VERSION with cli tools like bump (what string does it look for?)
+// TODO: feature - loading custom sound
+// TODO: menu about popup
+
+
 Controls::Controls(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Controls)
@@ -634,23 +640,29 @@ void Controls::on_loadLogoButton_pressed()
 
 void Controls::on_c1CustomFlagButton_pressed()
 {
-    // TODO: c1 -- pick custom flag to load
-    QString flag = "";
-    emit competitor1CustomFlagLoaded(flag);
+    // TODO: c1 -- load custom logo
+    QString customLogo = QFileDialog::getOpenFileName(this,
+                                        tr("Open Image"), ".",
+                        tr("Image Files (*.png *.jpg *.bmp)"));
+
+    qDebug() << "on_c1CustomFlagButton_pressed(): using customLogo string: " << customLogo;
+
+    if (!customLogo.isEmpty()) {
+        emit c1FlagChanged(customLogo);
+    }
 }
 
 void Controls::on_c2CustomLogoButton_pressed()
 {
-    // TODO: c2 -- load custom logo
-    QString flag = "";
-    emit competitor2CustomFlagLoaded(flag);
-}
+    QString customLogo = QFileDialog::getOpenFileName(this,
+                                        tr("Open Image"), ".",
+                        tr("Image Files (*.png *.jpg *.bmp)"));
 
-void Controls::on_c2FlagComboBox_currentIndexChanged(int index)
-{
-    // TODO: c2 -- pick new flag from dropdown
-    emit competitor2FlagChanged(index);
+    qDebug() << "on_c2CustomFlagButton_pressed(): using customLogo string: " << customLogo;
 
+    if (!customLogo.isEmpty()) {
+        emit c2FlagChanged(customLogo);
+    }
 }
 
 void Controls::on_playPauseButton_pressed()
@@ -907,5 +919,4 @@ void Controls::on_c2FlagComboBox_currentIndexChanged(const QString &flag)
 {
     QString flagpath = countryToResourceMap[flag];
     emit c2FlagChanged(flagpath);
-
 }
