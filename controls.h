@@ -27,7 +27,6 @@ private slots:
     void on_c1Add2Button_pressed();
     void on_c1Del2Button_pressed();
     void on_c1Add3Button_pressed();
-    void on_c1FlagComboBox_currentIndexChanged(int index);
     void on_c1CustomFlagButton_pressed();
     void on_c2CustomLogoButton_pressed();
     void on_c1Del3Button_pressed();
@@ -63,6 +62,8 @@ private slots:
     void on_divisionComboBox_currentIndexChanged(int index);
     void on_soundComboBox_currentIndexChanged(const QString &sound);
     void populateFlagDropDowns();
+    void on_c1FlagComboBox_currentIndexChanged(const QString &flag);
+    void on_c2FlagComboBox_currentIndexChanged(const QString &flag);
 
     // Actions
     void modify_points(QLabel *label, int amount);

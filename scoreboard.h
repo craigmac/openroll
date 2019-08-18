@@ -41,10 +41,12 @@ public slots:
 
     void setLogo(QString logo);
     void resetScores();
-    // TODO: UI: manually add all entries to UI to avoid dynamically
-    // loading at runtime
-    // TODO: setC1Flag(QString flagpath)
-    // TODO: setC2Flag(QString flagpath)
+
+    // TODO: UI: manually add all entries to UI to avoid dynamically loading at runtime
+    // or use QHash instead of QMap?(Faster key lookups but no storage order)
+
+    void setC1Flag(QString flagpath);
+    void setC2Flag(QString flagpath);
 
 private:
     Ui::Scoreboard *ui;

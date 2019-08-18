@@ -109,3 +109,13 @@ void Scoreboard::resetScores()
     ui->comp2_penalties->setText("0");
     ui->comp2_name->setText("Competitor 2");
 }
+
+void Scoreboard::setC1Flag(QString flagpath)
+{
+    ui->c1FlagLabel->setPixmap(flagpath);
+}
+
+void Scoreboard::setC2Flag(QString flagpath)
+{
+   ui->c2FlagLabel->setPixmap(flagpath);
+}

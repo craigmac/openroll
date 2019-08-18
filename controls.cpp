@@ -103,14 +103,15 @@ Controls::Controls(QWidget *parent) :
     connect(this, &Controls::matchReset,
             board, &Scoreboard::resetScores);
 
+    connect(this, &Controls::c1FlagChanged,
+            board, &Scoreboard::setC1Flag);
+
+    connect(this, &Controls::c2FlagChanged,
+            board, &Scoreboard::setC2Flag);
+
     populateFlagDropDowns();
 
     timer->start(1000); // every 1 second
-
-
-    // TEST
-    //ui->c1FlagComboBox->insertItem(0, QIcon(":/flags/ad"), "ad");
-    // TEST
 }
 
 Controls::~Controls()
@@ -631,13 +632,6 @@ void Controls::on_loadLogoButton_pressed()
     }
 }
 
-void Controls::on_c1FlagComboBox_currentIndexChanged(int index)
-{
-    // TODO: c1 -- pick new flag from dropdown
-    emit competitor1FlagChanged(index);
-
-}
-
 void Controls::on_c1CustomFlagButton_pressed()
 {
     // TODO: c1 -- pick custom flag to load
@@ -901,4 +895,17 @@ void Controls::on_c2LineEdit_textEdited(const QString &str)
 void Controls::on_testSoundButton_pressed()
 {
     playSound();
+}
+
+void Controls::on_c1FlagComboBox_currentIndexChanged(const QString &flag)
+{
+    QString flagpath = countryToResourceMap[flag];
+    emit c1FlagChanged(flagpath);
+}
+
+void Controls::on_c2FlagComboBox_currentIndexChanged(const QString &flag)
+{
+    QString flagpath = countryToResourceMap[flag];
+    emit c2FlagChanged(flagpath);
+
 }
