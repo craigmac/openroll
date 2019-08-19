@@ -155,10 +155,11 @@ QString Controls::calcNewTimeString()
 void Controls::updateDisplay()
 {
     QString newTime = calcNewTimeString();
-    // Update label
+
+    // Update label on Controls windows
     ui->timerLabel->setText(newTime);
 
-    // emit signals saying what we did
+    // emit signals saying what we did and/or what should update
     emit timerUpdated(newTime);
     emit divisionUpdated(m_currentDivision);
     emit beltUpdated(m_currentBelt);
@@ -404,6 +405,9 @@ void Controls::on_divisionComboBox_currentIndexChanged(int index)
         totalTime = 5 * 60;
         break;
     };
+
+    // Call here or display won't be updated if match is not running
+    updateDisplay();
 }
 
 void Controls::on_soundComboBox_currentIndexChanged(const QString &sound)
