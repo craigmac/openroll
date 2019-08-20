@@ -1,0 +1,9 @@
+2.0.0alpha:
+* First test public release, to be followed by a beta release
+and then a proper 2.0.0 production release.
+* Installer created
+* You are now able to load a custom logo for either competitor
+* Sound mute/unmute working
+* Choice of default sounds to use for time up buzzer/horn
+* Choice of flags to select for each competitor
+* All of the hundreds of other small improvements from the previous version...

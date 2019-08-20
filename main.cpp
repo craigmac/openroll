@@ -5,16 +5,16 @@
  * require object to access, available to all like a
  * global var. Must be defined outside of main or a function.
  */
-const QString Controls::s_VERSION = "2.0.0";
+const QString Controls::s_VERSION = "2.0.0-alpha";
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    //flags = Qt::Window | Qt::WindowStaysOnTopHint;
-    Controls w;
+    QApplication app(argc, argv);
+    Controls controls;
     Qt::WindowFlags flags(Qt::Window | Qt::WindowStaysOnTopHint);
-    w.setWindowFlags(flags);
-    w.show();
+    controls.setWindowFlags(flags);
+    QObject::connect(&app, &QCoreApplication::aboutToQuit, &controls, &Controls::onAboutToQuit);
+    controls.show();
 
-    return a.exec();
+    return app.exec();
 }

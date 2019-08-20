@@ -44,3 +44,14 @@ FORMS += \
 
 RESOURCES += \
     resources.qrc
+
+DISTFILES += \
+    AUTHORS \
+    CHANGELOG \
+    LICENSES.txt \
+    license.txt
+
+# As per docs, to generate Windows icon for .exe file in Explorer
+RC_ICONS = openroll.ico
+# Same, but for Apple, use osx tool to convert .ico to .icns file first
+# ICON = openroll.icns

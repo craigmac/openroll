@@ -12,8 +12,6 @@
 // TODO: how to best use DEBUG in Qt to remove qDebug() calls etc?
 // TODO: research better way to use VERSION with cli tools like bump (what string does it look for?)
 // TODO: feature - loading custom sound
-// TODO: menu about popup
-
 
 Controls::Controls(QWidget *parent) :
     QMainWindow(parent),
@@ -21,12 +19,11 @@ Controls::Controls(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("Openroll - Controls - " + Controls::s_VERSION);
-    /* Create Scoreboard as a child widget, but pass flags to make it an
-     * independent window, otherwise it will try to draw into the parent
-     * window.
-     */
+
+    // Pass flag to make board an independent window is required or it will draw inside controls window
     Scoreboard *board = new Scoreboard(this, Qt::WindowFlags(Qt::Window));
     board->setWindowTitle("Openroll - Scoreboard - " + Controls::s_VERSION);
+    board->setAttribute(Qt::WA_DeleteOnClose);
     board->show();
 
     // HACK: must be cleaner way to do this....
@@ -112,8 +109,7 @@ Controls::Controls(QWidget *parent) :
     connect(this, &Controls::c1FlagChanged,
             board, &Scoreboard::setC1Flag);
 
-    connect(this, &Controls::c2FlagChanged,
-            board, &Scoreboard::setC2Flag);
+    connect(this, &Controls::c2FlagChanged, board, &Scoreboard::setC2Flag);
 
     populateFlagDropDowns();
 
@@ -122,10 +118,11 @@ Controls::Controls(QWidget *parent) :
 
 Controls::~Controls()
 {
+    qDebug() << "Controls destructor called.";
     delete ui;
-    delete board;
-    delete m_player;
-    delete timer;
+    //    delete board;
+    //    delete m_player;
+    //    delete timer;
 }
 
 void Controls::modify_points(QLabel *label, int amount)
@@ -772,6 +769,16 @@ void Controls::resetMatchStates()
     clockPaused = false;
     matchDone = false;
     emit matchReset();
+}
+
+/* Called when QApplication is about to quit main event loop.
+ * Connects to QCoreApplication::aboutToQuit signal.
+ * Last-second cleanup goes here. Cannot be emitted by user
+ * and no user interaction possible in here.
+ */
+void Controls::onAboutToQuit()
+{
+    qDebug() << "onAboutToQuit called.";
 }
 
 void Controls::on_c1Del3Button_pressed()

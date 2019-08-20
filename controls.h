@@ -22,6 +22,9 @@ public:
     ~Controls() override;
     static const QString s_VERSION;
 
+public slots:
+    void onAboutToQuit();
+
 private slots:
     // Competitor 1 Controls
     void on_c1Add2Button_pressed();
@@ -73,6 +76,7 @@ private slots:
     void updateDisplay();
     QString calcNewTimeString();
     void resetMatchStates();
+
 
 private:
     Ui::Controls *ui;
