@@ -1,0 +1,38 @@
+New Code:
+* Run cpplint over code and fix
+* Adds documentation (style?)
+* Write unit tests
+* Allow loading custom sound file
+*
+
+Bugfix:
+* Fix load up time by removing dynamically population of dropdown,
+put it all in the control.ui file.
+* When app starts pressing test sound doesn't work
+* When you press sound test, the play button gets disabled, don't
+do that.
+
+Refactor:
+* merge disable/enable functions into single function
+* encapsulate match state into an enumeration? e.g.
+    enum matchState {
+        MATCH_STARTED = 0
+        MATCH_STARTED_TIMER_STARTED_TIMER_RUNNING
+        MATCH_STARTED_TIMER_STARTED_TIMER_PAUSED
+        MATCH_STARTED_TIMER_STOPPED };
+Figure out all combinations and switch on these easier rather than doing
+bunch of && conditionals.
+* divisionIdxToTimeMap[] is hacky, must be cleaner way to do that.
+* controls.h : signals are not named uniformly
+* Change all data members to 'm_varname' so they are uniform
+
+
+Non-code tasks:
+* OS X build and installer
+* Research qDebug() and how to rm/optimize in release builds
+* Canadian Grappling Military Championships contact
+* r/qt announce
+* r/opensource announce
+* r/cpp announce
+* linkedin position update: lead developer
+

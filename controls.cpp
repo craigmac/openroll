@@ -9,10 +9,10 @@
 #include <QStringList>
 #include <QFileDialog>
 
-// TODO: how to best use DEBUG in Qt to remove qDebug() calls etc?
-// TODO: research better way to use VERSION with cli tools like bump (what string does it look for?)
-// TODO: feature - loading custom sound
-
+/**
+ * @brief Controls::Controls
+ * @param parent
+ */
 Controls::Controls(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Controls)
@@ -125,6 +125,11 @@ Controls::~Controls()
     //    delete timer;
 }
 
+/**
+ * @brief Controls::modify_points
+ * @param label
+ * @param amount
+ */
 void Controls::modify_points(QLabel *label, int amount)
 {
     int oldValue = label->text().toInt();
@@ -132,6 +137,10 @@ void Controls::modify_points(QLabel *label, int amount)
     label->setText(QString::number(newValue));
 }
 
+/**
+ * @brief Controls::calcNewTimeString
+ * @return QString
+ */
 QString Controls::calcNewTimeString()
 {
     clockMinutes = totalTime / 60;
@@ -149,6 +158,9 @@ QString Controls::calcNewTimeString()
     return newTime;
 }
 
+/**
+ * @brief Controls::updateDisplay
+ */
 void Controls::updateDisplay()
 {
     QString newTime = calcNewTimeString();
@@ -162,6 +174,9 @@ void Controls::updateDisplay()
     emit beltUpdated(m_currentBelt);
 }
 
+/**
+ * @brief Controls::updateClock
+ */
 void Controls::updateClock()
 {
     if (matchDone) {
@@ -189,6 +204,9 @@ void Controls::updateClock()
 
 }
 
+/**
+ * @brief Controls::playSound
+ */
 void Controls::playSound()
 {
     if (ui->OnRadioButton->isChecked()) {
@@ -198,18 +216,27 @@ void Controls::playSound()
 
 }
 
-// TODO: combine disable/enable to single flip state call
+/**
+ * @brief Controls::disableControls
+ */
 void Controls::disableControls()
 {
     ui->divisionComboBox->setDisabled(true);
 }
 
+/**
+ * @brief Controls::enableControls
+ */
 void Controls::enableControls()
 {
     ui->playPauseButton->setDisabled(false);
     ui->divisionComboBox->setDisabled(false);
 }
 
+/**
+ * @brief Controls::closeEvent
+ * @param event
+ */
 void Controls::closeEvent(QCloseEvent *event)
 {
     qDebug() << "Close event caught on control window.";
@@ -226,6 +253,9 @@ void Controls::closeEvent(QCloseEvent *event)
     }
 }
 
+/**
+ * @brief Controls::on_c1Add2Button_pressed
+ */
 void Controls::on_c1Add2Button_pressed()
 {
     QLabel *label = ui->c1PointsLabel;
@@ -233,6 +263,9 @@ void Controls::on_c1Add2Button_pressed()
     emit competitor1PointsChanged(2);
 }
 
+/**
+ * @brief Controls::on_c1Del2Button_pressed
+ */
 void Controls::on_c1Del2Button_pressed()
 {
     QLabel *label = ui->c1PointsLabel;
@@ -241,6 +274,9 @@ void Controls::on_c1Del2Button_pressed()
 
 }
 
+/**
+ * @brief Controls::on_c1Add3Button_pressed
+ */
 void Controls::on_c1Add3Button_pressed()
 {
     QLabel *label = ui->c1PointsLabel;
@@ -248,6 +284,10 @@ void Controls::on_c1Add3Button_pressed()
     emit competitor1PointsChanged(3);
 }
 
+/**
+ * @brief Controls::on_divisionComboBox_currentIndexChanged
+ * @param index
+ */
 void Controls::on_divisionComboBox_currentIndexChanged(int index)
 {
     switch (index) {
@@ -407,6 +447,10 @@ void Controls::on_divisionComboBox_currentIndexChanged(int index)
     updateDisplay();
 }
 
+/**
+ * @brief Controls::on_soundComboBox_currentIndexChanged
+ * @param sound
+ */
 void Controls::on_soundComboBox_currentIndexChanged(const QString &sound)
 {
    QString f = "qrc:///sounds/" + sound;
@@ -415,7 +459,9 @@ void Controls::on_soundComboBox_currentIndexChanged(const QString &sound)
    //playSound();
 }
 
-/*
+/**
+ * @brief Controls::populateFlagDropDowns
+ * 
  * Add all the countries and related flag icons to
  * each competitor dropdown.
  */
@@ -629,6 +675,9 @@ void Controls::populateFlagDropDowns()
     }
 }
 
+/**
+ * @brief Controls::on_loadLogoButton_pressed
+ */
 void Controls::on_loadLogoButton_pressed()
 {
     QString logoFilename = QFileDialog::getOpenFileName(this,
@@ -639,6 +688,9 @@ void Controls::on_loadLogoButton_pressed()
     }
 }
 
+/**
+ * @brief Controls::on_c1CustomFlagButton_pressed
+ */
 void Controls::on_c1CustomFlagButton_pressed()
 {
     // TODO: c1 -- load custom logo
@@ -653,6 +705,9 @@ void Controls::on_c1CustomFlagButton_pressed()
     }
 }
 
+/**
+ * @brief Controls::on_c2CustomLogoButton_pressed
+ */
 void Controls::on_c2CustomLogoButton_pressed()
 {
     QString customLogo = QFileDialog::getOpenFileName(this,
@@ -666,6 +721,9 @@ void Controls::on_c2CustomLogoButton_pressed()
     }
 }
 
+/**
+ * @brief Controls::on_playPauseButton_pressed
+ */
 void Controls::on_playPauseButton_pressed()
 {
     qDebug() << "----------------------------------------------";
@@ -714,6 +772,9 @@ void Controls::on_playPauseButton_pressed()
     qDebug() << "----------------------------------------------";
 }
 
+/**
+ * @brief Controls::on_resetButton_pressed
+ */
 void Controls::on_resetButton_pressed()
 {
     qDebug() << "------------------------------------------";
@@ -762,6 +823,9 @@ void Controls::on_resetButton_pressed()
     qDebug() << "------------------------------------------";
 }
 
+/**
+ * @brief Controls::resetMatchStates
+ */
 void Controls::resetMatchStates()
 {
     matchStarted = false;
@@ -771,7 +835,10 @@ void Controls::resetMatchStates()
     emit matchReset();
 }
 
-/* Called when QApplication is about to quit main event loop.
+/**
+ * @brief Controls::onAboutToQuit
+ * 
+ * Called when QApplication is about to quit main event loop.
  * Connects to QCoreApplication::aboutToQuit signal.
  * Last-second cleanup goes here. Cannot be emitted by user
  * and no user interaction possible in here.
@@ -781,6 +848,9 @@ void Controls::onAboutToQuit()
     qDebug() << "onAboutToQuit called.";
 }
 
+/**
+ * @brief Controls::on_c1Del3Button_pressed
+ */
 void Controls::on_c1Del3Button_pressed()
 {
     QLabel *label = ui->c1PointsLabel;
@@ -788,6 +858,9 @@ void Controls::on_c1Del3Button_pressed()
     emit competitor1PointsChanged(-3);
 }
 
+/**
+ * @brief Controls::on_c1Add4Button_pressed
+ */
 void Controls::on_c1Add4Button_pressed()
 {
     QLabel *label = ui->c1PointsLabel;
@@ -796,6 +869,9 @@ void Controls::on_c1Add4Button_pressed()
 
 }
 
+/**
+ * @brief Controls::on_c1Del4Button_pressed
+ */
 void Controls::on_c1Del4Button_pressed()
 {
     QLabel *label = ui->c1PointsLabel;
@@ -803,6 +879,9 @@ void Controls::on_c1Del4Button_pressed()
     emit competitor1PointsChanged(-4);
 }
 
+/**
+ * @brief Controls::on_c1AddAButton_pressed
+ */
 void Controls::on_c1AddAButton_pressed()
 {
     QLabel *label = ui->c1AdvantagesLabel;
@@ -810,6 +889,9 @@ void Controls::on_c1AddAButton_pressed()
     emit competitor1AdvantagesChanged(1);
 }
 
+/**
+ * @brief Controls::on_c1DelAButton_pressed
+ */
 void Controls::on_c1DelAButton_pressed()
 {
     QLabel *label = ui->c1AdvantagesLabel;
@@ -818,6 +900,9 @@ void Controls::on_c1DelAButton_pressed()
 
 }
 
+/**
+ * @brief Controls::on_c1AddPButton_pressed
+ */
 void Controls::on_c1AddPButton_pressed()
 {
     QLabel *label = ui->c1PenaltiesLabel;
@@ -825,6 +910,9 @@ void Controls::on_c1AddPButton_pressed()
     emit competitor1PenaltiesChanged(1);
 }
 
+/**
+ * @brief Controls::on_c1DelPButton_pressed
+ */
 void Controls::on_c1DelPButton_pressed()
 {
     QLabel *label = ui->c1PenaltiesLabel;
@@ -832,6 +920,9 @@ void Controls::on_c1DelPButton_pressed()
     emit competitor1PenaltiesChanged(-1);
 }
 
+/**
+ * @brief Controls::on_c2Add2Button_pressed
+ */
 void Controls::on_c2Add2Button_pressed()
 {
    QLabel *label = ui->c2PointsLabel;
@@ -839,6 +930,9 @@ void Controls::on_c2Add2Button_pressed()
    emit competitor2PointsChanged(2);
 }
 
+/**
+ * @brief Controls::on_c2Del2Button_pressed
+ */
 void Controls::on_c2Del2Button_pressed()
 {
    QLabel *label = ui->c2PointsLabel;
@@ -846,6 +940,9 @@ void Controls::on_c2Del2Button_pressed()
    emit competitor2PointsChanged(-2);
 }
 
+/**
+ * @brief Controls::on_c2Add3Button_pressed
+ */
 void Controls::on_c2Add3Button_pressed()
 {
    QLabel *label = ui->c2PointsLabel;
@@ -853,6 +950,9 @@ void Controls::on_c2Add3Button_pressed()
    emit competitor2PointsChanged(3);
 }
 
+/**
+ * @brief Controls::on_c2Del3Button_pressed
+ */
 void Controls::on_c2Del3Button_pressed()
 {
    QLabel *label = ui->c2PointsLabel;
@@ -860,6 +960,9 @@ void Controls::on_c2Del3Button_pressed()
    emit competitor2PointsChanged(-3);
 }
 
+/**
+ * @brief Controls::on_c2Add4Button_pressed
+ */
 void Controls::on_c2Add4Button_pressed()
 {
 
@@ -868,6 +971,9 @@ void Controls::on_c2Add4Button_pressed()
    emit competitor2PointsChanged(4);
 }
 
+/**
+ * @brief Controls::on_c2Del4Button_pressed
+ */
 void Controls::on_c2Del4Button_pressed()
 {
    QLabel *label = ui->c2PointsLabel;
@@ -875,6 +981,9 @@ void Controls::on_c2Del4Button_pressed()
    emit competitor2PointsChanged(-4);
 }
 
+/**
+ * @brief Controls::on_c2AddAButton_pressed
+ */
 void Controls::on_c2AddAButton_pressed()
 {
    QLabel *label = ui->c2AdvantagesLabel;
@@ -882,6 +991,9 @@ void Controls::on_c2AddAButton_pressed()
    emit competitor2AdvantagesChanged(1);
 }
 
+/**
+ * @brief Controls::on_c2DelAButton_pressed
+ */
 void Controls::on_c2DelAButton_pressed()
 {
    QLabel *label = ui->c2AdvantagesLabel;
@@ -889,6 +1001,9 @@ void Controls::on_c2DelAButton_pressed()
    emit competitor2AdvantagesChanged(-1);
 }
 
+/**
+ * @brief Controls::on_c2AddPButton_pressed
+ */
 void Controls::on_c2AddPButton_pressed()
 {
    QLabel *label = ui->c2PenaltiesLabel;
@@ -896,6 +1011,9 @@ void Controls::on_c2AddPButton_pressed()
    emit competitor2PenaltiesChanged(1);
 }
 
+/**
+ * @brief Controls::on_c2DelPButton_pressed
+ */
 void Controls::on_c2DelPButton_pressed()
 {
    QLabel *label = ui->c2PenaltiesLabel;
@@ -903,29 +1021,48 @@ void Controls::on_c2DelPButton_pressed()
    emit competitor2PenaltiesChanged(-1);
 }
 
+/**
+ * @brief Controls::on_c1LineEdit_textEdited
+ * @param str
+ */
 void Controls::on_c1LineEdit_textEdited(const QString &str)
 {
     ui->c1NameLabel->setText(str);
     emit competitor1NameChanged(str);
 }
 
+/**
+ * @brief Controls::on_c2LineEdit_textEdited
+ * @param str
+ */
 void Controls::on_c2LineEdit_textEdited(const QString &str)
 {
    ui->c2NameLabel->setText(str);
    emit competitor2NameChanged(str);
 }
 
+/**
+ * @brief Controls::on_testSoundButton_pressed
+ */
 void Controls::on_testSoundButton_pressed()
 {
     playSound();
 }
 
+/**
+ * @brief Controls::on_c1FlagComboBox_currentIndexChanged
+ * @param flag
+ */
 void Controls::on_c1FlagComboBox_currentIndexChanged(const QString &flag)
 {
     QString flagpath = countryToResourceMap[flag];
     emit c1FlagChanged(flagpath);
 }
 
+/**
+ * @brief Controls::on_c2FlagComboBox_currentIndexChanged
+ * @param flag
+ */
 void Controls::on_c2FlagComboBox_currentIndexChanged(const QString &flag)
 {
     QString flagpath = countryToResourceMap[flag];

@@ -99,7 +99,7 @@ private:
     QString m_currentDivision = "ADULT";
     QString m_currentBelt = "WHITE";
 
-    QTimer *timer;
+    QTimer *timer; /**<Timer that update function every 1 second. */
     QMediaPlayer *m_player;
     QUrl m_defaultSound = QUrl("qrc://sounds/airhorn.wav");
 
