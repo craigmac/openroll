@@ -1,4 +1,5 @@
 # Openroll
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 Openroll is a free and open-source scoreboard and match timer for IBJJF-rules
 Brazilian Jiu-Jitsu. It is not affiliated with the IBJJF in any way.
@@ -7,29 +8,12 @@ Brazilian Jiu-Jitsu. It is not affiliated with the IBJJF in any way.
 [![Download Openroll](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/openroll/files/latest/download)
 
 # Development
-## Windows
-To build on a Windows machine, you will need:
+To build debug and/or release builds on a Windows machine, you will need:
 
 * Qt Creator 4.9.2+, which comes with Qt 5.12.4+ available from [Qt
   website](https://www.qt.io/download).
-* minGW 64-bit Kit is used for Debug and Release builds in Qt Creator.
-
-## Mac OS X
-To build on OS X, you will need:
-
-* XCode installed (free, from Apple, find it in the App Store).
-* Qt Creator 4.9.2+, which comes with Qt 5.12.4+ available from [Qt
-  website](https://www.qt.io/download).
-* Build Debug/Release versions using default clang-64 kit.
-
-## Linux/BSD Systems
-To build on most linux/unix-based systems, you will need:
-
-* Qt Creator 4.9.2+, which comes with Qt 5.12.4+ available from [Qt
-  website](https://www.qt.io/download).
-* Build Debug/Release versions using clang 64-bit kit (usually you must
-install clang separately usually, unlike OS X, which comes with clang as part
-of XCode)
+* If using the Qt online installer, choose the MinGW 64-bit Kit and install
+the mingw64 build tools as well.
 
 ## Troubleshooting Builds
 Make sure first that you can build and run a Qt program by opening Qt Creator
@@ -57,8 +41,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see the [GNU General Public
 License](https://www.gnu.org/licenses/).
 
-Images are licensed by C.D. MacEachern under [Apache License
-2.0](https://www.apache.org/licenses/LICENSE-2.0.html) from Google (C) 2014.
+Images are licensed by C.D. MacEachern under [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+from Google (C) 2014.
 See file LICENSES.txt for more details.
 
 Sound files are licensed by C.D. MacEachern under [CC BY
