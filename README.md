@@ -4,9 +4,7 @@ Openroll is a free and open-source scoreboard and match timer for IBJJF-rules
 Brazilian Jiu-Jitsu. It is not affiliated with the IBJJF in any way.
 
 # Installation
-Use the official pre-built binaries for your system, available at
-[Sourceforge](https://openroll.sourceforge.io). If you simply want to use this
-program, and not develop/alter it, this is all you need to do.
+[![Download Openroll](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/openroll/files/latest/download)
 
 # Development
 ## Windows
@@ -14,7 +12,7 @@ To build on a Windows machine, you will need:
 
 * Qt Creator 4.9.2+, which comes with Qt 5.12.4+ available from [Qt
   website](https://www.qt.io/download).
-* MSVC 2017 64-bit Kit is used for Debug and Release builds in Qt Creator.
+* minGW 64-bit Kit is used for Debug and Release builds in Qt Creator.
 
 ## Mac OS X
 To build on OS X, you will need:
