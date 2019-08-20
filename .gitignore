@@ -1,3 +1,4 @@
 openroll.pro.user
 *.o
 installer/packages/com.barkersoftware.openroll/data/*
+*.exe
