@@ -1,0 +1,1 @@
+C:\Qt\Tools\QtInstallerFramework\3.1\bin\binarycreator.exe -c C:\Users\cmaceachern\projects\Qt\openroll\openroll\installer\config\config.xml -p C:\Users\cmaceachern\projects\Qt\openroll\openroll\installer\packages openroll-installer.exe
