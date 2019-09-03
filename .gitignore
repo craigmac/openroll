@@ -2,3 +2,8 @@ openroll.pro.user
 *.o
 installer/packages/com.barkersoftware.openroll/data/*
 *.exe
+*.obj
+GPATH
+GRTAGS
+GTAGS
+compile_commands.json
