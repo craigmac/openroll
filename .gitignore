@@ -7,3 +7,7 @@ GPATH
 GRTAGS
 GTAGS
 compile_commands.json
+HTML/
+debug/
+release/
+x64/

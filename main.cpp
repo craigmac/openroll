@@ -11,10 +11,10 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     Controls controls;
-    Qt::WindowFlags flags(Qt::Window | Qt::WindowStaysOnTopHint);
+    const Qt::WindowFlags flags(Qt::Window | Qt::WindowStaysOnTopHint);
     controls.setWindowFlags(flags);
     QObject::connect(&app, &QCoreApplication::aboutToQuit, &controls, &Controls::onAboutToQuit);
     controls.show();
 
-    return app.exec();
+    return QApplication::exec();
 }

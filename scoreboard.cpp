@@ -63,34 +63,34 @@ void Scoreboard::setCompetitor2Penalties(int value)
     ui->comp2_penalties->setText(QString::number(newValue));
 }
 
-void Scoreboard::setCompetitor1Name(QString name)
+void Scoreboard::setCompetitor1Name(const QString& name)
 {
     ui->comp1_name->setText(name);
 }
 
-void Scoreboard::setCompetitor2Name(QString name)
+void Scoreboard::setCompetitor2Name(const QString& name)
 {
     ui->comp2_name->setText(name);
 }
 
-void Scoreboard::setTimeLabel(QString newtime)
+void Scoreboard::setTimeLabel(const QString& newtime)
 {
     ui->timer_display->setText(newtime);
 
 }
 
-void Scoreboard::setDivisionLabel(QString division)
+void Scoreboard::setDivisionLabel(const QString& division)
 {
     ui->divisionLabel->setText(division);
 }
 
-void Scoreboard::setBeltLabel(QString newbelt)
+void Scoreboard::setBeltLabel(const QString& newbelt)
 {
     ui->beltLabel->setText(newbelt);
 
 }
 
-void Scoreboard::setLogo(QString logo)
+void Scoreboard::setLogo(const QString& logo)
 {
     qDebug() << "Scoreboard given this logo to try to load: " << logo;
     QPixmap img = QPixmap(logo);
@@ -110,12 +110,12 @@ void Scoreboard::resetScores()
     ui->comp2_name->setText("Competitor 2");
 }
 
-void Scoreboard::setC1Flag(QString flagpath)
+void Scoreboard::setC1Flag(const QString& flagpath)
 {
     ui->c1FlagLabel->setPixmap(flagpath);
 }
 
-void Scoreboard::setC2Flag(QString flagpath)
+void Scoreboard::setC2Flag(const QString& flagpath)
 {
    ui->c2FlagLabel->setPixmap(flagpath);
 }

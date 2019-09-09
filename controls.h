@@ -39,7 +39,7 @@ private slots:
     void on_c1DelAButton_pressed();
     void on_c1AddPButton_pressed();
     void on_c1DelPButton_pressed();
-    void on_c1LineEdit_textEdited(const QString &arg1);
+    void on_c1LineEdit_textEdited(const QString &str);
 
     // Competitor 2 Controls
     void on_c2Add2Button_pressed();
@@ -52,7 +52,7 @@ private slots:
     void on_c2DelAButton_pressed();
     void on_c2AddPButton_pressed();
     void on_c2DelPButton_pressed();
-    void on_c2LineEdit_textEdited(const QString &arg1);
+    void on_c2LineEdit_textEdited(const QString &str);
 
     // General Buttons
     void on_playPauseButton_pressed();
@@ -110,20 +110,18 @@ private:
     QMap<QString, QString> countryToResourceMap;
 
 signals:
-    // TODO: refactor to make these signals uniformly named
     void competitor1PointsChanged(int value);
     void competitor1AdvantagesChanged(int value);
     void competitor1PenaltiesChanged(int value);
     void competitor1NameChanged(QString name);
-    void c1FlagChanged(QString flagpath);
+    void competitor1FlagChanged(QString flag);
 
     void competitor2PointsChanged(int value);
     void competitor2AdvantagesChanged(int value);
     void competitor2PenaltiesChanged(int value);
     void competitor2NameChanged(QString name);
-    void c2FlagChanged(QString flagpath);
+    void competitor2FlagChanged(QString flagpath);
 
-    //void soundChanged(int index);
     void playPauseStateChanged(bool isPaused);
     void matchReset();
 

@@ -106,10 +106,9 @@ Controls::Controls(QWidget *parent) :
     connect(this, &Controls::matchReset,
             board, &Scoreboard::resetScores);
 
-    connect(this, &Controls::c1FlagChanged,
-            board, &Scoreboard::setC1Flag);
+    connect(this, &Controls::competitor1FlagChanged, board, &Scoreboard::setC1Flag);
 
-    connect(this, &Controls::c2FlagChanged, board, &Scoreboard::setC2Flag);
+    connect(this, &Controls::competitor2FlagChanged, board, &Scoreboard::setC2Flag);
 
     populateFlagDropDowns();
 
@@ -468,202 +467,202 @@ void Controls::on_soundComboBox_currentIndexChanged(const QString &sound)
 void Controls::populateFlagDropDowns()
 {
     // TODO: use a thread/parallel to do this for speed!
-    countryToResourceMap.insert("ad", ":/flags/ad");
-    countryToResourceMap.insert("ae", ":/flags/ae");
-    countryToResourceMap.insert("af", ":/flags/af");
-    countryToResourceMap.insert("ag", ":/flags/ag");
-    countryToResourceMap.insert("al", ":/flags/al");
-    countryToResourceMap.insert("am", ":/flags/am");
-    countryToResourceMap.insert("ao", ":/flags/ao");
-    countryToResourceMap.insert("ar", ":/flags/ar");
-    countryToResourceMap.insert("at", ":/flags/at");
-    countryToResourceMap.insert("au", ":/flags/au");
-    countryToResourceMap.insert("az", ":/flags/az");
-    countryToResourceMap.insert("ba", ":/flags/ba");
-    countryToResourceMap.insert("bb", ":/flags/bb");
-    countryToResourceMap.insert("bd", ":/flags/bd");
-    countryToResourceMap.insert("be", ":/flags/be");
-    countryToResourceMap.insert("bf", ":/flags/bf");
-    countryToResourceMap.insert("bg", ":/flags/bg");
-    countryToResourceMap.insert("bh", ":/flags/bh");
-    countryToResourceMap.insert("bi", ":/flags/bi");
-    countryToResourceMap.insert("bj", ":/flags/bj");
-    countryToResourceMap.insert("bn", ":/flags/bn");
-    countryToResourceMap.insert("bo", ":/flags/bo");
-    countryToResourceMap.insert("br", ":/flags/br");
-    countryToResourceMap.insert("bs", ":/flags/bs");
-    countryToResourceMap.insert("bt", ":/flags/bt");
-    countryToResourceMap.insert("bw", ":/flags/bw");
-    countryToResourceMap.insert("by", ":/flags/by");
-    countryToResourceMap.insert("bz", ":/flags/bz");
-    countryToResourceMap.insert("ca", ":/flags/ca");
-    countryToResourceMap.insert("cd", ":/flags/cd");
-    countryToResourceMap.insert("cf", ":/flags/cf");
-    countryToResourceMap.insert("cg", ":/flags/cg");
-    countryToResourceMap.insert("ch", ":/flags/ch");
-    countryToResourceMap.insert("ci", ":/flags/ci");
-    countryToResourceMap.insert("cl", ":/flags/cl");
-    countryToResourceMap.insert("cm", ":/flags/cm");
-    countryToResourceMap.insert("cn", ":/flags/cn");
-    countryToResourceMap.insert("co", ":/flags/co");
-    countryToResourceMap.insert("cr", ":/flags/cr");
-    countryToResourceMap.insert("cu", ":/flags/cu");
-    countryToResourceMap.insert("cv", ":/flags/cv");
-    countryToResourceMap.insert("cy", ":/flags/cy");
-    countryToResourceMap.insert("cz", ":/flags/cz");
-    countryToResourceMap.insert("de", ":/flags/de");
-    countryToResourceMap.insert("dj", ":/flags/dj");
-    countryToResourceMap.insert("dk", ":/flags/dk");
-    countryToResourceMap.insert("dm", ":/flags/dm");
-    countryToResourceMap.insert("do", ":/flags/do");
-    countryToResourceMap.insert("dz", ":/flags/dz");
-    countryToResourceMap.insert("ec", ":/flags/ec");
-    countryToResourceMap.insert("ee", ":/flags/ee");
-    countryToResourceMap.insert("eg", ":/flags/eg");
-    countryToResourceMap.insert("eh", ":/flags/eh");
-    countryToResourceMap.insert("er", ":/flags/er");
-    countryToResourceMap.insert("es", ":/flags/es");
-    countryToResourceMap.insert("et", ":/flags/et");
-    countryToResourceMap.insert("fi", ":/flags/fi");
-    countryToResourceMap.insert("fj", ":/flags/fj");
-    countryToResourceMap.insert("fm", ":/flags/fm");
-    countryToResourceMap.insert("fr", ":/flags/fr");
-    countryToResourceMap.insert("ga", ":/flags/ga");
-    countryToResourceMap.insert("gb", ":/flags/gb");
-    countryToResourceMap.insert("gd", ":/flags/gd");
-    countryToResourceMap.insert("ge", ":/flags/ge");
-    countryToResourceMap.insert("gh", ":/flags/gh");
-    countryToResourceMap.insert("gm", ":/flags/gm");
-    countryToResourceMap.insert("gn", ":/flags/gn");
-    countryToResourceMap.insert("gq", ":/flags/gq");
-    countryToResourceMap.insert("gr", ":/flags/gr");
-    countryToResourceMap.insert("gt", ":/flags/gt");
-    countryToResourceMap.insert("gw", ":/flags/gw");
-    countryToResourceMap.insert("gy", ":/flags/gy");
-    countryToResourceMap.insert("hn", ":/flags/hn");
-    countryToResourceMap.insert("hr", ":/flags/hr");
-    countryToResourceMap.insert("ht", ":/flags/ht");
-    countryToResourceMap.insert("hu", ":/flags/hu");
-    countryToResourceMap.insert("id", ":/flags/id");
-    countryToResourceMap.insert("ie", ":/flags/ie");
-    countryToResourceMap.insert("il", ":/flags/il");
-    countryToResourceMap.insert("in", ":/flags/in");
-    countryToResourceMap.insert("iq", ":/flags/iq");
-    countryToResourceMap.insert("ir", ":/flags/ir");
-    countryToResourceMap.insert("is", ":/flags/is");
-    countryToResourceMap.insert("it", ":/flags/it");
-    countryToResourceMap.insert("jm", ":/flags/jm");
-    countryToResourceMap.insert("jo", ":/flags/jo");
-    countryToResourceMap.insert("jp", ":/flags/jp");
-    countryToResourceMap.insert("ke", ":/flags/ke");
-    countryToResourceMap.insert("kg", ":/flags/kg");
-    countryToResourceMap.insert("kh", ":/flags/kh");
-    countryToResourceMap.insert("ki", ":/flags/ki");
-    countryToResourceMap.insert("km", ":/flags/km");
-    countryToResourceMap.insert("kn", ":/flags/kn");
-    countryToResourceMap.insert("kp", ":/flags/kp");
-    countryToResourceMap.insert("kr", ":/flags/kr");
-    countryToResourceMap.insert("ks", ":/flags/ks");
-    countryToResourceMap.insert("kw", ":/flags/kw");
-    countryToResourceMap.insert("kz", ":/flags/kz");
-    countryToResourceMap.insert("la", ":/flags/la");
-    countryToResourceMap.insert("lb", ":/flags/lb");
-    countryToResourceMap.insert("lc", ":/flags/lc");
-    countryToResourceMap.insert("li", ":/flags/li");
-    countryToResourceMap.insert("lk", ":/flags/lk");
-    countryToResourceMap.insert("lr", ":/flags/lr");
-    countryToResourceMap.insert("ls", ":/flags/ls");
-    countryToResourceMap.insert("lt", ":/flags/lt");
-    countryToResourceMap.insert("lu", ":/flags/lu");
-    countryToResourceMap.insert("lv", ":/flags/lv");
-    countryToResourceMap.insert("ly", ":/flags/ly");
-    countryToResourceMap.insert("ma", ":/flags/ma");
-    countryToResourceMap.insert("mc", ":/flags/mc");
-    countryToResourceMap.insert("md", ":/flags/md");
-    countryToResourceMap.insert("me", ":/flags/me");
-    countryToResourceMap.insert("mg", ":/flags/mg");
-    countryToResourceMap.insert("mh", ":/flags/mh");
-    countryToResourceMap.insert("mk", ":/flags/mk");
-    countryToResourceMap.insert("ml", ":/flags/ml");
-    countryToResourceMap.insert("mm", ":/flags/mm");
-    countryToResourceMap.insert("mn", ":/flags/mn");
-    countryToResourceMap.insert("mr", ":/flags/mr");
-    countryToResourceMap.insert("mt", ":/flags/mt");
-    countryToResourceMap.insert("mu", ":/flags/mu");
-    countryToResourceMap.insert("mv", ":/flags/mv");
-    countryToResourceMap.insert("mw", ":/flags/mw");
-    countryToResourceMap.insert("mx", ":/flags/mx");
-    countryToResourceMap.insert("my", ":/flags/my");
-    countryToResourceMap.insert("mz", ":/flags/mz");
-    countryToResourceMap.insert("na", ":/flags/na");
-    countryToResourceMap.insert("ne", ":/flags/ne");
-    countryToResourceMap.insert("ng", ":/flags/ng");
-    countryToResourceMap.insert("ni", ":/flags/ni");
-    countryToResourceMap.insert("nl", ":/flags/nl");
-    countryToResourceMap.insert("no", ":/flags/no");
-    countryToResourceMap.insert("np", ":/flags/np");
-    countryToResourceMap.insert("nr", ":/flags/nr");
-    countryToResourceMap.insert("nz", ":/flags/nz");
-    countryToResourceMap.insert("om", ":/flags/om");
-    countryToResourceMap.insert("pa", ":/flags/pa");
-    countryToResourceMap.insert("pe", ":/flags/pe");
-    countryToResourceMap.insert("pg", ":/flags/pg");
-    countryToResourceMap.insert("ph", ":/flags/ph");
-    countryToResourceMap.insert("pk", ":/flags/pk");
-    countryToResourceMap.insert("pl", ":/flags/pl");
-    countryToResourceMap.insert("pt", ":/flags/pt");
-    countryToResourceMap.insert("pw", ":/flags/pw");
-    countryToResourceMap.insert("py", ":/flags/py");
-    countryToResourceMap.insert("qa", ":/flags/qa");
-    countryToResourceMap.insert("ro", ":/flags/ro");
-    countryToResourceMap.insert("rs", ":/flags/rs");
-    countryToResourceMap.insert("ru", ":/flags/ru");
-    countryToResourceMap.insert("rw", ":/flags/rw");
-    countryToResourceMap.insert("sa", ":/flags/sa");
-    countryToResourceMap.insert("sb", ":/flags/sb");
-    countryToResourceMap.insert("sc", ":/flags/sc");
-    countryToResourceMap.insert("sd", ":/flags/sd");
-    countryToResourceMap.insert("se", ":/flags/se");
-    countryToResourceMap.insert("sg", ":/flags/sg");
-    countryToResourceMap.insert("si", ":/flags/si");
-    countryToResourceMap.insert("sk", ":/flags/sk");
-    countryToResourceMap.insert("sl", ":/flags/sl");
-    countryToResourceMap.insert("sm", ":/flags/sm");
-    countryToResourceMap.insert("sn", ":/flags/sn");
-    countryToResourceMap.insert("so", ":/flags/so");
-    countryToResourceMap.insert("sr", ":/flags/sr");
-    countryToResourceMap.insert("st", ":/flags/st");
-    countryToResourceMap.insert("sv", ":/flags/sv");
-    countryToResourceMap.insert("sy", ":/flags/sy");
-    countryToResourceMap.insert("sz", ":/flags/sz");
-    countryToResourceMap.insert("td", ":/flags/td");
-    countryToResourceMap.insert("tg", ":/flags/tg");
-    countryToResourceMap.insert("th", ":/flags/th");
-    countryToResourceMap.insert("tj", ":/flags/tj");
-    countryToResourceMap.insert("tl", ":/flags/tl");
-    countryToResourceMap.insert("tm", ":/flags/tm");
-    countryToResourceMap.insert("tn", ":/flags/tn");
-    countryToResourceMap.insert("to", ":/flags/to");
-    countryToResourceMap.insert("tr", ":/flags/tr");
-    countryToResourceMap.insert("tt", ":/flags/tt");
-    countryToResourceMap.insert("tv", ":/flags/tv");
-    countryToResourceMap.insert("tw", ":/flags/tw");
-    countryToResourceMap.insert("tz", ":/flags/tz");
-    countryToResourceMap.insert("ua", ":/flags/ua");
-    countryToResourceMap.insert("ug", ":/flags/ug");
-    countryToResourceMap.insert("us", ":/flags/us");
-    countryToResourceMap.insert("uy", ":/flags/uy");
-    countryToResourceMap.insert("uz", ":/flags/uz");
-    countryToResourceMap.insert("va", ":/flags/va");
-    countryToResourceMap.insert("vc", ":/flags/vc");
-    countryToResourceMap.insert("ve", ":/flags/ve");
-    countryToResourceMap.insert("vn", ":/flags/vn");
-    countryToResourceMap.insert("vu", ":/flags/vu");
-    countryToResourceMap.insert("ws", ":/flags/ws");
-    countryToResourceMap.insert("ye", ":/flags/ye");
-    countryToResourceMap.insert("za", ":/flags/za");
-    countryToResourceMap.insert("zm", ":/flags/zm");
-    countryToResourceMap.insert("zw", ":/flags/zw");
+    countryToResourceMap.insert("ad", ":/small-flags/ad-small");
+    countryToResourceMap.insert("ae", ":/small-flags/ae-small");
+    countryToResourceMap.insert("af", ":/small-flags/af-small");
+    countryToResourceMap.insert("ag", ":/small-flags/ag-small");
+    countryToResourceMap.insert("al", ":/small-flags/al-small");
+    countryToResourceMap.insert("am", ":/small-flags/am-small");
+    countryToResourceMap.insert("ao", ":/small-flags/ao-small");
+    countryToResourceMap.insert("ar", ":/small-flags/ar-small");
+    countryToResourceMap.insert("at", ":/small-flags/at-small");
+    countryToResourceMap.insert("au", ":/small-flags/au-small");
+    countryToResourceMap.insert("az", ":/small-flags/az-small");
+    countryToResourceMap.insert("ba", ":/small-flags/ba-small");
+    countryToResourceMap.insert("bb", ":/small-flags/bb-small");
+    countryToResourceMap.insert("bd", ":/small-flags/bd-small");
+    countryToResourceMap.insert("be", ":/small-flags/be-small");
+    countryToResourceMap.insert("bf", ":/small-flags/bf-small");
+    countryToResourceMap.insert("bg", ":/small-flags/bg-small");
+    countryToResourceMap.insert("bh", ":/small-flags/bh-small");
+    countryToResourceMap.insert("bi", ":/small-flags/bi-small");
+    countryToResourceMap.insert("bj", ":/small-flags/bj-small");
+    countryToResourceMap.insert("bn", ":/small-flags/bn-small");
+    countryToResourceMap.insert("bo", ":/small-flags/bo-small");
+    countryToResourceMap.insert("br", ":/small-flags/br-small");
+    countryToResourceMap.insert("bs", ":/small-flags/bs-small");
+    countryToResourceMap.insert("bt", ":/small-flags/bt-small");
+    countryToResourceMap.insert("bw", ":/small-flags/bw-small");
+    countryToResourceMap.insert("by", ":/small-flags/by-small");
+    countryToResourceMap.insert("bz", ":/small-flags/bz-small");
+    countryToResourceMap.insert("ca", ":/small-flags/ca-small");
+    countryToResourceMap.insert("cd", ":/small-flags/cd-small");
+    countryToResourceMap.insert("cf", ":/small-flags/cf-small");
+    countryToResourceMap.insert("cg", ":/small-flags/cg-small");
+    countryToResourceMap.insert("ch", ":/small-flags/ch-small");
+    countryToResourceMap.insert("ci", ":/small-flags/ci-small");
+    countryToResourceMap.insert("cl", ":/small-flags/cl-small");
+    countryToResourceMap.insert("cm", ":/small-flags/cm-small");
+    countryToResourceMap.insert("cn", ":/small-flags/cn-small");
+    countryToResourceMap.insert("co", ":/small-flags/co-small");
+    countryToResourceMap.insert("cr", ":/small-flags/cr-small");
+    countryToResourceMap.insert("cu", ":/small-flags/cu-small");
+    countryToResourceMap.insert("cv", ":/small-flags/cv-small");
+    countryToResourceMap.insert("cy", ":/small-flags/cy-small");
+    countryToResourceMap.insert("cz", ":/small-flags/cz-small");
+    countryToResourceMap.insert("de", ":/small-flags/de-small");
+    countryToResourceMap.insert("dj", ":/small-flags/dj-small");
+    countryToResourceMap.insert("dk", ":/small-flags/dk-small");
+    countryToResourceMap.insert("dm", ":/small-flags/dm-small");
+    countryToResourceMap.insert("do", ":/small-flags/do-small");
+    countryToResourceMap.insert("dz", ":/small-flags/dz-small");
+    countryToResourceMap.insert("ec", ":/small-flags/ec-small");
+    countryToResourceMap.insert("ee", ":/small-flags/ee-small");
+    countryToResourceMap.insert("eg", ":/small-flags/eg-small");
+    countryToResourceMap.insert("eh", ":/small-flags/eh-small");
+    countryToResourceMap.insert("er", ":/small-flags/er-small");
+    countryToResourceMap.insert("es", ":/small-flags/es-small");
+    countryToResourceMap.insert("et", ":/small-flags/et-small");
+    countryToResourceMap.insert("fi", ":/small-flags/fi-small");
+    countryToResourceMap.insert("fj", ":/small-flags/fj-small");
+    countryToResourceMap.insert("fm", ":/small-flags/fm-small");
+    countryToResourceMap.insert("fr", ":/small-flags/fr-small");
+    countryToResourceMap.insert("ga", ":/small-flags/ga-small");
+    countryToResourceMap.insert("gb", ":/small-flags/gb-small");
+    countryToResourceMap.insert("gd", ":/small-flags/gd-small");
+    countryToResourceMap.insert("ge", ":/small-flags/ge-small");
+    countryToResourceMap.insert("gh", ":/small-flags/gh-small");
+    countryToResourceMap.insert("gm", ":/small-flags/gm-small");
+    countryToResourceMap.insert("gn", ":/small-flags/gn-small");
+    countryToResourceMap.insert("gq", ":/small-flags/gq-small");
+    countryToResourceMap.insert("gr", ":/small-flags/gr-small");
+    countryToResourceMap.insert("gt", ":/small-flags/gt-small");
+    countryToResourceMap.insert("gw", ":/small-flags/gw-small");
+    countryToResourceMap.insert("gy", ":/small-flags/gy-small");
+    countryToResourceMap.insert("hn", ":/small-flags/hn-small");
+    countryToResourceMap.insert("hr", ":/small-flags/hr-small");
+    countryToResourceMap.insert("ht", ":/small-flags/ht-small");
+    countryToResourceMap.insert("hu", ":/small-flags/hu-small");
+    countryToResourceMap.insert("id", ":/small-flags/id-small");
+    countryToResourceMap.insert("ie", ":/small-flags/ie-small");
+    countryToResourceMap.insert("il", ":/small-flags/il-small");
+    countryToResourceMap.insert("in", ":/small-flags/in-small");
+    countryToResourceMap.insert("iq", ":/small-flags/iq-small");
+    countryToResourceMap.insert("ir", ":/small-flags/ir-small");
+    countryToResourceMap.insert("is", ":/small-flags/is-small");
+    countryToResourceMap.insert("it", ":/small-flags/it-small");
+    countryToResourceMap.insert("jm", ":/small-flags/jm-small");
+    countryToResourceMap.insert("jo", ":/small-flags/jo-small");
+    countryToResourceMap.insert("jp", ":/small-flags/jp-small");
+    countryToResourceMap.insert("ke", ":/small-flags/ke-small");
+    countryToResourceMap.insert("kg", ":/small-flags/kg-small");
+    countryToResourceMap.insert("kh", ":/small-flags/kh-small");
+    countryToResourceMap.insert("ki", ":/small-flags/ki-small");
+    countryToResourceMap.insert("km", ":/small-flags/km-small");
+    countryToResourceMap.insert("kn", ":/small-flags/kn-small");
+    countryToResourceMap.insert("kp", ":/small-flags/kp-small");
+    countryToResourceMap.insert("kr", ":/small-flags/kr-small");
+    countryToResourceMap.insert("ks", ":/small-flags/ks-small");
+    countryToResourceMap.insert("kw", ":/small-flags/kw-small");
+    countryToResourceMap.insert("kz", ":/small-flags/kz-small");
+    countryToResourceMap.insert("la", ":/small-flags/la-small");
+    countryToResourceMap.insert("lb", ":/small-flags/lb-small");
+    countryToResourceMap.insert("lc", ":/small-flags/lc-small");
+    countryToResourceMap.insert("li", ":/small-flags/li-small");
+    countryToResourceMap.insert("lk", ":/small-flags/lk-small");
+    countryToResourceMap.insert("lr", ":/small-flags/lr-small");
+    countryToResourceMap.insert("ls", ":/small-flags/ls-small");
+    countryToResourceMap.insert("lt", ":/small-flags/lt-small");
+    countryToResourceMap.insert("lu", ":/small-flags/lu-small");
+    countryToResourceMap.insert("lv", ":/small-flags/lv-small");
+    countryToResourceMap.insert("ly", ":/small-flags/ly-small");
+    countryToResourceMap.insert("ma", ":/small-flags/ma-small");
+    countryToResourceMap.insert("mc", ":/small-flags/mc-small");
+    countryToResourceMap.insert("md", ":/small-flags/md-small");
+    countryToResourceMap.insert("me", ":/small-flags/me-small");
+    countryToResourceMap.insert("mg", ":/small-flags/mg-small");
+    countryToResourceMap.insert("mh", ":/small-flags/mh-small");
+    countryToResourceMap.insert("mk", ":/small-flags/mk-small");
+    countryToResourceMap.insert("ml", ":/small-flags/ml-small");
+    countryToResourceMap.insert("mm", ":/small-flags/mm-small");
+    countryToResourceMap.insert("mn", ":/small-flags/mn-small");
+    countryToResourceMap.insert("mr", ":/small-flags/mr-small");
+    countryToResourceMap.insert("mt", ":/small-flags/mt-small");
+    countryToResourceMap.insert("mu", ":/small-flags/mu-small");
+    countryToResourceMap.insert("mv", ":/small-flags/mv-small");
+    countryToResourceMap.insert("mw", ":/small-flags/mw-small");
+    countryToResourceMap.insert("mx", ":/small-flags/mx-small");
+    countryToResourceMap.insert("my", ":/small-flags/my-small");
+    countryToResourceMap.insert("mz", ":/small-flags/mz-small");
+    countryToResourceMap.insert("na", ":/small-flags/na-small");
+    countryToResourceMap.insert("ne", ":/small-flags/ne-small");
+    countryToResourceMap.insert("ng", ":/small-flags/ng-small");
+    countryToResourceMap.insert("ni", ":/small-flags/ni-small");
+    countryToResourceMap.insert("nl", ":/small-flags/nl-small");
+    countryToResourceMap.insert("no", ":/small-flags/no-small");
+    countryToResourceMap.insert("np", ":/small-flags/np-small");
+    countryToResourceMap.insert("nr", ":/small-flags/nr-small");
+    countryToResourceMap.insert("nz", ":/small-flags/nz-small");
+    countryToResourceMap.insert("om", ":/small-flags/om-small");
+    countryToResourceMap.insert("pa", ":/small-flags/pa-small");
+    countryToResourceMap.insert("pe", ":/small-flags/pe-small");
+    countryToResourceMap.insert("pg", ":/small-flags/pg-small");
+    countryToResourceMap.insert("ph", ":/small-flags/ph-small");
+    countryToResourceMap.insert("pk", ":/small-flags/pk-small");
+    countryToResourceMap.insert("pl", ":/small-flags/pl-small");
+    countryToResourceMap.insert("pt", ":/small-flags/pt-small");
+    countryToResourceMap.insert("pw", ":/small-flags/pw-small");
+    countryToResourceMap.insert("py", ":/small-flags/py-small");
+    countryToResourceMap.insert("qa", ":/small-flags/qa-small");
+    countryToResourceMap.insert("ro", ":/small-flags/ro-small");
+    countryToResourceMap.insert("rs", ":/small-flags/rs-small");
+    countryToResourceMap.insert("ru", ":/small-flags/ru-small");
+    countryToResourceMap.insert("rw", ":/small-flags/rw-small");
+    countryToResourceMap.insert("sa", ":/small-flags/sa-small");
+    countryToResourceMap.insert("sb", ":/small-flags/sb-small");
+    countryToResourceMap.insert("sc", ":/small-flags/sc-small");
+    countryToResourceMap.insert("sd", ":/small-flags/sd-small");
+    countryToResourceMap.insert("se", ":/small-flags/se-small");
+    countryToResourceMap.insert("sg", ":/small-flags/sg-small");
+    countryToResourceMap.insert("si", ":/small-flags/si-small");
+    countryToResourceMap.insert("sk", ":/small-flags/sk-small");
+    countryToResourceMap.insert("sl", ":/small-flags/sl-small");
+    countryToResourceMap.insert("sm", ":/small-flags/sm-small");
+    countryToResourceMap.insert("sn", ":/small-flags/sn-small");
+    countryToResourceMap.insert("so", ":/small-flags/so-small");
+    countryToResourceMap.insert("sr", ":/small-flags/sr-small");
+    countryToResourceMap.insert("st", ":/small-flags/st-small");
+    countryToResourceMap.insert("sv", ":/small-flags/sv-small");
+    countryToResourceMap.insert("sy", ":/small-flags/sy-small");
+    countryToResourceMap.insert("sz", ":/small-flags/sz-small");
+    countryToResourceMap.insert("td", ":/small-flags/td-small");
+    countryToResourceMap.insert("tg", ":/small-flags/tg-small");
+    countryToResourceMap.insert("th", ":/small-flags/th-small");
+    countryToResourceMap.insert("tj", ":/small-flags/tj-small");
+    countryToResourceMap.insert("tl", ":/small-flags/tl-small");
+    countryToResourceMap.insert("tm", ":/small-flags/tm-small");
+    countryToResourceMap.insert("tn", ":/small-flags/tn-small");
+    countryToResourceMap.insert("to", ":/small-flags/to-small");
+    countryToResourceMap.insert("tr", ":/small-flags/tr-small");
+    countryToResourceMap.insert("tt", ":/small-flags/tt-small");
+    countryToResourceMap.insert("tv", ":/small-flags/tv-small");
+    countryToResourceMap.insert("tw", ":/small-flags/tw-small");
+    countryToResourceMap.insert("tz", ":/small-flags/tz-small");
+    countryToResourceMap.insert("ua", ":/small-flags/ua-small");
+    countryToResourceMap.insert("ug", ":/small-flags/ug-small");
+    countryToResourceMap.insert("us", ":/small-flags/us-small");
+    countryToResourceMap.insert("uy", ":/small-flags/uy-small");
+    countryToResourceMap.insert("uz", ":/small-flags/uz-small");
+    countryToResourceMap.insert("va", ":/small-flags/va-small");
+    countryToResourceMap.insert("vc", ":/small-flags/vc-small");
+    countryToResourceMap.insert("ve", ":/small-flags/ve-small");
+    countryToResourceMap.insert("vn", ":/small-flags/vn-small");
+    countryToResourceMap.insert("vu", ":/small-flags/vu-small");
+    countryToResourceMap.insert("ws", ":/small-flags/ws-small");
+    countryToResourceMap.insert("ye", ":/small-flags/ye-small");
+    countryToResourceMap.insert("za", ":/small-flags/za-small");
+    countryToResourceMap.insert("zm", ":/small-flags/zm-small");
+    countryToResourceMap.insert("zw", ":/small-flags/zw-small");
 
     QMap<QString, QString>::const_iterator i = countryToResourceMap.constBegin();
     int j = 0;
@@ -693,7 +692,6 @@ void Controls::on_loadLogoButton_pressed()
  */
 void Controls::on_c1CustomFlagButton_pressed()
 {
-    // TODO: c1 -- load custom logo
     QString customLogo = QFileDialog::getOpenFileName(this,
                                         tr("Open Image"), ".",
                         tr("Image Files (*.png *.jpg *.bmp)"));
@@ -701,7 +699,7 @@ void Controls::on_c1CustomFlagButton_pressed()
     qDebug() << "on_c1CustomFlagButton_pressed(): using customLogo string: " << customLogo;
 
     if (!customLogo.isEmpty()) {
-        emit c1FlagChanged(customLogo);
+        emit competitor1FlagChanged(customLogo);
     }
 }
 
@@ -717,7 +715,7 @@ void Controls::on_c2CustomLogoButton_pressed()
     qDebug() << "on_c2CustomFlagButton_pressed(): using customLogo string: " << customLogo;
 
     if (!customLogo.isEmpty()) {
-        emit c2FlagChanged(customLogo);
+        emit competitor2FlagChanged(customLogo);
     }
 }
 
@@ -1052,11 +1050,16 @@ void Controls::on_testSoundButton_pressed()
 /**
  * @brief Controls::on_c1FlagComboBox_currentIndexChanged
  * @param flag
+ * 
+ * Emits a QString representing the path to the big flag version of the
+ * small flag selected. This is so we can load small version of flag for
+ * speed at startup into the dropdown, and load big version only when
+ * needed, i.e., right here.
  */
 void Controls::on_c1FlagComboBox_currentIndexChanged(const QString &flag)
 {
-    QString flagpath = countryToResourceMap[flag];
-    emit c1FlagChanged(flagpath);
+    QString bigflag = ":/flags/" + flag;
+    emit competitor1FlagChanged(bigflag);
 }
 
 /**
@@ -1065,6 +1068,6 @@ void Controls::on_c1FlagComboBox_currentIndexChanged(const QString &flag)
  */
 void Controls::on_c2FlagComboBox_currentIndexChanged(const QString &flag)
 {
-    QString flagpath = countryToResourceMap[flag];
-    emit c2FlagChanged(flagpath);
+    QString bigflag = ":/flags/" + flag;
+    emit competitor2FlagChanged(bigflag);
 }

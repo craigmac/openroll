@@ -32,21 +32,18 @@ public slots:
     void setCompetitor2Advantages(int value);
     void setCompetitor2Penalties(int value);
 
-    void setCompetitor1Name(QString name);
-    void setCompetitor2Name(QString name);
+    void setCompetitor1Name(const QString& name);
+    void setCompetitor2Name(const QString& name);
 
-    void setTimeLabel(QString newtime);
-    void setDivisionLabel(QString division);
-    void setBeltLabel(QString newbelt);
+    void setTimeLabel(const QString& newtime);
+    void setDivisionLabel(const QString& division);
+    void setBeltLabel(const QString& newbelt);
 
-    void setLogo(QString logo);
+    void setLogo(const QString& logo);
     void resetScores();
 
-    // TODO: UI: manually add all entries to UI to avoid dynamically loading at runtime
-    // or use QHash instead of QMap?(Faster key lookups but no storage order)
-
-    void setC1Flag(QString flagpath);
-    void setC2Flag(QString flagpath);
+    void setC1Flag(const QString& flagpath);
+    void setC2Flag(const QString& flagpath);
 
 private:
     Ui::Scoreboard *ui;

@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1098</width>
-    <height>340</height>
+    <width>1150</width>
+    <height>350</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1150</width>
+    <height>350</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -97,7 +103,7 @@ border: none;</string>
       <item row="6" column="4">
        <widget class="QPushButton" name="c1AddPButton">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
           <verstretch>1</verstretch>
          </sizepolicy>
@@ -116,7 +122,7 @@ font-size: 24pt;</string>
       <item row="6" column="6">
        <widget class="QPushButton" name="c2Add2Button">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
           <verstretch>1</verstretch>
          </sizepolicy>
@@ -327,7 +333,7 @@ border: none;</string>
       <item row="6" column="9">
        <widget class="QPushButton" name="c2AddAButton">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
           <verstretch>1</verstretch>
          </sizepolicy>
@@ -361,7 +367,7 @@ font-size: 36pt;</string>
       <item row="6" column="10">
        <widget class="QPushButton" name="c2AddPButton">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
           <verstretch>1</verstretch>
          </sizepolicy>
@@ -570,7 +576,7 @@ font-size: 18pt;</string>
       <item row="6" column="3">
        <widget class="QPushButton" name="c1AddAButton">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
           <verstretch>1</verstretch>
          </sizepolicy>
@@ -618,7 +624,7 @@ border: none;</string>
       <item row="6" column="2">
        <widget class="QPushButton" name="c1Add4Button">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
           <verstretch>1</verstretch>
          </sizepolicy>
@@ -811,7 +817,7 @@ font-size: 18pt;</string>
       <item row="6" column="1">
        <widget class="QPushButton" name="c1Add3Button">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
           <verstretch>1</verstretch>
          </sizepolicy>
@@ -902,7 +908,7 @@ font-size: 24pt;</string>
       <item row="6" column="8">
        <widget class="QPushButton" name="c2Add4Button">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
           <verstretch>1</verstretch>
          </sizepolicy>
@@ -966,7 +972,7 @@ font-size: 36pt;</string>
       <item row="6" column="7">
        <widget class="QPushButton" name="c2Add3Button">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
           <verstretch>1</verstretch>
          </sizepolicy>
@@ -985,10 +991,16 @@ border: none;</string>
       <item row="0" column="7">
        <widget class="QComboBox" name="soundComboBox">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
           <horstretch>1</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>70</width>
+          <height>0</height>
+         </size>
         </property>
         <item>
          <property name="text">
