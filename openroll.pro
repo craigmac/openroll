@@ -31,6 +31,7 @@ SOURCES += \
 
 HEADERS += \
     controls.h \
+    openroll-config.h \
     scoreboard.h
 
 # Default rules for deployment.

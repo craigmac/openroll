@@ -5,9 +5,9 @@
  * require object to access, available to all like a
  * global var. Must be defined outside of main or a function.
  */
-const QString Controls::s_VERSION = "2.0.0-alpha";
+// const QString Controls::s_VERSION = "2.0.0-alpha";
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
     Controls controls;

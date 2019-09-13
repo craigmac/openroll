@@ -11,3 +11,9 @@ HTML/
 debug/
 release/
 x64/
+Makefile*
+openroll.*
+.vs/
+.qmake.stash
+ui_*
+*.log

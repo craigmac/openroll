@@ -1,13 +1,14 @@
 #include "controls.h"
+#include "openroll-config.h"
 #include "scoreboard.h"
 #include "ui_controls.h"
 #include <map>
 #include <QDebug>
+#include <QDir>
+#include <QFileDialog>
+#include <QStringList>
 #include <QTime>
 #include <QtWidgets>
-#include <QDir>
-#include <QStringList>
-#include <QFileDialog>
 
 /**
  * @brief Controls::Controls
@@ -18,11 +19,10 @@ Controls::Controls(QWidget *parent) :
     ui(new Ui::Controls)
 {
     ui->setupUi(this);
-    setWindowTitle("Openroll - Controls - " + Controls::s_VERSION);
-
+    setWindowTitle("Openroll - Controls - " + OPENROLL_VERSION);
     // Pass flag to make board an independent window is required or it will draw inside controls window
     Scoreboard *board = new Scoreboard(this, Qt::WindowFlags(Qt::Window));
-    board->setWindowTitle("Openroll - Scoreboard - " + Controls::s_VERSION);
+    board->setWindowTitle("Openroll - Scoreboard - " + OPENROLL_VERSION);
     board->setAttribute(Qt::WA_DeleteOnClose);
     board->show();
 
