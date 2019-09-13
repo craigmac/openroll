@@ -12,7 +12,7 @@
 
 /**
  * @brief Controls::Controls
- * @param parent
+ * @param parent QWidget
  */
 Controls::Controls(QWidget *parent) :
     QMainWindow(parent),
@@ -26,7 +26,7 @@ Controls::Controls(QWidget *parent) :
     board->setAttribute(Qt::WA_DeleteOnClose);
     board->show();
 
-    // HACK: must be cleaner way to do this....
+    // TODO: Remove magic numbers, set to const QStrings
     divisionIdxToTimeMap[0] = 120;
     divisionIdxToTimeMap[1] = 120;
     divisionIdxToTimeMap[2] = 120;
@@ -115,19 +115,19 @@ Controls::Controls(QWidget *parent) :
     timer->start(1000); // every 1 second
 }
 
+/**
+ * @brief Controls::~Controls
+ */
 Controls::~Controls()
 {
     qDebug() << "Controls destructor called.";
     delete ui;
-    //    delete board;
-    //    delete m_player;
-    //    delete timer;
 }
 
 /**
  * @brief Controls::modify_points
- * @param label
- * @param amount
+ * @param label QLabel
+ * @param amount int
  */
 void Controls::modify_points(QLabel *label, int amount)
 {
@@ -234,7 +234,7 @@ void Controls::enableControls()
 
 /**
  * @brief Controls::closeEvent
- * @param event
+ * @param event QCloseEvent
  */
 void Controls::closeEvent(QCloseEvent *event)
 {
@@ -285,7 +285,7 @@ void Controls::on_c1Add3Button_pressed()
 
 /**
  * @brief Controls::on_divisionComboBox_currentIndexChanged
- * @param index
+ * @param index int
  */
 void Controls::on_divisionComboBox_currentIndexChanged(int index)
 {
@@ -440,7 +440,7 @@ void Controls::on_divisionComboBox_currentIndexChanged(int index)
         m_currentBelt = "UNKNOWN";
         totalTime = 5 * 60;
         break;
-    };
+    }
 
     // Call here or display won't be updated if match is not running
     updateDisplay();
@@ -448,14 +448,13 @@ void Controls::on_divisionComboBox_currentIndexChanged(int index)
 
 /**
  * @brief Controls::on_soundComboBox_currentIndexChanged
- * @param sound
+ * @param sound QString
  */
 void Controls::on_soundComboBox_currentIndexChanged(const QString &sound)
 {
    QString f = "qrc:///sounds/" + sound;
    qDebug() << "Changing to sound file: " << f;
    m_player->setMedia(QUrl(f));
-   //playSound();
 }
 
 /**
@@ -1021,7 +1020,7 @@ void Controls::on_c2DelPButton_pressed()
 
 /**
  * @brief Controls::on_c1LineEdit_textEdited
- * @param str
+ * @param str QString
  */
 void Controls::on_c1LineEdit_textEdited(const QString &str)
 {
@@ -1031,7 +1030,7 @@ void Controls::on_c1LineEdit_textEdited(const QString &str)
 
 /**
  * @brief Controls::on_c2LineEdit_textEdited
- * @param str
+ * @param str QString
  */
 void Controls::on_c2LineEdit_textEdited(const QString &str)
 {
@@ -1049,7 +1048,7 @@ void Controls::on_testSoundButton_pressed()
 
 /**
  * @brief Controls::on_c1FlagComboBox_currentIndexChanged
- * @param flag
+ * @param flag QString
  * 
  * Emits a QString representing the path to the big flag version of the
  * small flag selected. This is so we can load small version of flag for
@@ -1064,7 +1063,7 @@ void Controls::on_c1FlagComboBox_currentIndexChanged(const QString &flag)
 
 /**
  * @brief Controls::on_c2FlagComboBox_currentIndexChanged
- * @param flag
+ * @param flag QString
  */
 void Controls::on_c2FlagComboBox_currentIndexChanged(const QString &flag)
 {
