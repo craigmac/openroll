@@ -459,7 +459,7 @@ void Controls::on_soundComboBox_currentIndexChanged(const QString &sound)
 
 /**
  * @brief Controls::populateFlagDropDowns
- * 
+ *
  * Add all the countries and related flag icons to
  * each competitor dropdown.
  */
@@ -834,7 +834,7 @@ void Controls::resetMatchStates()
 
 /**
  * @brief Controls::onAboutToQuit
- * 
+ *
  * Called when QApplication is about to quit main event loop.
  * Connects to QCoreApplication::aboutToQuit signal.
  * Last-second cleanup goes here. Cannot be emitted by user
@@ -1049,7 +1049,7 @@ void Controls::on_testSoundButton_pressed()
 /**
  * @brief Controls::on_c1FlagComboBox_currentIndexChanged
  * @param flag QString
- * 
+ *
  * Emits a QString representing the path to the big flag version of the
  * small flag selected. This is so we can load small version of flag for
  * speed at startup into the dropdown, and load big version only when

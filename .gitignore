@@ -17,3 +17,8 @@ openroll.*
 .qmake.stash
 ui_*
 *.log
+.clangd/
+.vscode/
+*.sublime-*
+tmp/
+openroll_resource.rc
