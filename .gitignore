@@ -12,7 +12,6 @@ debug/
 release/
 x64/
 Makefile*
-openroll.*
 .vs/
 .qmake.stash
 ui_*
@@ -27,3 +26,6 @@ openroll_autogen/
 cmake_install.cmake
 CMakeCache.txt
 openroll_plugin_import.cpp
+openroll.ilk
+openroll.pdb
+openroll.pro.*
