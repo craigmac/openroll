@@ -4,6 +4,8 @@
 Openroll is a free and open-source scoreboard and match timer for IBJJF-rules
 Brazilian Jiu-Jitsu. It is not affiliated with the IBJJF in any way.
 
+[![Download Openroll](https://img.shields.io/sourceforge/dt/openroll.svg)](https://sourceforge.net/projects/openroll/files/latest/download)
+
 # Installation
 [![Download Openroll](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/openroll/files/latest/download)
 
