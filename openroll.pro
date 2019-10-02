@@ -2,8 +2,13 @@ QT       += multimedia widgets
 
 TARGET = openroll
 TEMPLATE = app
+VERSION = 2.0.0
 
-# DEFINES += QT_DEPRECATED_WARNINGS
+# for Windows resource-file
+QMAKE_TARGET_COMPANY = "Barker Software"
+QMAKE_TARGET_DESCRIPTION = "Brazilian jiu-jitsu match timer and scoreboard using IBJJF ruleset."
+QMAKE_TARGET_COPYRIGHT = 2019
+QMAKE_TARGET_PRODUCT = "Openroll"
 
 CONFIG += c++11
 
@@ -29,6 +34,7 @@ FORMS += \
 RESOURCES += \
     resources.qrc
 
+# supported by UnixMake specs only, put these in DESTDIR with TARGET
 DISTFILES += \
     AUTHORS \
     CHANGELOG \
@@ -41,7 +47,7 @@ win32: {
 
 osx: {
     # Same, but for Apple, use osx tool to convert .ico to .icns file first
-    # ICON = openroll.icns
+    ICON = openroll.icns
 }
 
 linux: {

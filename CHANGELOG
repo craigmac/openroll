@@ -1,3 +1,11 @@
+2.0.0:
+* Huge speedboost on load
+* Static build -- fewer files and size
+* Portable now, no installer needed or admin priviledges--unzip and run.
+* Many small bug fixes and build improvements working toward os x build and
+release
+
+
 2.0.0alpha:
 * First test public release, to be followed by a beta release
 and then a proper 2.0.0 production release.
