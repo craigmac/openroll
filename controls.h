@@ -109,6 +109,17 @@ private:
     // Maps country display name to icon in qrc file
     QMap<QString, QString> countryToResourceMap;
 
+    // Constants to avoid magic numbers
+    const int TWO_MINUTES = 2 * 60;
+    const int THREE_MINUTES = 3 * 60;
+    const int FOUR_MINUTES = 4 * 60;
+    const int FIVE_MINUTES = 5 * 60;
+    const int SIX_MINUTES = 6 * 60;
+    const int SEVEN_MINUTES = 7 * 60;
+    const int EIGHT_MINUTES = 8 * 60;
+    const int NINE_MINUTES = 9 * 60;
+    const int TEN_MINUTES = 10 * 60;
+
 signals:
     void competitor1PointsChanged(int value);
     void competitor1AdvantagesChanged(int value);

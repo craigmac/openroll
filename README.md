@@ -10,10 +10,9 @@ Brazilian Jiu-Jitsu. It is not affiliated with the IBJJF in any way.
 # Development
 To build debug and/or release builds on a Windows machine, you will need:
 
-* Qt Creator 4.9.2+, which comes with Qt 5.12.4+ available from [Qt
-  website](https://www.qt.io/download).
-* If using the Qt online installer, choose the MinGW 64-bit Kit and install
-the mingw64 build tools as well.
+* MSYS2: using msys2.exe interpreter install packages 'qt5-static' and 'qt-creator' to be
+able to build Qt 5 statically for Windows using MinGW-w64 toolchain. The details are at:
+[https://wiki.qt.io/MSYS2](MSYS2 Wiki).
 
 ## Troubleshooting Builds
 Make sure first that you can build and run a Qt program by opening Qt Creator

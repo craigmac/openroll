@@ -39,6 +39,7 @@ DISTFILES += \
     AUTHORS \
     CHANGELOG \
     LICENSES.txt \
+    README.md \
     license.txt
 
 win32: {

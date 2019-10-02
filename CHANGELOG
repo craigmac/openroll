@@ -1,3 +1,7 @@
+
+* BUG: clicking test sound disabled play/pause until reset button pressed.
+Removed that limitation.
+
 2.0.0:
 * Huge speedboost on load
 * Static build -- fewer files and size

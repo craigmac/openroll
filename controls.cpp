@@ -26,36 +26,35 @@ Controls::Controls(QWidget *parent) :
     board->setAttribute(Qt::WA_DeleteOnClose);
     board->show();
 
-    // TODO: Remove magic numbers, set to const QStrings
-    divisionIdxToTimeMap[0] = 120;
-    divisionIdxToTimeMap[1] = 120;
-    divisionIdxToTimeMap[2] = 120;
-    divisionIdxToTimeMap[3] = 180;
-    divisionIdxToTimeMap[4] = 180;
-    divisionIdxToTimeMap[5] = 180;
-    divisionIdxToTimeMap[6] = 240;
-    divisionIdxToTimeMap[7] = 240;
-    divisionIdxToTimeMap[8] = 240;
-    divisionIdxToTimeMap[9] = 240;
-    divisionIdxToTimeMap[10] = 240;
-    divisionIdxToTimeMap[11] = 240;
-    divisionIdxToTimeMap[12] = 300;
-    divisionIdxToTimeMap[13] = 300;
-    divisionIdxToTimeMap[14] = 300;
-    divisionIdxToTimeMap[15] = 360;
-    divisionIdxToTimeMap[16] = 420;
-    divisionIdxToTimeMap[17] = 480;
-    divisionIdxToTimeMap[18] = 600;
-    divisionIdxToTimeMap[19] = 300;
-    divisionIdxToTimeMap[20] = 300;
-    divisionIdxToTimeMap[21] = 360;
-    divisionIdxToTimeMap[22] = 360;
-    divisionIdxToTimeMap[23] = 360;
-    divisionIdxToTimeMap[24] = 300;
-    divisionIdxToTimeMap[25] = 300;
-    divisionIdxToTimeMap[26] = 300;
-    divisionIdxToTimeMap[27] = 300;
-    divisionIdxToTimeMap[28] = 300;
+    divisionIdxToTimeMap[0] = TWO_MINUTES;
+    divisionIdxToTimeMap[1] = TWO_MINUTES;
+    divisionIdxToTimeMap[2] = TWO_MINUTES;
+    divisionIdxToTimeMap[3] = THREE_MINUTES;
+    divisionIdxToTimeMap[4] = THREE_MINUTES;
+    divisionIdxToTimeMap[5] = THREE_MINUTES;
+    divisionIdxToTimeMap[6] = FOUR_MINUTES;
+    divisionIdxToTimeMap[7] = FOUR_MINUTES;
+    divisionIdxToTimeMap[8] = FOUR_MINUTES;
+    divisionIdxToTimeMap[9] = FOUR_MINUTES;
+    divisionIdxToTimeMap[10] = FOUR_MINUTES;
+    divisionIdxToTimeMap[11] = FOUR_MINUTES;
+    divisionIdxToTimeMap[12] = FIVE_MINUTES;
+    divisionIdxToTimeMap[13] = FIVE_MINUTES;
+    divisionIdxToTimeMap[14] = FIVE_MINUTES;
+    divisionIdxToTimeMap[15] = SIX_MINUTES;
+    divisionIdxToTimeMap[16] = SEVEN_MINUTES;
+    divisionIdxToTimeMap[17] = EIGHT_MINUTES;
+    divisionIdxToTimeMap[18] = TEN_MINUTES;
+    divisionIdxToTimeMap[19] = FIVE_MINUTES;
+    divisionIdxToTimeMap[20] = FIVE_MINUTES;
+    divisionIdxToTimeMap[21] = SIX_MINUTES;
+    divisionIdxToTimeMap[22] = SIX_MINUTES;
+    divisionIdxToTimeMap[23] = SIX_MINUTES;
+    divisionIdxToTimeMap[24] = FIVE_MINUTES;
+    divisionIdxToTimeMap[25] = FIVE_MINUTES;
+    divisionIdxToTimeMap[26] = FIVE_MINUTES;
+    divisionIdxToTimeMap[27] = FIVE_MINUTES;
+    divisionIdxToTimeMap[28] = FIVE_MINUTES;
 
     qDebug() << "totalTime is: " << totalTime;
     qDebug() << "clockMinutes default is: " << clockMinutes;
@@ -211,7 +210,7 @@ void Controls::playSound()
     if (ui->OnRadioButton->isChecked()) {
         m_player->play();
     }
-    ui->playPauseButton->setDisabled(true);
+    //ui->playPauseButton->setDisabled(true);
 
 }
 
@@ -465,7 +464,7 @@ void Controls::on_soundComboBox_currentIndexChanged(const QString &sound)
  */
 void Controls::populateFlagDropDowns()
 {
-    // TODO: use a thread/parallel to do this for speed!
+    // TODO: use a thread/parallel to do this for even moar speed?
     countryToResourceMap.insert("ad", ":/small-flags/ad-small");
     countryToResourceMap.insert("ae", ":/small-flags/ae-small");
     countryToResourceMap.insert("af", ":/small-flags/af-small");
