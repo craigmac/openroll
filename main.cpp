@@ -1,5 +1,7 @@
 #include "controls.h"
 #include <QApplication>
+#include "logger.h"
+#include <QDebug>
 
 int main(int argc, char *argv[]) {
   QApplication app(argc, argv);
@@ -11,7 +13,10 @@ int main(int argc, char *argv[]) {
                    &Controls::onAboutToQuit);
   controls.show();
 
-  return QApplication::exec();
+  qInfo() << "Using log file named: " << logger::filename;
+  logger::attach();
+
+  return app.exec();
 }
 
 // DEV: Load your own sound file
@@ -21,4 +26,3 @@ int main(int argc, char *argv[]) {
  * created to fire again in 1s. Really it should just continue from time remaining on the previous timer,
  * otherwise user can just keep hitting play/pause every .5 seconds and the screen would never update.
  */
-

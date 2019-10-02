@@ -29,3 +29,5 @@ openroll_plugin_import.cpp
 openroll.ilk
 openroll.pdb
 openroll.pro.*
+object_script.*
+log.txt

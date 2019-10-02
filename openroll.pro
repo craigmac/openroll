@@ -13,12 +13,14 @@ QMAKE_TARGET_PRODUCT = "Openroll"
 CONFIG += c++11
 
 SOURCES += \
+        logger.cpp \
         main.cpp \
         controls.cpp \
         scoreboard.cpp
 
 HEADERS += \
     controls.h \
+    logger.h \
     openroll-config.h \
     scoreboard.h
 
