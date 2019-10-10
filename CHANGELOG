@@ -1,6 +1,9 @@
-
+2.0.1:
 * BUG: clicking test sound disabled play/pause until reset button pressed.
 Removed that limitation.
+* Dynamically linked build for LGPL compliance and easier releases
+* Licenses files renamed and cleaned up LICENSES.txt file
+* README reduced and simplified.
 
 2.0.0:
 * Huge speedboost on load

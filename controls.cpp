@@ -2,6 +2,9 @@
 #include "openroll-config.h"
 #include "scoreboard.h"
 #include "ui_controls.h"
+#ifdef QT_DEBUG
+#include "logger.h"
+#endif
 #include <map>
 #include <QDebug>
 #include <QDir>

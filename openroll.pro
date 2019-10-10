@@ -2,7 +2,7 @@ QT       += multimedia widgets
 
 TARGET = openroll
 TEMPLATE = app
-VERSION = 2.0.0
+VERSION = 2.0.1
 
 # for Windows resource-file
 QMAKE_TARGET_COMPANY = "Barker Software"
@@ -36,23 +36,30 @@ FORMS += \
 RESOURCES += \
     resources.qrc
 
-# supported by UnixMake specs only, put these in DESTDIR with TARGET
+# only works with Unix makefiles, Windows you have to copy these manually or with script
 DISTFILES += \
     AUTHORS \
     CHANGELOG \
     LICENSES.txt \
     README.md \
-    license.txt
+    gpl.txt \
+    lgpl.txt
 
-win32: {
+win32 {
     RC_ICONS = openroll.ico
+#ifdef QT_DEBUG
+    CONFIG += console
+#else
+    CONFIG -= console
+#endif
 }
 
-osx: {
+osx {
     # Same, but for Apple, use osx tool to convert .ico to .icns file first
     ICON = openroll.icns
+    CONFIG += app_bundle
 }
 
-linux: {
+linux {
 
 }
