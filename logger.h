@@ -1,5 +1,5 @@
-#ifndef LOGGER_H
-#define LOGGER_H
+#ifndef QT_DEBUG_H
+#define QT_DEBUG_H
 
 #include <QObject>
 #include <QDebug>
@@ -29,4 +29,4 @@ signals:
 public slots:
 };
 
-#endif // LOGGER_H
+#endif // QT_DEBUG_H

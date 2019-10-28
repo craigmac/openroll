@@ -1,18 +1,20 @@
 #include "scoreboard.h"
 #include "ui_scoreboard.h"
-#ifdef LOGGER
-    #include "logger.h"
-#endif
+#ifdef QT_DEBUG
+#include "logger.h"
 #include <QDebug>
+#endif
 
 /**
  * @brief Scoreboard::closeEvent
  * @param event QCloseEvent
  */
-void Scoreboard::closeEvent(QCloseEvent *event)
-{
-    qDebug() << "Close event caught on scoreboard";
-    event->accept();
+void Scoreboard::closeEvent(QCloseEvent *event) {
+
+#ifdef QT_DEBUG
+  qDebug() << "Close event caught on scoreboard";
+#endif
+  event->accept();
 }
 
 /**
@@ -151,11 +153,13 @@ void Scoreboard::setBeltLabel(const QString& newbelt)
  * @brief Scoreboard::setLogo
  * @param logo QString
  */
-void Scoreboard::setLogo(const QString& logo)
-{
-    qDebug() << "Scoreboard given this logo to try to load: " << logo;
-    QPixmap img = QPixmap(logo);
-    ui->user_logo->setPixmap(img);
+void Scoreboard::setLogo(const QString &logo) {
+
+#ifdef QT_DEBUG
+  qDebug() << "Scoreboard given this logo to try to load: " << logo;
+#endif
+  QPixmap img = QPixmap(logo);
+  ui->user_logo->setPixmap(img);
 }
 
 /**

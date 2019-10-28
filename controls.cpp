@@ -2,11 +2,13 @@
 #include "openroll-config.h"
 #include "scoreboard.h"
 #include "ui_controls.h"
-#ifdef LOGGER
-    #include "logger.h"
-#endif
-#include <map>
+
+#ifdef QT_DEBUG
+#include "logger.h"
 #include <QDebug>
+#endif
+
+#include <map>
 #include <QDir>
 #include <QFileDialog>
 #include <QStringList>
@@ -59,9 +61,11 @@ Controls::Controls(QWidget *parent) :
     divisionIdxToTimeMap[27] = FIVE_MINUTES;
     divisionIdxToTimeMap[28] = FIVE_MINUTES;
 
+#ifdef QT_DEBUG
     qDebug() << "totalTime is: " << totalTime;
     qDebug() << "clockMinutes default is: " << clockMinutes;
     qDebug() << "clockSeconds default is: " << clockSeconds;
+#endif
 
     timer = new QTimer(this);
     m_player = new QMediaPlayer(this);
@@ -120,10 +124,11 @@ Controls::Controls(QWidget *parent) :
 /**
  * @brief Controls::~Controls
  */
-Controls::~Controls()
-{
-    qDebug() << "Controls destructor called.";
-    delete ui;
+Controls::~Controls() {
+#ifdef QT_DEBUG
+  qDebug() << "Controls destructor called.";
+#endif
+  delete ui;
 }
 
 /**
@@ -178,31 +183,39 @@ void Controls::updateDisplay()
 /**
  * @brief Controls::updateClock
  */
-void Controls::updateClock()
-{
-    if (matchDone) {
-        qDebug() << "updateClock(): matchDone = true condition hit.";
-        /* GOTCHA: just update the display and stop here, this handles
-         * case where match was started and clock was ticking and
-         * user hits reset button without hitting pause first.
-         */
-        updateDisplay();
-        return;
-    }
+void Controls::updateClock() {
+  if (matchDone) {
 
-    if (totalTime <= 0) {
-        qDebug() << "updateClock(): totalTime <=0 condition hit.";
-        Controls::playSound();
-        matchDone = true;
-        return; // stop here
-    }
+#ifdef QT_DEBUG
+    qDebug() << "updateClock(): matchDone = true condition hit.";
+#endif
+    /* GOTCHA: just update the display and stop here, this handles
+     * case where match was started and clock was ticking and
+     * user hits reset button without hitting pause first.
+     */
+    updateDisplay();
+    return;
+  }
 
-    if (matchStarted && clockRunning) {
-        qDebug() << "updateClock(): matchStarted && clockRunning = true condition hit.";
-        totalTime--;
-        updateDisplay();
-    }
+  if (totalTime <= 0) {
 
+#ifdef QT_DEBUG
+    qDebug() << "updateClock(): totalTime <=0 condition hit.";
+#endif
+    Controls::playSound();
+    matchDone = true;
+    return; // stop here
+  }
+
+  if (matchStarted && clockRunning) {
+
+#ifdef QT_DEBUG
+    qDebug()
+        << "updateClock(): matchStarted && clockRunning = true condition hit.";
+#endif
+    totalTime--;
+    updateDisplay();
+  }
 }
 
 /**
@@ -238,20 +251,19 @@ void Controls::enableControls()
  * @brief Controls::closeEvent
  * @param event QCloseEvent
  */
-void Controls::closeEvent(QCloseEvent *event)
-{
-    qDebug() << "Close event caught on control window.";
-    QMessageBox::StandardButton resBtn = QMessageBox::question(this,
-                                      "Openroll",
-                                      "Are you sure?",
-                                      QMessageBox::No | QMessageBox::Yes,
-                                      QMessageBox::No);
-    if (resBtn != QMessageBox::Yes) {
-        event->ignore();
-    }
-    else {
-        event->accept();
-    }
+void Controls::closeEvent(QCloseEvent *event) {
+
+#ifdef QT_DEBUG
+  qDebug() << "Close event caught on control window.";
+#endif
+  QMessageBox::StandardButton resBtn = QMessageBox::question(
+      this, "Openroll", "Are you sure?", QMessageBox::No | QMessageBox::Yes,
+      QMessageBox::No);
+  if (resBtn != QMessageBox::Yes) {
+    event->ignore();
+  } else {
+    event->accept();
+  }
 }
 
 /**
@@ -452,11 +464,13 @@ void Controls::on_divisionComboBox_currentIndexChanged(int index)
  * @brief Controls::on_soundComboBox_currentIndexChanged
  * @param sound QString
  */
-void Controls::on_soundComboBox_currentIndexChanged(const QString &sound)
-{
-   QString f = "qrc:///sounds/" + sound;
-   qDebug() << "Changing to sound file: " << f;
-   m_player->setMedia(QUrl(f));
+void Controls::on_soundComboBox_currentIndexChanged(const QString &sound) {
+  QString f = "qrc:///sounds/" + sound;
+
+#ifdef QT_DEBUG
+  qDebug() << "Changing to sound file: " << f;
+#endif
+  m_player->setMedia(QUrl(f));
 }
 
 /**
@@ -691,135 +705,146 @@ void Controls::on_loadLogoButton_pressed()
 /**
  * @brief Controls::on_c1CustomFlagButton_pressed
  */
-void Controls::on_c1CustomFlagButton_pressed()
-{
-    QString customLogo = QFileDialog::getOpenFileName(this,
-                                        tr("Open Image"), ".",
-                        tr("Image Files (*.png *.jpg *.bmp)"));
+void Controls::on_c1CustomFlagButton_pressed() {
+  QString customLogo = QFileDialog::getOpenFileName(
+      this, tr("Open Image"), ".", tr("Image Files (*.png *.jpg *.bmp)"));
 
-    qDebug() << "on_c1CustomFlagButton_pressed(): using customLogo string: " << customLogo;
+#ifdef QT_DEBUG
+  qDebug() << "on_c1CustomFlagButton_pressed(): using customLogo string: "
+           << customLogo;
+#endif
 
-    if (!customLogo.isEmpty()) {
-        emit competitor1FlagChanged(customLogo);
-    }
+  if (!customLogo.isEmpty()) {
+    emit competitor1FlagChanged(customLogo);
+  }
 }
 
 /**
  * @brief Controls::on_c2CustomLogoButton_pressed
  */
-void Controls::on_c2CustomLogoButton_pressed()
-{
-    QString customLogo = QFileDialog::getOpenFileName(this,
-                                        tr("Open Image"), ".",
-                        tr("Image Files (*.png *.jpg *.bmp)"));
+void Controls::on_c2CustomLogoButton_pressed() {
+  QString customLogo = QFileDialog::getOpenFileName(
+      this, tr("Open Image"), ".", tr("Image Files (*.png *.jpg *.bmp)"));
 
-    qDebug() << "on_c2CustomFlagButton_pressed(): using customLogo string: " << customLogo;
+#ifdef QT_DEBUG
+  qDebug() << "on_c2CustomFlagButton_pressed(): using customLogo string: "
+           << customLogo;
+#endif
 
-    if (!customLogo.isEmpty()) {
-        emit competitor2FlagChanged(customLogo);
-    }
+  if (!customLogo.isEmpty()) {
+    emit competitor2FlagChanged(customLogo);
+  }
 }
 
 /**
  * @brief Controls::on_playPauseButton_pressed
  */
-void Controls::on_playPauseButton_pressed()
-{
-    qDebug() << "----------------------------------------------";
-    qDebug() << "Control:on_play_button_clicked() entry state: " <<
-                "matchStarted: " << matchStarted << ", " <<
-                "clockRunning: " << clockRunning << ", " <<
-                "clockPaused: " << clockPaused;
-    qDebug() << "----------------------------------------------";
+void Controls::on_playPauseButton_pressed() {
+#ifdef QT_DEBUG
+  qDebug() << "----------------------------------------------";
+  qDebug() << "Control:on_play_button_clicked() entry state: "
+           << "matchStarted: " << matchStarted << ", "
+           << "clockRunning: " << clockRunning << ", "
+           << "clockPaused: " << clockPaused;
+  qDebug() << "----------------------------------------------";
+#endif
 
-    if (!matchStarted) {
-        /* current image is play icon, flip to pause icon and
-         * disable any controls we don't want user pressing
-         * after match has officially started.
-         */
-        matchStarted = true;
-        clockRunning = true;
-        clockPaused = false;
-        ui->playPauseButton->setIcon(QIcon(":/ui/pause"));
-        disableControls();
+  if (!matchStarted) {
+    /* current image is play icon, flip to pause icon and
+     * disable any controls we don't want user pressing
+     * after match has officially started.
+     */
+    matchStarted = true;
+    clockRunning = true;
+    clockPaused = false;
+    ui->playPauseButton->setIcon(QIcon(":/ui/pause"));
+    disableControls();
+  } else {
+    /* matchStarted is true, meaning user pressed play button
+     * already to start the match. After first time
+     * on_play_button_clicked() is fired, the code path will keep
+     * hitting this 'else' path until the state of the match is
+     * flipped to matchStarted = false
+     */
+    if (clockPaused) { // current image is 'play' icon, flip to pause icon
+      ui->playPauseButton->setIcon(QIcon(":/ui/pause"));
+      clockPaused = false;
+      clockRunning = true;
+    } else if (clockRunning) { // current image is 'pause' icon
+      // stop clock and flip image to 'play'
+      ui->playPauseButton->setIcon(QIcon(":/ui/play"));
+      clockRunning = false;
+      clockPaused = true;
     }
-    else {
-        /* matchStarted is true, meaning user pressed play button
-         * already to start the match. After first time
-         * on_play_button_clicked() is fired, the code path will keep
-         * hitting this 'else' path until the state of the match is
-         * flipped to matchStarted = false
-         */
-        if (clockPaused) { // current image is 'play' icon, flip to pause icon
-            ui->playPauseButton->setIcon(QIcon(":/ui/pause"));
-            clockPaused = false;
-            clockRunning = true;
-        }
-        else if (clockRunning) { // current image is 'pause' icon
-            // stop clock and flip image to 'play'
-            ui->playPauseButton->setIcon(QIcon(":/ui/play"));
-            clockRunning = false;
-            clockPaused = true;
-        }
-    }
+  }
 
-    qDebug() << "----------------------------------------------";
-    qDebug() << "Control:on_play_button_clicked() exit state: " <<
-                "matchStarted: " << matchStarted << ", " <<
-                "clockRunning: " << clockRunning << ", " <<
-                "clockPaused: " << clockPaused;
-    qDebug() << "----------------------------------------------";
+#ifdef QT_DEBUG
+  qDebug() << "----------------------------------------------";
+  qDebug() << "Control:on_play_button_clicked() exit state: "
+           << "matchStarted: " << matchStarted << ", "
+           << "clockRunning: " << clockRunning << ", "
+           << "clockPaused: " << clockPaused;
+  qDebug() << "----------------------------------------------";
+#endif
 }
 
 /**
  * @brief Controls::on_resetButton_pressed
  */
-void Controls::on_resetButton_pressed()
-{
-    qDebug() << "------------------------------------------";
-    qDebug() << "Controls::on_resetButton_pressed() -- in.";
-    qDebug() << "------------------------------------------";
-    ui->c1NameLabel->setText("Competitor 1");
-    ui->c1PointsLabel->setText("0");
-    ui->c1AdvantagesLabel->setText("0");
-    ui->c1PenaltiesLabel->setText("0");
-    ui->c1PointsLabel->setText("0");
+void Controls::on_resetButton_pressed() {
+#ifdef QT_DEBUG
+  qDebug() << "------------------------------------------";
+  qDebug() << "Controls::on_resetButton_pressed() -- in.";
+  qDebug() << "------------------------------------------";
+#endif
+  ui->c1NameLabel->setText("Competitor 1");
+  ui->c1PointsLabel->setText("0");
+  ui->c1AdvantagesLabel->setText("0");
+  ui->c1PenaltiesLabel->setText("0");
+  ui->c1PointsLabel->setText("0");
 
-    ui->c2NameLabel->setText("Competitor 2");
-    ui->c2PointsLabel->setText("0");
-    ui->c2AdvantagesLabel->setText("0");
-    ui->c2PenaltiesLabel->setText("0");
-    ui->c2PointsLabel->setText("0");
+  ui->c2NameLabel->setText("Competitor 2");
+  ui->c2PointsLabel->setText("0");
+  ui->c2AdvantagesLabel->setText("0");
+  ui->c2PenaltiesLabel->setText("0");
+  ui->c2PointsLabel->setText("0");
 
-    ui->playPauseButton->setIcon(QIcon(":/ui/play"));
+  ui->playPauseButton->setIcon(QIcon(":/ui/play"));
 
-    // re-enable any controls that were disabled during running of match timer
-    enableControls();
+  // re-enable any controls that were disabled during running of match timer
+  enableControls();
 
-    /* Give current index to our map to get total seconds for reset value,
-     * because we to keep the same division and timings when reset is pressed rather
-     * than requiring user to change those each time they hit reset.
-     */
-    totalTime = divisionIdxToTimeMap[ui->divisionComboBox->currentIndex()];
+  /* Give current index to our map to get total seconds for reset value,
+   * because we to keep the same division and timings when reset is pressed
+   * rather than requiring user to change those each time they hit reset.
+   */
+  totalTime = divisionIdxToTimeMap[ui->divisionComboBox->currentIndex()];
 
-    qDebug() << "Contents of divisionIdxToTimeMap: " << divisionIdxToTimeMap;
+#ifdef QT_DEBUG
+  qDebug() << "Contents of divisionIdxToTimeMap: " << divisionIdxToTimeMap;
+#endif
 
-    clockMinutes = totalTime / 60;
-    clockSeconds = totalTime % 60;
+  clockMinutes = totalTime / 60;
+  clockSeconds = totalTime % 60;
 
-    qDebug() << "Using totalTime: " << totalTime;
-    qDebug() << "Using clockMinutes: " << clockMinutes;
-    qDebug() << "Using clockSeconds: " << clockSeconds;
+#ifdef QT_DEBUG
+  qDebug() << "Using totalTime: " << totalTime;
+  qDebug() << "Using clockMinutes: " << clockMinutes;
+  qDebug() << "Using clockSeconds: " << clockSeconds;
 
-    // require updating display here to show reset values
-    updateDisplay();
+#endif
 
-    // Update match states
-    resetMatchStates();
+  // require updating display here to show reset values
+  updateDisplay();
 
-    qDebug() << "------------------------------------------";
-    qDebug() << "Controls::on_resetButton_pressed() -- out.";
-    qDebug() << "------------------------------------------";
+  // Update match states
+  resetMatchStates();
+
+#ifdef QT_DEBUG
+  qDebug() << "------------------------------------------";
+  qDebug() << "Controls::on_resetButton_pressed() -- out.";
+  qDebug() << "------------------------------------------";
+#endif
 }
 
 /**
@@ -842,9 +867,11 @@ void Controls::resetMatchStates()
  * Last-second cleanup goes here. Cannot be emitted by user
  * and no user interaction possible in here.
  */
-void Controls::onAboutToQuit()
-{
-    qDebug() << "onAboutToQuit called.";
+void Controls::onAboutToQuit() {
+
+#ifdef QT_DEBUG
+  qDebug() << "onAboutToQuit called.";
+#endif
 }
 
 /**
