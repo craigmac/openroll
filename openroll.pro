@@ -1,7 +1,7 @@
 QT += multimedia widgets
 TARGET = openroll
 TEMPLATE = app
-VERSION = 2.0.1
+VERSION = 2.0.2
 
 CONFIG += c++11
 CONFIG(debug, debug|release) {

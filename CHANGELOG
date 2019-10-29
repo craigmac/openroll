@@ -1,3 +1,11 @@
+2.0.2:
+* BUG: pause/unpause now respects remaining time to next update ui call so
+timer is accurate to real life stopwatch and uses a more finer grained
+timer.
+* UI updates - now have a play AND pause button separate, use LCD clock type
+display for timer
+* Huge overhaul and refactoring of code.
+
 2.0.1:
 * BUG: clicking test sound disabled play/pause until reset button pressed.
 Removed that limitation.

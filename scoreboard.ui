@@ -407,21 +407,18 @@ color: 'white';</string>
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="timer_display">
+      <widget class="QLCDNumber" name="lcdClock">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
          <horstretch>1</horstretch>
          <verstretch>1</verstretch>
         </sizepolicy>
        </property>
-       <property name="styleSheet">
-        <string notr="true">font: 192pt 'Consolas';</string>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
        </property>
-       <property name="text">
-        <string>5:00</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
        </property>
       </widget>
      </item>

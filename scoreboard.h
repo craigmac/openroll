@@ -20,10 +20,6 @@ public:
     ~Scoreboard() override;
 
 public slots:
-    /* These are connected to signals emitted from another object using
-     * QObject::connect() function. We set up emitting signals and their signature in
-     * controls.h and create the signal-slot connection in controls.cpp initializer.
-     */
     void setCompetitor1Points(int value);
     void setCompetitor1Advantages(int value);
     void setCompetitor1Penalties(int value);
@@ -35,7 +31,7 @@ public slots:
     void setCompetitor1Name(const QString& name);
     void setCompetitor2Name(const QString& name);
 
-    void setTimeLabel(const QString& newtime);
+    void setClockDisplay(const QString &newtime);
     void setDivisionLabel(const QString& division);
     void setBeltLabel(const QString& newbelt);
 

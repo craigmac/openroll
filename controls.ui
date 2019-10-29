@@ -33,18 +33,66 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_5">
+      <item row="0" column="9">
+       <widget class="QPushButton" name="testSoundButton">
         <property name="text">
-         <string>&lt;b&gt;Points&lt;/b&gt;</string>
+         <string>Test</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="10">
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>&lt;b&gt;Advantages&lt;/b&gt;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
-      <item row="7" column="6">
-       <widget class="QPushButton" name="c2Del2Button">
+      <item row="3" column="0">
+       <widget class="QLabel" name="c1PointsLabel">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(60, 125, 59);
+color: rgb(255, 255, 255);
+font-size: 36pt;</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="9">
+       <widget class="QPushButton" name="c2Del4Button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>1</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(60, 125, 59);
+color: rgb(255, 255, 255);
+font-size: 24pt;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string>-4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="7">
+       <widget class="QPushButton" name="c2CustomLogoButton">
+        <property name="text">
+         <string>Custom ...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QPushButton" name="c1Del2Button">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -62,8 +110,8 @@ border: none;</string>
         </property>
        </widget>
       </item>
-      <item row="6" column="0">
-       <widget class="QPushButton" name="c1Add2Button">
+      <item row="6" column="2">
+       <widget class="QPushButton" name="c1Add4Button">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -77,26 +125,7 @@ font-size: 24pt;
 border: none;</string>
         </property>
         <property name="text">
-         <string>+2</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="1">
-       <widget class="QPushButton" name="c1Del3Button">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>1</horstretch>
-          <verstretch>1</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(60, 125, 59);
-color: rgb(255, 255, 255);
-font-size: 24pt;
-border: none;</string>
-        </property>
-        <property name="text">
-         <string>-3</string>
+         <string>+4</string>
         </property>
        </widget>
       </item>
@@ -119,7 +148,79 @@ font-size: 24pt;</string>
         </property>
        </widget>
       </item>
-      <item row="6" column="6">
+      <item row="5" column="9" colspan="3">
+       <widget class="QLineEdit" name="c2LineEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string>Competitor 2</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="11">
+       <widget class="QLabel" name="c2PenaltiesLabel">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(200, 0, 0);
+color: rgb(255, 255, 255);
+font-size: 36pt;</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0" colspan="3">
+       <widget class="QLineEdit" name="c1LineEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string>Competitor 1</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="2">
+       <widget class="QPushButton" name="c1Del4Button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>1</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(60, 125, 59);
+color: rgb(255, 255, 255);
+font-size: 24pt;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string>-4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="7">
        <widget class="QPushButton" name="c2Add2Button">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -138,8 +239,344 @@ border: none;</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="c1PointsLabel">
+      <item row="5" column="3">
+       <widget class="QComboBox" name="c1FlagComboBox"/>
+      </item>
+      <item row="7" column="7">
+       <widget class="QPushButton" name="c2Del2Button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>1</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(60, 125, 59);
+color: rgb(255, 255, 255);
+font-size: 24pt;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string>-2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="9">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>&lt;b&gt;Points&lt;/b&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="7">
+       <widget class="QLabel" name="label_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>&lt;b&gt;Buzzer Sound:&lt;/b&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>&lt;b&gt;Division:&lt;/b&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="11">
+       <widget class="QPushButton" name="c2AddPButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>1</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(200, 0, 0);
+border: none;
+color: rgb(255,255,255);
+font-size: 24pt;</string>
+        </property>
+        <property name="text">
+         <string>+P</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="4">
+       <widget class="QPushButton" name="c1CustomFlagButton">
+        <property name="text">
+         <string>Custom ...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="10">
+       <widget class="QLabel" name="c2AdvantagesLabel">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(224, 225, 1);
+color: rgb(255, 255, 255);
+font-size: 36pt;</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="10" colspan="2">
+       <widget class="QGroupBox" name="soundGroupBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QRadioButton" name="OnRadioButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>261</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>On</string>
+         </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/ui/soundon</normaloff>:/ui/soundon</iconset>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="MuteRadioButton">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>0</y>
+           <width>84</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Mute</string>
+         </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/ui/mute</normaloff>:/ui/mute</iconset>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item row="7" column="4">
+       <widget class="QPushButton" name="c1DelPButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>1</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(200, 0, 0);
+border: none;
+color: rgb(255,255,255);
+font-size: 24pt;</string>
+        </property>
+        <property name="text">
+         <string>-P</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="8">
+       <widget class="QComboBox" name="c2FlagComboBox"/>
+      </item>
+      <item row="6" column="10">
+       <widget class="QPushButton" name="c2AddAButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>1</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(224, 225, 1);
+border: none;
+color: rgb(255,255,255);
+font-size: 24pt;</string>
+        </property>
+        <property name="text">
+         <string>+A</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QPushButton" name="c1Del3Button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>1</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(60, 125, 59);
+color: rgb(255, 255, 255);
+font-size: 24pt;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string>-3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>&lt;b&gt;Points&lt;/b&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="QPushButton" name="loadLogoButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="8">
+       <widget class="QPushButton" name="c2Del3Button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>1</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(60, 125, 59);
+color: rgb(255, 255, 255);
+font-size: 24pt;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string>-3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QPushButton" name="c1Add2Button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>1</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(60, 125, 59);
+color: rgb(255, 255, 255);
+font-size: 24pt;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string>+2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="11">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>&lt;b&gt;Penalties&lt;/b&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="9">
+       <widget class="QPushButton" name="c2Add4Button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>1</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(60, 125, 59);
+color: rgb(255, 255, 255);
+font-size: 24pt;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string>+4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLabel" name="label_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>&lt;b&gt;Load Logo:&lt;/b&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="3">
+       <widget class="QLabel" name="c1NameLabel">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(85, 0, 255);
+color: rgb(255, 255, 255);
+font-size: 18pt;</string>
+        </property>
+        <property name="text">
+         <string>Competitor 1</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="9">
+       <widget class="QLabel" name="c2PointsLabel">
         <property name="styleSheet">
          <string notr="true">background-color: rgb(60, 125, 59);
 color: rgb(255, 255, 255);
@@ -311,61 +748,54 @@ font-size: 36pt;</string>
         </item>
        </widget>
       </item>
-      <item row="7" column="8">
-       <widget class="QPushButton" name="c2Del4Button">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>1</horstretch>
-          <verstretch>1</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(60, 125, 59);
-color: rgb(255, 255, 255);
-font-size: 24pt;
-border: none;</string>
-        </property>
+      <item row="1" column="2">
+       <widget class="QLabel" name="label_7">
         <property name="text">
-         <string>-4</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="9">
-       <widget class="QPushButton" name="c2AddAButton">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>1</horstretch>
-          <verstretch>1</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(224, 225, 1);
-border: none;
-color: rgb(255,255,255);
-font-size: 24pt;</string>
-        </property>
-        <property name="text">
-         <string>+A</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="9">
-       <widget class="QLabel" name="c2AdvantagesLabel">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(224, 225, 1);
-color: rgb(255, 255, 255);
-font-size: 36pt;</string>
-        </property>
-        <property name="text">
-         <string>0</string>
+         <string>&lt;b&gt;Penalties&lt;/b&gt;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
-      <item row="6" column="10">
-       <widget class="QPushButton" name="c2AddPButton">
+      <item row="0" column="8">
+       <widget class="QComboBox" name="soundComboBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>70</width>
+          <height>0</height>
+         </size>
+        </property>
+        <item>
+         <property name="text">
+          <string>airhorn</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>basketballbuzzer</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>buzz</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>doorbuzzer</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="7" column="11">
+       <widget class="QPushButton" name="c2DelPButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -379,55 +809,7 @@ color: rgb(255,255,255);
 font-size: 24pt;</string>
         </property>
         <property name="text">
-         <string>+P</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="8" colspan="3">
-       <widget class="QLineEdit" name="c2LineEdit">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-          <horstretch>1</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="placeholderText">
-         <string>Competitor 2</string>
-        </property>
-        <property name="clearButtonEnabled">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="3">
-       <widget class="QComboBox" name="c1FlagComboBox"/>
-      </item>
-      <item row="7" column="9">
-       <widget class="QPushButton" name="c2DelAButton">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>1</horstretch>
-          <verstretch>1</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(224, 225, 1);
-border: none;
-color: rgb(255,255,255);
-font-size: 24pt;</string>
-        </property>
-        <property name="text">
-         <string>-A</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="6">
-       <widget class="QPushButton" name="c2CustomLogoButton">
-        <property name="text">
-         <string>Custom ...</string>
+         <string>-P</string>
         </property>
        </widget>
       </item>
@@ -454,125 +836,6 @@ font-size: 24pt;</string>
         </property>
        </widget>
       </item>
-      <item row="7" column="10">
-       <widget class="QPushButton" name="c2DelPButton">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>1</horstretch>
-          <verstretch>1</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(200, 0, 0);
-border: none;
-color: rgb(255,255,255);
-font-size: 24pt;</string>
-        </property>
-        <property name="text">
-         <string>-P</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="8">
-       <widget class="QLabel" name="c2PointsLabel">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(60, 125, 59);
-color: rgb(255, 255, 255);
-font-size: 36pt;</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="9">
-       <widget class="QLabel" name="label_9">
-        <property name="text">
-         <string>&lt;b&gt;Advantages&lt;/b&gt;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QLabel" name="c1AdvantagesLabel">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(224, 225, 1);
-color: rgb(255, 255, 255);
-font-size: 36pt;</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label_6">
-        <property name="text">
-         <string>&lt;b&gt;Advantages&lt;/b&gt;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="0">
-       <widget class="QPushButton" name="c1Del2Button">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>1</horstretch>
-          <verstretch>1</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(60, 125, 59);
-color: rgb(255, 255, 255);
-font-size: 24pt;
-border: none;</string>
-        </property>
-        <property name="text">
-         <string>-2</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="4">
-       <widget class="QLabel" name="label_3">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-          <horstretch>1</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>&lt;b&gt;Load Logo:&lt;/b&gt;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="8" colspan="3">
-       <widget class="QLabel" name="c2NameLabel">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);
-font-size: 18pt;</string>
-        </property>
-        <property name="text">
-         <string>Competitor 2</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
       <item row="6" column="3">
        <widget class="QPushButton" name="c1AddAButton">
         <property name="sizePolicy">
@@ -589,228 +852,6 @@ font-size: 24pt;</string>
         </property>
         <property name="text">
          <string>+A</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="8">
-       <widget class="QLabel" name="label_8">
-        <property name="text">
-         <string>&lt;b&gt;Points&lt;/b&gt;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="7">
-       <widget class="QPushButton" name="c2Del3Button">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>1</horstretch>
-          <verstretch>1</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(60, 125, 59);
-color: rgb(255, 255, 255);
-font-size: 24pt;
-border: none;</string>
-        </property>
-        <property name="text">
-         <string>-3</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="2">
-       <widget class="QPushButton" name="c1Add4Button">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>1</horstretch>
-          <verstretch>1</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(60, 125, 59);
-color: rgb(255, 255, 255);
-font-size: 24pt;
-border: none;</string>
-        </property>
-        <property name="text">
-         <string>+4</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0" colspan="3">
-       <widget class="QLineEdit" name="c1LineEdit">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-          <horstretch>1</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="placeholderText">
-         <string>Competitor 1</string>
-        </property>
-        <property name="clearButtonEnabled">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-          <horstretch>1</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>&lt;b&gt;Division:&lt;/b&gt;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="10">
-       <widget class="QLabel" name="label_10">
-        <property name="text">
-         <string>&lt;b&gt;Penalties&lt;/b&gt;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="2">
-       <widget class="QPushButton" name="c1Del4Button">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>1</horstretch>
-          <verstretch>1</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(60, 125, 59);
-color: rgb(255, 255, 255);
-font-size: 24pt;
-border: none;</string>
-        </property>
-        <property name="text">
-         <string>-4</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="9" colspan="2">
-       <widget class="QGroupBox" name="soundGroupBox">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
-          <horstretch>1</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="title">
-         <string/>
-        </property>
-        <widget class="QRadioButton" name="OnRadioButton">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>0</y>
-           <width>261</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>On</string>
-         </property>
-         <property name="icon">
-          <iconset resource="resources.qrc">
-           <normaloff>:/ui/soundon</normaloff>:/ui/soundon</iconset>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="MuteRadioButton">
-         <property name="geometry">
-          <rect>
-           <x>80</x>
-           <y>0</y>
-           <width>84</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Mute</string>
-         </property>
-         <property name="icon">
-          <iconset resource="resources.qrc">
-           <normaloff>:/ui/mute</normaloff>:/ui/mute</iconset>
-         </property>
-        </widget>
-       </widget>
-      </item>
-      <item row="7" column="4">
-       <widget class="QPushButton" name="c1DelPButton">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>1</horstretch>
-          <verstretch>1</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(200, 0, 0);
-border: none;
-color: rgb(255,255,255);
-font-size: 24pt;</string>
-        </property>
-        <property name="text">
-         <string>-P</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="6">
-       <widget class="QLabel" name="label_2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-          <horstretch>1</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>&lt;b&gt;Buzzer Sound:&lt;/b&gt;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0" colspan="3">
-       <widget class="QLabel" name="c1NameLabel">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(85, 0, 255);
-color: rgb(255, 255, 255);
-font-size: 18pt;</string>
-        </property>
-        <property name="text">
-         <string>Competitor 1</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QLabel" name="label_7">
-        <property name="text">
-         <string>&lt;b&gt;Penalties&lt;/b&gt;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
@@ -848,43 +889,24 @@ font-size: 36pt;</string>
         </property>
        </widget>
       </item>
-      <item row="5" column="5">
-       <widget class="QLabel" name="timerLabel">
+      <item row="7" column="10">
+       <widget class="QPushButton" name="c2DelAButton">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
-          <verstretch>0</verstretch>
+          <verstretch>1</verstretch>
          </sizepolicy>
         </property>
         <property name="styleSheet">
-         <string notr="true">font-size: 48pt;</string>
+         <string notr="true">background-color: rgb(224, 225, 1);
+border: none;
+color: rgb(255,255,255);
+font-size: 24pt;</string>
         </property>
         <property name="text">
-         <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:36pt;&quot;&gt;5:00&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="scaledContents">
-         <bool>false</bool>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <string>-A</string>
         </property>
        </widget>
-      </item>
-      <item row="0" column="5">
-       <widget class="QPushButton" name="loadLogoButton">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-          <horstretch>1</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>...</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="7">
-       <widget class="QComboBox" name="c2FlagComboBox"/>
       </item>
       <item row="7" column="3">
        <widget class="QPushButton" name="c1DelAButton">
@@ -905,8 +927,23 @@ font-size: 24pt;</string>
         </property>
        </widget>
       </item>
+      <item row="4" column="9" colspan="3">
+       <widget class="QLabel" name="c2NameLabel">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+font-size: 18pt;</string>
+        </property>
+        <property name="text">
+         <string>Competitor 2</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
       <item row="6" column="8">
-       <widget class="QPushButton" name="c2Add4Button">
+       <widget class="QPushButton" name="c2Add3Button">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>1</horstretch>
@@ -920,19 +957,53 @@ font-size: 24pt;
 border: none;</string>
         </property>
         <property name="text">
-         <string>+4</string>
+         <string>+3</string>
         </property>
        </widget>
       </item>
-      <item row="5" column="4">
-       <widget class="QPushButton" name="c1CustomFlagButton">
+      <item row="1" column="1">
+       <widget class="QLabel" name="label_6">
         <property name="text">
-         <string>Custom ...</string>
+         <string>&lt;b&gt;Advantages&lt;/b&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
-      <item row="6" column="5">
-       <widget class="QPushButton" name="playPauseButton">
+      <item row="3" column="1">
+       <widget class="QLabel" name="c1AdvantagesLabel">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(224, 225, 1);
+color: rgb(255, 255, 255);
+font-size: 36pt;</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="5">
+       <widget class="QLCDNumber" name="lcdTimerControls">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>1</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="lineWidth">
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="5">
+       <widget class="QPushButton" name="playButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>2</horstretch>
@@ -954,80 +1025,26 @@ border: none;</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="10">
-       <widget class="QLabel" name="c2PenaltiesLabel">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(200, 0, 0);
-color: rgb(255, 255, 255);
-font-size: 36pt;</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="7">
-       <widget class="QPushButton" name="c2Add3Button">
+      <item row="6" column="5">
+       <widget class="QPushButton" name="pauseButton">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
           <horstretch>1</horstretch>
           <verstretch>1</verstretch>
          </sizepolicy>
         </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(60, 125, 59);
-color: rgb(255, 255, 255);
-font-size: 24pt;
-border: none;</string>
-        </property>
         <property name="text">
-         <string>+3</string>
+         <string/>
         </property>
-       </widget>
-      </item>
-      <item row="0" column="7">
-       <widget class="QComboBox" name="soundComboBox">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-          <horstretch>1</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/ui/pause</normaloff>:/ui/pause</iconset>
         </property>
-        <property name="minimumSize">
+        <property name="iconSize">
          <size>
-          <width>70</width>
-          <height>0</height>
+          <width>32</width>
+          <height>32</height>
          </size>
-        </property>
-        <item>
-         <property name="text">
-          <string>airhorn</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>basketballbuzzer</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>buzz</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>doorbuzzer</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="0" column="8">
-       <widget class="QPushButton" name="testSoundButton">
-        <property name="text">
-         <string>Test</string>
         </property>
        </widget>
       </item>
