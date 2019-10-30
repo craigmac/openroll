@@ -21,7 +21,6 @@ class Controls : public QMainWindow
 public:
     explicit Controls(QWidget *parent = nullptr);
     ~Controls() override;
-    static const QString s_VERSION;
 
 public slots:
   void matchNewSetup();

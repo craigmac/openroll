@@ -29,14 +29,10 @@ FORMS += \
 RESOURCES += \
     resources.qrc
 
-# Files to copy on install
-EXTRA_FILES += \
-    AUTHORS \
-    CHANGELOG \
-    LICENSES.txt \
-    README.md \
-    gpl.txt \
-    lgpl.txt
+# Extra files to copy into the build output directory
+extra_files.files = AUTHORS CHANGELOG gpl.txt lgpl.txt LICENSES.txt README.md
+
+INSTALLS += extra_files
 
 win32 {
     CONFIG += windows
@@ -77,3 +73,19 @@ linux {
         HEADERS += logger.h
     }
 }
+
+RCC_DIR = build/
+
+message("======================================")
+message("Building: $${TARGET} with QT_VERSION $${QT_VERSION}")
+message("Using pro file at $$_PRO_FILE_PWD_")
+message("Compiler: $${QMAKE_CXX}")
+message("QMake from: $${QMAKE_QMAKE}")
+message("DESTDIR: $${DESTDIR}")
+message("OBJECTS_DIR: $${OBJECTS_DIR}")
+message("RCC_DIR: $${RCC_DIR}")
+message("Makefile/s placed in OUT_PWD: $${OUT_PWD}")
+message("QMAKE_CXXFLAGS_DEBUG: $${QMAKE_CXXFLAGS_DEBUG}")
+message("QMAKE_CXXFLAGS_RELEASE: $${QMAKE_CXXFLAGS_RELEASE}")
+
+message("======================================")

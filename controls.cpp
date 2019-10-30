@@ -17,7 +17,12 @@
 
 /*!
  * \brief Controls::Controls
- * \param parent
+ * \param parent - Default is nullptr. Otherwise pass in parent QWidget pointer
+ * to make parent of this object.
+ *
+ * Default constructor for Controls class. In this initializer list it calls parent
+ * QMainWindow constructor with any parent pointer given (default value of nullptr),
+ * and sets ui member to pointer to Ui::Controls namespace defined in the header.
  */
 Controls::Controls(QWidget *parent) : QMainWindow(parent), ui(new Ui::Controls) {
   ui->setupUi(this);
