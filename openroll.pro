@@ -4,13 +4,15 @@ TEMPLATE = app
 VERSION = 2.0.2
 
 CONFIG += c++11
+
+# Extra files to copy into the build output directory
+extra_files.files = AUTHORS CHANGELOG gpl.txt lgpl.txt LICENSES.txt
+
+# Debug configuration
 CONFIG(debug, debug|release) {
     # adds -DQT_DEBUG to preprocessor so we can use it in ifdef in source
     DEFINES += QT_DEBUG
-    message(Debug build configuration selected...)
 }
-
-CONFIG(release, debug|release) :message(Release build config selected...)
 
 SOURCES += \
         main.cpp \
@@ -29,9 +31,6 @@ FORMS += \
 RESOURCES += \
     resources.qrc
 
-# Extra files to copy into the build output directory
-extra_files.files = AUTHORS CHANGELOG gpl.txt lgpl.txt LICENSES.txt README.md
-
 INSTALLS += extra_files
 
 win32 {
@@ -47,6 +46,10 @@ win32 {
         CONFIG += console
         SOURCES += logger.cpp
         HEADERS += logger.h
+        extra_files.path = $$OUT_PWD/../build-openroll-Desktop_Qt_5_12_5_MSVC2017_64bit-Debug/debug
+    }
+    CONFIG(release, debug|release) {
+        extra_files.path = $$OUT_PWD/../build-openroll-Desktop_Qt_5_12_5_MSVC2017_64bit-Release/release
     }
 }
 
@@ -74,18 +77,9 @@ linux {
     }
 }
 
-RCC_DIR = build/
-
 message("======================================")
 message("Building: $${TARGET} with QT_VERSION $${QT_VERSION}")
 message("Using pro file at $$_PRO_FILE_PWD_")
 message("Compiler: $${QMAKE_CXX}")
 message("QMake from: $${QMAKE_QMAKE}")
-message("DESTDIR: $${DESTDIR}")
-message("OBJECTS_DIR: $${OBJECTS_DIR}")
-message("RCC_DIR: $${RCC_DIR}")
-message("Makefile/s placed in OUT_PWD: $${OUT_PWD}")
-message("QMAKE_CXXFLAGS_DEBUG: $${QMAKE_CXXFLAGS_DEBUG}")
-message("QMAKE_CXXFLAGS_RELEASE: $${QMAKE_CXXFLAGS_RELEASE}")
-
 message("======================================")

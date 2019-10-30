@@ -21,6 +21,3 @@ int main(int argc, char *argv[]) {
 
   return QApplication::exec();
 }
-
-// DEV: Load your own sound file
-// DEV: Since controls and scoreboards should be singletons, should we just use static classes instead?

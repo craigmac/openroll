@@ -110,8 +110,8 @@ private:
      * save this value when pause is pressed so we can continue countdown from this value.
      */
     int timerRemainingTime = 0;
-    int minutes = 0;
-    int seconds = 30;
+    int minutes = 5;
+    int seconds = 0;
 
     QTimer timer;
     QTime time;
@@ -130,7 +130,6 @@ private:
     void competitor2NameChanged(QString name);
     void competitor2FlagChanged(QString flagpath);
 
-    void playPauseStateChanged(bool isPaused);
     void matchReset();
 
     void timerUpdated(QString time);

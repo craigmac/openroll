@@ -1,8 +1,9 @@
 #ifndef SCOREBOARD_H
 #define SCOREBOARD_H
 
-#include <QWidget>
 #include <QCloseEvent>
+#include <QLabel>
+#include <QWidget>
 
 namespace Ui {
 class Scoreboard;
@@ -19,7 +20,7 @@ public:
     explicit Scoreboard(QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
     ~Scoreboard() override;
 
-public slots:
+  public slots:
     void setCompetitor1Points(int value);
     void setCompetitor1Advantages(int value);
     void setCompetitor1Penalties(int value);
@@ -28,20 +29,20 @@ public slots:
     void setCompetitor2Advantages(int value);
     void setCompetitor2Penalties(int value);
 
-    void setCompetitor1Name(const QString& name);
-    void setCompetitor2Name(const QString& name);
+    void setCompetitor1Name(const QString &name);
+    void setCompetitor2Name(const QString &name);
 
     void setClockDisplay(const QString &newtime);
-    void setDivisionLabel(const QString& division);
-    void setBeltLabel(const QString& newbelt);
+    void setDivisionLabel(const QString &division);
+    void setBeltLabel(const QString &newbelt);
 
-    void setLogo(const QString& logo);
+    void setLogo(const QString &logo);
     void resetScores();
 
-    void setC1Flag(const QString& flagpath);
-    void setC2Flag(const QString& flagpath);
+    void setC1Flag(const QString &flagpath);
+    void setC2Flag(const QString &flagpath);
 
-private:
+  private:
     Ui::Scoreboard *ui;
 };
 

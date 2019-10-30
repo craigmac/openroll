@@ -15,6 +15,8 @@
 #include <QtWidgets>
 #include <map>
 
+// TODO: Load your own sound file
+
 /*!
  * \brief Controls::Controls
  * \param parent - Default is nullptr. Otherwise pass in parent QWidget pointer
@@ -128,18 +130,17 @@ Controls::~Controls() { delete ui; }
  */
 void Controls::matchPause() {
   if (timer.isActive()) {
-    qDebug() << "matchPause() timer.isActive() true";
     timerRemainingTime = timer.remainingTime();
-    qDebug() << "timerRemainingTime: " << timerRemainingTime;
     timer.stop();
 
     ui->playButton->setEnabled(true);
     ui->pauseButton->setEnabled(false);
     ui->resetButton->setEnabled(true);
-    // DEV: don't think we need this here.
-    //    updateDisplays();
+    ui->divisionComboBox->setEnabled(false);
   }
 }
+
+// DEV: better connect() with lambdas to reduce code?
 
 /*!
  * \brief Controls::matchPlay
@@ -162,7 +163,6 @@ void Controls::matchPause() {
 void Controls::matchPlay() {
   if (!timer.isActive()) {
     if (timerRemainingTime > 0) {
-      qDebug() << "matchPlay(): timerRemainingTime" << timerRemainingTime;
       timer.setInterval(timerRemainingTime);
     } else {
       timer.setInterval(1000);
@@ -171,6 +171,7 @@ void Controls::matchPlay() {
     ui->playButton->setEnabled(false);
     ui->pauseButton->setEnabled(true);
     ui->resetButton->setEnabled(true);
+    ui->divisionComboBox->setEnabled(false);
 
     timer.start();
   }
@@ -181,11 +182,10 @@ void Controls::matchPlay() {
  * \param label
  * \param amount
  */
-void Controls::modify_points(QLabel *label, int amount)
-{
-    int oldValue = label->text().toInt();
-    int newValue = oldValue + amount < 0 ? 0 : oldValue + amount;
-    label->setText(QString::number(newValue));
+void Controls::modify_points(QLabel *label, int amount) {
+  int oldValue = label->text().toInt();
+  int newValue = oldValue + amount < 0 ? 0 : oldValue + amount;
+  label->setText(QString::number(newValue));
 }
 
 /*!
@@ -206,7 +206,6 @@ void Controls::update() {
 
   // Hack: eww, must be better way but this works...
   if (time == zeroTime) {
-    qDebug() << "Reached zero time. match done.";
     time.setHMS(0, 0, 0);
     updateDisplays(); // otherwise display 1 second remaining
     matchDone = true;
@@ -258,25 +257,22 @@ void Controls::closeEvent(QCloseEvent *event) {
   }
 }
 
-// DEV: change all these signatures from on_foo_pressed() to just c1Add2() etc. as clang-tidy suggests
 void Controls::on_c1Add2Button_pressed() {
   QLabel *label = ui->c1PointsLabel;
   modify_points(label, 2);
   emit competitor1PointsChanged(2);
 }
 
-void Controls::on_c1Del2Button_pressed()
-{
-    QLabel *label = ui->c1PointsLabel;
-    modify_points(label, -2);
-    emit competitor1PointsChanged(-2);
+void Controls::on_c1Del2Button_pressed() {
+  QLabel *label = ui->c1PointsLabel;
+  modify_points(label, -2);
+  emit competitor1PointsChanged(-2);
 }
 
-void Controls::on_c1Add3Button_pressed()
-{
-    QLabel *label = ui->c1PointsLabel;
-    modify_points(label, 3);
-    emit competitor1PointsChanged(3);
+void Controls::on_c1Add3Button_pressed() {
+  QLabel *label = ui->c1PointsLabel;
+  modify_points(label, 3);
+  emit competitor1PointsChanged(3);
 }
 
 /*!
@@ -766,6 +762,7 @@ void Controls::matchNewSetup() {
   ui->playButton->setEnabled(true);
   ui->pauseButton->setEnabled(false);
   ui->resetButton->setEnabled(true);
+  ui->divisionComboBox->setEnabled(true);
 
   if (timer.isActive()) {
     timer.stop();
@@ -784,124 +781,107 @@ void Controls::matchNewSetup() {
   emit matchReset();
 }
 
-void Controls::on_c1Del3Button_pressed()
-{
-    QLabel *label = ui->c1PointsLabel;
-    modify_points(label, -3);
-    emit competitor1PointsChanged(-3);
+void Controls::on_c1Del3Button_pressed() {
+  QLabel *label = ui->c1PointsLabel;
+  modify_points(label, -3);
+  emit competitor1PointsChanged(-3);
 }
 
-void Controls::on_c1Add4Button_pressed()
-{
-    QLabel *label = ui->c1PointsLabel;
-    modify_points(label, 4);
-    emit competitor1PointsChanged(4);
+void Controls::on_c1Add4Button_pressed() {
+  QLabel *label = ui->c1PointsLabel;
+  modify_points(label, 4);
+  emit competitor1PointsChanged(4);
 }
 
-void Controls::on_c1Del4Button_pressed()
-{
-    QLabel *label = ui->c1PointsLabel;
-    modify_points(label, -4);
-    emit competitor1PointsChanged(-4);
+void Controls::on_c1Del4Button_pressed() {
+  QLabel *label = ui->c1PointsLabel;
+  modify_points(label, -4);
+  emit competitor1PointsChanged(-4);
 }
 
-void Controls::on_c1AddAButton_pressed()
-{
-    QLabel *label = ui->c1AdvantagesLabel;
-    modify_points(label, 1);
-    emit competitor1AdvantagesChanged(1);
+void Controls::on_c1AddAButton_pressed() {
+  QLabel *label = ui->c1AdvantagesLabel;
+  modify_points(label, 1);
+  emit competitor1AdvantagesChanged(1);
 }
 
-void Controls::on_c1DelAButton_pressed()
-{
-    QLabel *label = ui->c1AdvantagesLabel;
-    modify_points(label, -1);
-    emit competitor1AdvantagesChanged(-1);
+void Controls::on_c1DelAButton_pressed() {
+  QLabel *label = ui->c1AdvantagesLabel;
+  modify_points(label, -1);
+  emit competitor1AdvantagesChanged(-1);
 }
 
-void Controls::on_c1AddPButton_pressed()
-{
-    QLabel *label = ui->c1PenaltiesLabel;
-    modify_points(label, 1);
-    emit competitor1PenaltiesChanged(1);
+void Controls::on_c1AddPButton_pressed() {
+  QLabel *label = ui->c1PenaltiesLabel;
+  modify_points(label, 1);
+  emit competitor1PenaltiesChanged(1);
 }
 
-void Controls::on_c1DelPButton_pressed()
-{
-    QLabel *label = ui->c1PenaltiesLabel;
-    modify_points(label, -1);
-    emit competitor1PenaltiesChanged(-1);
+void Controls::on_c1DelPButton_pressed() {
+  QLabel *label = ui->c1PenaltiesLabel;
+  modify_points(label, -1);
+  emit competitor1PenaltiesChanged(-1);
 }
 
-void Controls::on_c2Add2Button_pressed()
-{
-   QLabel *label = ui->c2PointsLabel;
-   modify_points(label, 2);
-   emit competitor2PointsChanged(2);
+void Controls::on_c2Add2Button_pressed() {
+  QLabel *label = ui->c2PointsLabel;
+  modify_points(label, 2);
+  emit competitor2PointsChanged(2);
 }
 
-void Controls::on_c2Del2Button_pressed()
-{
-   QLabel *label = ui->c2PointsLabel;
-   modify_points(label, -2);
-   emit competitor2PointsChanged(-2);
+void Controls::on_c2Del2Button_pressed() {
+  QLabel *label = ui->c2PointsLabel;
+  modify_points(label, -2);
+  emit competitor2PointsChanged(-2);
 }
 
-void Controls::on_c2Add3Button_pressed()
-{
-   QLabel *label = ui->c2PointsLabel;
-   modify_points(label, 3);
-   emit competitor2PointsChanged(3);
+void Controls::on_c2Add3Button_pressed() {
+  QLabel *label = ui->c2PointsLabel;
+  modify_points(label, 3);
+  emit competitor2PointsChanged(3);
 }
 
-void Controls::on_c2Del3Button_pressed()
-{
-   QLabel *label = ui->c2PointsLabel;
-   modify_points(label, -3);
-   emit competitor2PointsChanged(-3);
+void Controls::on_c2Del3Button_pressed() {
+  QLabel *label = ui->c2PointsLabel;
+  modify_points(label, -3);
+  emit competitor2PointsChanged(-3);
 }
 
-void Controls::on_c2Add4Button_pressed()
-{
+void Controls::on_c2Add4Button_pressed() {
 
-   QLabel *label = ui->c2PointsLabel;
-   modify_points(label, 4);
-   emit competitor2PointsChanged(4);
+  QLabel *label = ui->c2PointsLabel;
+  modify_points(label, 4);
+  emit competitor2PointsChanged(4);
 }
 
-void Controls::on_c2Del4Button_pressed()
-{
-   QLabel *label = ui->c2PointsLabel;
-   modify_points(label, -4);
-   emit competitor2PointsChanged(-4);
+void Controls::on_c2Del4Button_pressed() {
+  QLabel *label = ui->c2PointsLabel;
+  modify_points(label, -4);
+  emit competitor2PointsChanged(-4);
 }
 
-void Controls::on_c2AddAButton_pressed()
-{
-   QLabel *label = ui->c2AdvantagesLabel;
-   modify_points(label, 1);
-   emit competitor2AdvantagesChanged(1);
+void Controls::on_c2AddAButton_pressed() {
+  QLabel *label = ui->c2AdvantagesLabel;
+  modify_points(label, 1);
+  emit competitor2AdvantagesChanged(1);
 }
 
-void Controls::on_c2DelAButton_pressed()
-{
-   QLabel *label = ui->c2AdvantagesLabel;
-   modify_points(label, -1);
-   emit competitor2AdvantagesChanged(-1);
+void Controls::on_c2DelAButton_pressed() {
+  QLabel *label = ui->c2AdvantagesLabel;
+  modify_points(label, -1);
+  emit competitor2AdvantagesChanged(-1);
 }
 
-void Controls::on_c2AddPButton_pressed()
-{
-   QLabel *label = ui->c2PenaltiesLabel;
-   modify_points(label, 1);
-   emit competitor2PenaltiesChanged(1);
+void Controls::on_c2AddPButton_pressed() {
+  QLabel *label = ui->c2PenaltiesLabel;
+  modify_points(label, 1);
+  emit competitor2PenaltiesChanged(1);
 }
 
-void Controls::on_c2DelPButton_pressed()
-{
-   QLabel *label = ui->c2PenaltiesLabel;
-   modify_points(label, -1);
-   emit competitor2PenaltiesChanged(-1);
+void Controls::on_c2DelPButton_pressed() {
+  QLabel *label = ui->c2PenaltiesLabel;
+  modify_points(label, -1);
+  emit competitor2PenaltiesChanged(-1);
 }
 
 /*!
