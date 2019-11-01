@@ -46,10 +46,10 @@ win32 {
         CONFIG += console
         SOURCES += logger.cpp
         HEADERS += logger.h
-        extra_files.path = $$OUT_PWD/../build-openroll-Desktop_Qt_5_12_5_MSVC2017_64bit-Debug/debug
+        extra_files.path = $$OUT_PWD/debug
     }
     CONFIG(release, debug|release) {
-        extra_files.path = $$OUT_PWD/../build-openroll-Desktop_Qt_5_12_5_MSVC2017_64bit-Release/release
+        extra_files.path = $$OUT_PWD/release
     }
 }
 
@@ -77,9 +77,9 @@ linux {
     }
 }
 
-message("======================================")
-message("Building: $${TARGET} with QT_VERSION $${QT_VERSION}")
-message("Using pro file at $$_PRO_FILE_PWD_")
-message("Compiler: $${QMAKE_CXX}")
-message("QMake from: $${QMAKE_QMAKE}")
-message("======================================")
+!build_pass:message("======================================")
+!build_pass:message("Building: $${TARGET} with QT_VERSION $${QT_VERSION}")
+!build_pass:message("Using pro file at $$_PRO_FILE_PWD_")
+!build_pass:message("Compiler: $${QMAKE_CXX}")
+!build_pass:message("QMake from: $${QMAKE_QMAKE}")
+!build_pass:message("======================================")

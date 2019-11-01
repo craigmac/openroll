@@ -31,3 +31,4 @@ openroll.pdb
 openroll.pro.*
 object_script.*
 log.txt
+build/
