@@ -1,3 +1,5 @@
+NOTE: no further work is being done on this project for the forseeable future--it has been put into archive mode.
+
 # Openroll
 
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPLv3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
