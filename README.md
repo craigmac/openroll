@@ -1,4 +1,5 @@
-NOTE: no further work is being done on this project for the forseeable future--it has been put into archive mode.
+NOTE: transition to Qt 6 underway, will take to end of 2021 at least (Qt 6 removed 'multimedia' library this project needs, will not be
+put back in until September 2021 and Qt 6.2 LTS is out).
 
 # Openroll
 
