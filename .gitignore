@@ -30,4 +30,5 @@ openroll.ilk
 openroll.pdb
 openroll.pro.*
 object_script.*
-log.txt
+log.txt.DS_Store
+.DS_Store

@@ -4,6 +4,11 @@ TEMPLATE = app
 VERSION = 2.0.2
 
 CONFIG += c++11
+# Disables warning about not using macOS SDK 10.15 (using 11.1)
+CONFIG += sdk_no_version_check
+
+# Make deprecated APIs an error for API deprecated in 5.15 or older
+DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x050F00
 
 # Extra files to copy into the build output directory
 extra_files.files = AUTHORS CHANGELOG gpl.txt lgpl.txt LICENSES.txt
