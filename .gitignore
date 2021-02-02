@@ -32,3 +32,4 @@ openroll.pro.*
 object_script.*
 log.txt.DS_Store
 .DS_Store
+build/
