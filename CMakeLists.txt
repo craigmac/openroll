@@ -12,6 +12,7 @@ set(CMAKE_CONFIGURATION_TYPES "Release;RelWithDebInfo" CACHE STRING "" FORCE)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
 # Set Windows System Env. Variable => QTDIR=C:\Qt\5.15.2\mingw81_64
 # and two more new system env vars:
 # %QTDIR%\bin and %QTDIR%\lib (replace %QTDIR% with $QTDIR on UNIX)
