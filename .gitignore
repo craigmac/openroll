@@ -33,3 +33,5 @@ object_script.*
 log.txt.DS_Store
 .DS_Store
 build/
+CMakeLists.txt.user
+build-*/
