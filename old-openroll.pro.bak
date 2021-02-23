@@ -88,3 +88,6 @@ message("Using pro file at $$_PRO_FILE_PWD_")
 message("Compiler: $${QMAKE_CXX}")
 message("QMake from: $${QMAKE_QMAKE}")
 message("======================================")
+
+DISTFILES += \
+    CMakefileLists.txt
