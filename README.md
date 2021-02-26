@@ -1,6 +1,3 @@
-NOTE: transition to Qt 6 underway, will take to end of 2021 at least (Qt 6 removed 'multimedia' library this project needs, will not be
-put back in until September 2021 and Qt 6.2 LTS is out).
-
 # Openroll
 
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPLv3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
@@ -24,16 +21,6 @@ Brazilian Jiu-Jitsu. It is not affiliated with the IBJJF in any way.
 * Dynamic scoreboard display scales to any size.
 * Open-source licensing allows you to make modifications and builds as you
 see fit, no vendor lock-in
-
-## Installation (Windows-only)
-
-Although only packaged for Windows 7+, it has been tested and ran on OS X and Ubuntu 18.04.x during
-development.
-
-## Download
-
-Link to Sourceforge direct download for Windows:
-[![Download Openroll](https://img.shields.io/sourceforge/dt/openroll.svg)](https://sourceforge.net/projects/openroll/files/latest/download)
 
 ## Licenses
 
