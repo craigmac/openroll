@@ -32,3 +32,9 @@ openroll.pro.*
 object_script.*
 log.txt
 build/
+log.txt.DS_Store
+.DS_Store
+build/
+CMakeLists.txt.user
+build-*/
+.cache/

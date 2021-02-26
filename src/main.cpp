@@ -18,6 +18,5 @@ int main(int argc, char *argv[]) {
   qInfo() << "Using log file named: " << logger::filename;
   logger::attach();
 #endif
-
   return QApplication::exec();
 }

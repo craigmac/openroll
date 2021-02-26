@@ -1,0 +1,16 @@
+C:\Projects\openroll\build\build-openroll-Desktop_Qt_5_15_2_MinGW_64_bit-Release\audio
+C:\Projects\openroll\build\build-openroll-Desktop_Qt_5_15_2_MinGW_64_bit-Release\bearer
+C:\Projects\openroll\build\build-openroll-Desktop_Qt_5_15_2_MinGW_64_bit-Release\iconengines
+C:\Projects\openroll\build\build-openroll-Desktop_Qt_5_15_2_MinGW_64_bit-Release\imageformats
+C:\Projects\openroll\build\build-openroll-Desktop_Qt_5_15_2_MinGW_64_bit-Release\mediaservice
+C:\Projects\openroll\build\build-openroll-Desktop_Qt_5_15_2_MinGW_64_bit-Release\platforms
+C:\Projects\openroll\build\build-openroll-Desktop_Qt_5_15_2_MinGW_64_bit-Release\playlistformats
+C:\Projects\openroll\build\build-openroll-Desktop_Qt_5_15_2_MinGW_64_bit-Release\styles
+C:\Projects\openroll\build\build-openroll-Desktop_Qt_5_15_2_MinGW_64_bit-Release\translations
+C:\Projects\openroll\build\build-openroll-Desktop_Qt_5_15_2_MinGW_64_bit-Release\*.dll
+C:\Projects\openroll\build\build-openroll-Desktop_Qt_5_15_2_MinGW_64_bit-Release\openroll.exe
+C:\Projects\openroll\CHANGELOG
+C:\Projects\openroll\gpl.txt
+C:\Projects\openroll\lgpl.txt
+C:\Projects\openroll\LICENSES.txt
+C:\Projects\openroll\AUTHORS
