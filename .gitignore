@@ -35,3 +35,4 @@ log.txt.DS_Store
 build/
 CMakeLists.txt.user
 build-*/
+.cache/

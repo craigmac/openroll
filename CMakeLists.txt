@@ -1,14 +1,13 @@
 cmake_minimum_required(VERSION 3.14)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 if (WIN32)
     project(openroll LANGUAGES CXX)
 elseif(UNIX)
     project(openroll)
 endif()
 
-set(CMAKE_CONFIGURATION_TYPES "Release;RelWithDebInfo" CACHE STRING "" FORCE)
-
-#======================= INCLUSION OF Qt =======================#
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
@@ -21,7 +20,6 @@ find_package(Qt5Core REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Multimedia REQUIRED)
 
-#=================== INCLUSION OF Project Files ====================#
 set(FORMS_DIR "${CMAKE_SOURCE_DIR}/forms")
 set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
 set(SOURCE_DIR "${CMAKE_SOURCE_DIR}/src")
@@ -35,12 +33,6 @@ file(GLOB_RECURSE SOURCES
     "${FORMS_DIR}/*.qrc"
     "${INCLUDE_DIR}/*.h"
     "${SOURCE_DIR}/*.cpp"
-)
-
-#=================== SETUP EXECTUABLE ====================#
-# Enable debug logging on RELWITHDEBINFO configuration
-set_property(DIRECTORY APPEND PROPERTY COMPILE_DEFINITIONS
-    $<$<CONFIG:RELWITHDEBINFO>:QT_MESSAGELOGCONTEXT>
 )
 
 # Add the forms directory to the AUTOUIC search paths
